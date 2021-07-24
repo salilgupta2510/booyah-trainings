@@ -20,11 +20,14 @@ const Logo = ({
     >
       <h1 className="m-0">
         <Link to="/">
-          <Image
+          {/* <Image
             src={require('./../../../assets/images/logo.png')}
             alt="Open"
             width={400}
-            height={200} />
+            height={200} /> */}
+          <div style={{ fontSize: 35, fontFamily: 'sans-serif' }}>
+            Agile Training by Booyah
+          </div>
         </Link>
       </h1>
     </div>

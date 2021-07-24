@@ -41,11 +41,11 @@ const Footer = ({
           )}>
           <div className="footer-top space-between text-xxs">
             <Logo />
-            <FooterSocial />
+            {/* <FooterSocial /> */}
           </div>
           <div className="footer-bottom space-between text-xxs invert-order-desktop">
-            <FooterNav />
-            <div className="footer-copyright">Made by <a href="https://cruip.com">Cruip</a>. All right reserved</div>
+            {/* <FooterNav /> */}
+            <div className="footer-copyright">Copyright © 2021 Booyah Training (OPC) Private Limited</div>
           </div>
         </div>
       </div>
