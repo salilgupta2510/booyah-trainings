@@ -111,7 +111,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Home</Link>
+                      <Link to="/" onClick={closeMenu}>Home</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -120,7 +120,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>KSD</Link>
+                      <Link to="/KSD" onClick={closeMenu}>KSD</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -129,7 +129,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>KSI</Link>
+                      <Link to="/KSI" onClick={closeMenu}>KSI</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -138,7 +138,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Calendar</Link>
+                      <Link to="/Calendar" onClick={closeMenu}>Calendar</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -147,7 +147,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Contact</Link>
+                      <Link to="/Contact" onClick={closeMenu}>Contact</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -156,7 +156,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="#0" onClick={closeMenu}>Privacy Policy</Link>
+                      <Link to="/Policy" onClick={closeMenu}>Privacy Policy</Link>
                     </li>
                   </ul>
                 </div>

@@ -67,19 +67,13 @@ const Hero = ({
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
                 An iNSIDE Out approach to Agile Training
                 </p>
+
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
                   <Button tag="a" color="primary" wideMobile href="">
-                    Reacd More
-                    </Button>
-                </ButtonGroup>
-              </div>
-              <div className="reveal-from-bottom" data-reveal-delay="600">
-                <ButtonGroup>
-                  <Button tag="a" color="dark" wideMobile href="">
                     REGISTER FOR KSD/KMP-1
                     </Button>
-                  <Button tag="a" color="dark" wideMobile href="">
+                  <Button tag="a" color="primary" wideMobile href="">
                     REGISTER FOR KSI/KMP-2
                     </Button>
                 </ButtonGroup>
