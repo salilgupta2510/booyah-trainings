@@ -71,7 +71,7 @@ const KSD = ({
                 </p>
                             <div className="reveal-from-bottom" data-reveal-delay="600">
                                 <ButtonGroup>
-                                    <Button tag="a" color="primary" wideMobile href="">
+                                    <Button tag="a" color="primary" wideMobile href="/Calendar">
                                         REGISTER FOR KSD
                     </Button>
                                 </ButtonGroup>

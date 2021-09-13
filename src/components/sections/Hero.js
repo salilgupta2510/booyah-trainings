@@ -70,19 +70,16 @@ const Hero = ({
 
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile href="">
+                  <Button tag="a" color="primary" wideMobile href="/Calendar">
                     REGISTER FOR KSD/KMP-1
                     </Button>
-                  <Button tag="a" color="primary" wideMobile href="">
+                  <Button tag="a" color="primary" wideMobile href="/Calendar">
                     REGISTER FOR KSI/KMP-2
                     </Button>
                 </ButtonGroup>
               </div>
             </div>
           </div>
-          {/* <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="800">
-            
-          </div> */}
         </div>
       </div>
     </section >
