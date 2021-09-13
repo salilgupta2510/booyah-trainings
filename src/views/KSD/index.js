@@ -4,6 +4,8 @@ import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../../components/elements/ButtonGroup';
 import Button from '../../components/elements/Button';
 import Cta from '../../components/sections/Cta';
+import { Link } from 'react-router-dom';
+
 
 const propTypes = {
     ...SectionProps.types
@@ -71,9 +73,9 @@ const KSD = ({
                 </p>
                             <div className="reveal-from-bottom" data-reveal-delay="600">
                                 <ButtonGroup>
-                                    <Button tag="a" color="primary" wideMobile href="/Calendar">
-                                        REGISTER FOR KSD
-                    </Button>
+                                    <Button tag="a" color="primary" wideMobile href="">
+                                        <Link to="/Calendar">REGISTER FOR KSD</Link>
+                                    </Button>
                                 </ButtonGroup>
                             </div>
                         </div>
