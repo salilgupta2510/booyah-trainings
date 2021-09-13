@@ -44,7 +44,6 @@ const App = () => {
           <AppRoute exact path="/KSD" component={KSD} layout={LayoutDefault} />
           <AppRoute exact path="/KSI" component={KSI} layout={LayoutDefault} />
           <AppRoute exact path="/Calendar" component={Calendar} layout={LayoutDefault} />
-          <AppRoute exact path="/Contact" component={Home} layout={LayoutDefault} />
           <AppRoute exact path="/Policy" component={Policy} layout={LayoutDefault} />
         </Switch>
       )} />

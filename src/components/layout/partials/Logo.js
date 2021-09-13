@@ -30,6 +30,9 @@ const Logo = ({
           </div>
         </Link>
       </h1>
+      {props.showCopyRight && <div className="footer-bottom space-between text-xxs invert-order-desktop">
+        <div className="footer-copyright">Copyright © 2021 Booyah Training (OPC) Private Limited</div>
+      </div>}
     </div>
   );
 }

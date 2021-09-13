@@ -84,7 +84,7 @@ const Header = ({
           classNames(
             'site-header-heading',
           )}>
-          <Logo />
+          <Logo showCopyRight={false} />
           {!hideNav &&
             <>
               <button
@@ -139,15 +139,6 @@ const Header = ({
                     )}>
                     <li>
                       <Link to="/Calendar" onClick={closeMenu}>Calendar</Link>
-                    </li>
-                  </ul>
-                  <ul className={
-                    classNames(
-                      'list-reset text-xs',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="/Contact" onClick={closeMenu}>Contact</Link>
                     </li>
                   </ul>
                   <ul className={

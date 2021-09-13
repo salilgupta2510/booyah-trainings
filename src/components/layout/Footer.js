@@ -40,12 +40,8 @@ const Footer = ({
             topDivider && 'has-top-divider'
           )}>
           <div className="footer-top space-between text-xxs">
-            <Logo />
-            {/* <FooterSocial /> */}
-          </div>
-          <div className="footer-bottom space-between text-xxs invert-order-desktop">
-            {/* <FooterNav /> */}
-            <div className="footer-copyright">Copyright © 2021 Booyah Training (OPC) Private Limited</div>
+            <Logo showCopyRight={true} />
+            <FooterSocial showPhoneNumber={true} />
           </div>
         </div>
       </div>
