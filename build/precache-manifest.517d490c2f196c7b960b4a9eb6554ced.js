@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e49731f79d531936fd791c914aedc85e",
+    "revision": "dd66e8d0acf6a2463f9a6e02400e0c2e",
     "url": "/booyah-trainings/index.html"
   },
   {
-    "revision": "60ff596fa4dfd33b7d46",
+    "revision": "3d0ea73849da3728ef2a",
     "url": "/booyah-trainings/static/css/main.dd62031f.chunk.css"
   },
   {
-    "revision": "427b4f737a73ef525bb4",
-    "url": "/booyah-trainings/static/js/2.b1f8ba8d.chunk.js"
+    "revision": "ce8eaed7f26ebb6eb49c",
+    "url": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js"
   },
   {
     "revision": "117d65892edc8adcd29d4a0d57b5a80a",
-    "url": "/booyah-trainings/static/js/2.b1f8ba8d.chunk.js.LICENSE.txt"
+    "url": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "60ff596fa4dfd33b7d46",
-    "url": "/booyah-trainings/static/js/main.e8ef52ec.chunk.js"
+    "revision": "3d0ea73849da3728ef2a",
+    "url": "/booyah-trainings/static/js/main.9942c2a6.chunk.js"
   },
   {
     "revision": "77fd5cca81a66e38e44a",

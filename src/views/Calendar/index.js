@@ -4,6 +4,7 @@ import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../../components/elements/ButtonGroup';
 import Button from '../../components/elements/Button';
 import Cta from '../../components/sections/Cta';
+import FooterSocial from '../../components/layout/partials/FooterSocial';
 
 const propTypes = {
     ...SectionProps.types
@@ -65,19 +66,7 @@ const Calendar = ({
                         <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
                             Under Construction !!
             </h1>
-                        {/* <div className="container-xs">
-                            <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                                Design a Kanban system or improve an existing system for optimal flow and faster delivery. Learn the fundamentals of the Kanban Method. Experience Kanban with a simulation game and hands-on exercises to design a Kanban board.
-                </p>
-                            <div className="reveal-from-bottom" data-reveal-delay="600">
-                                <ButtonGroup>
-                                    <Button tag="a" color="primary" wideMobile href="">
-                                        REGISTER FOR Calendar
-                    </Button>
-                                </ButtonGroup>
-                            </div>
-                        </div> */}
-
+                        <FooterSocial label={"Mean while get in touch with us here"} showPhoneNumber={false} />
                     </div>
                 </div>
             </div>
