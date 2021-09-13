@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/booyah-trainings/static/css/main.dd62031f.chunk.css",
-    "main.js": "/booyah-trainings/static/js/main.11979f7e.chunk.js",
-    "main.js.map": "/booyah-trainings/static/js/main.11979f7e.chunk.js.map",
+    "main.js": "/booyah-trainings/static/js/main.9942c2a6.chunk.js",
+    "main.js.map": "/booyah-trainings/static/js/main.9942c2a6.chunk.js.map",
     "runtime-main.js": "/booyah-trainings/static/js/runtime-main.b15a3bd3.js",
     "runtime-main.js.map": "/booyah-trainings/static/js/runtime-main.b15a3bd3.js.map",
-    "static/js/2.b1f8ba8d.chunk.js": "/booyah-trainings/static/js/2.b1f8ba8d.chunk.js",
-    "static/js/2.b1f8ba8d.chunk.js.map": "/booyah-trainings/static/js/2.b1f8ba8d.chunk.js.map",
+    "static/js/2.b7d95c5f.chunk.js": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js",
+    "static/js/2.b7d95c5f.chunk.js.map": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js.map",
     "index.html": "/booyah-trainings/index.html",
-    "precache-manifest.ce5c2a0661c332d5093033c368ad4ff2.js": "/booyah-trainings/precache-manifest.ce5c2a0661c332d5093033c368ad4ff2.js",
+    "precache-manifest.517d490c2f196c7b960b4a9eb6554ced.js": "/booyah-trainings/precache-manifest.517d490c2f196c7b960b4a9eb6554ced.js",
     "service-worker.js": "/booyah-trainings/service-worker.js",
     "static/css/main.dd62031f.chunk.css.map": "/booyah-trainings/static/css/main.dd62031f.chunk.css.map",
-    "static/js/2.b1f8ba8d.chunk.js.LICENSE.txt": "/booyah-trainings/static/js/2.b1f8ba8d.chunk.js.LICENSE.txt",
+    "static/js/2.b7d95c5f.chunk.js.LICENSE.txt": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js.LICENSE.txt",
     "static/media/Coach.jpeg": "/booyah-trainings/static/media/Coach.14817a6e.jpeg",
     "static/media/style.scss": "/booyah-trainings/static/media/illustration-section-02.63d0555d.svg",
     "static/media/feature-tile-icon-01.svg": "/booyah-trainings/static/media/feature-tile-icon-01.0f9928d7.svg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b15a3bd3.js",
-    "static/js/2.b1f8ba8d.chunk.js",
+    "static/js/2.b7d95c5f.chunk.js",
     "static/css/main.dd62031f.chunk.css",
-    "static/js/main.11979f7e.chunk.js"
+    "static/js/main.9942c2a6.chunk.js"
   ]
 }
