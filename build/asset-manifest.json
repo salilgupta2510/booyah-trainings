@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/booyah-trainings/static/css/main.dd62031f.chunk.css",
-    "main.js": "/booyah-trainings/static/js/main.9942c2a6.chunk.js",
-    "main.js.map": "/booyah-trainings/static/js/main.9942c2a6.chunk.js.map",
+    "main.css": "/booyah-trainings/static/css/main.8bc56367.chunk.css",
+    "main.js": "/booyah-trainings/static/js/main.c644a7a3.chunk.js",
+    "main.js.map": "/booyah-trainings/static/js/main.c644a7a3.chunk.js.map",
     "runtime-main.js": "/booyah-trainings/static/js/runtime-main.b15a3bd3.js",
     "runtime-main.js.map": "/booyah-trainings/static/js/runtime-main.b15a3bd3.js.map",
-    "static/js/2.b7d95c5f.chunk.js": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js",
-    "static/js/2.b7d95c5f.chunk.js.map": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js.map",
+    "static/js/2.099aa357.chunk.js": "/booyah-trainings/static/js/2.099aa357.chunk.js",
+    "static/js/2.099aa357.chunk.js.map": "/booyah-trainings/static/js/2.099aa357.chunk.js.map",
     "index.html": "/booyah-trainings/index.html",
-    "precache-manifest.517d490c2f196c7b960b4a9eb6554ced.js": "/booyah-trainings/precache-manifest.517d490c2f196c7b960b4a9eb6554ced.js",
+    "precache-manifest.fd9d8b5891d90be68f0566b731ab7915.js": "/booyah-trainings/precache-manifest.fd9d8b5891d90be68f0566b731ab7915.js",
     "service-worker.js": "/booyah-trainings/service-worker.js",
-    "static/css/main.dd62031f.chunk.css.map": "/booyah-trainings/static/css/main.dd62031f.chunk.css.map",
-    "static/js/2.b7d95c5f.chunk.js.LICENSE.txt": "/booyah-trainings/static/js/2.b7d95c5f.chunk.js.LICENSE.txt",
+    "static/css/main.8bc56367.chunk.css.map": "/booyah-trainings/static/css/main.8bc56367.chunk.css.map",
+    "static/js/2.099aa357.chunk.js.LICENSE.txt": "/booyah-trainings/static/js/2.099aa357.chunk.js.LICENSE.txt",
     "static/media/Coach.jpeg": "/booyah-trainings/static/media/Coach.14817a6e.jpeg",
     "static/media/style.scss": "/booyah-trainings/static/media/illustration-section-02.63d0555d.svg",
     "static/media/feature-tile-icon-01.svg": "/booyah-trainings/static/media/feature-tile-icon-01.0f9928d7.svg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b15a3bd3.js",
-    "static/js/2.b7d95c5f.chunk.js",
-    "static/css/main.dd62031f.chunk.css",
-    "static/js/main.9942c2a6.chunk.js"
+    "static/js/2.099aa357.chunk.js",
+    "static/css/main.8bc56367.chunk.css",
+    "static/js/main.c644a7a3.chunk.js"
   ]
 }

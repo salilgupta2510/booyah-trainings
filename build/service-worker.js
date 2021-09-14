@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/booyah-trainings/precache-manifest.517d490c2f196c7b960b4a9eb6554ced.js"
+  "/booyah-trainings/precache-manifest.fd9d8b5891d90be68f0566b731ab7915.js"
 );
 
 self.addEventListener('message', (event) => {

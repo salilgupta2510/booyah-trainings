@@ -44,7 +44,7 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Our Training Prgrams',
+    title: 'Our Training Programs',
     paragraph: 'Our trainers have real-life experience in Agile Transformation. As a result, we follow an iNSIDE Out approach to Agile training. We provide inclusive and immersive training with personalized attention to each attendee. In addition, our group exercises, group discussions, and fun activities enhance collaboration and make our training more effective.'
   };
 

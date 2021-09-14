@@ -6,13 +6,6 @@ import Button from '../../components/elements/Button';
 import Cta from '../../components/sections/Cta';
 import { Link } from 'react-router-dom';
 
-const propTypes = {
-    ...SectionProps.types
-}
-
-const defaultProps = {
-    ...SectionProps.defaults
-}
 const KSI = ({
     className,
     topOuterDivider,
@@ -38,7 +31,7 @@ const KSI = ({
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
-
+    // eslint-disable-next-line
     const tilesClasses = classNames(
         'tiles-wrap center-content'
     );

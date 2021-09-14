@@ -1,18 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
-import ButtonGroup from '../../components/elements/ButtonGroup';
-import Button from '../../components/elements/Button';
-import Cta from '../../components/sections/Cta';
 import FooterSocial from '../../components/layout/partials/FooterSocial';
 
-const propTypes = {
-    ...SectionProps.types
-}
-
-const defaultProps = {
-    ...SectionProps.defaults
-}
 const Calendar = ({
     className,
     topOuterDivider,
@@ -38,22 +28,10 @@ const Calendar = ({
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
-
+    // eslint-disable-next-line
     const tilesClasses = classNames(
         'tiles-wrap center-content'
     );
-
-    const renderTile = (text, color) => {
-        return (
-            <div className="tiles-item reveal-from-right" data-reveal-delay={200} style={{ padding: 0 }}>
-                <div className="tiles-item-inner" style={{ backgroundColor: `${color}`, color: 'black' }}>
-                    <p className="m-0 text-sm">
-                        {text}
-                    </p>
-                </div>
-            </div>
-        )
-    }
 
     return (
         <section

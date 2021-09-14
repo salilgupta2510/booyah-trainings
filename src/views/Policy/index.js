@@ -1,17 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
-import ButtonGroup from '../../components/elements/ButtonGroup';
-import Button from '../../components/elements/Button';
-import Cta from '../../components/sections/Cta';
 
-const propTypes = {
-    ...SectionProps.types
-}
-
-const defaultProps = {
-    ...SectionProps.defaults
-}
 const Policy = ({
     className,
     topOuterDivider,

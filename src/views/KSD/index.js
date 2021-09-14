@@ -6,11 +6,11 @@ import Button from '../../components/elements/Button';
 import Cta from '../../components/sections/Cta';
 import { Link } from 'react-router-dom';
 
-
+// eslint-disable-next-line
 const propTypes = {
     ...SectionProps.types
 }
-
+// eslint-disable-next-line
 const defaultProps = {
     ...SectionProps.defaults
 }
@@ -40,6 +40,7 @@ const KSD = ({
         bottomDivider && 'has-bottom-divider'
     );
 
+    // eslint-disable-next-line
     const tilesClasses = classNames(
         'tiles-wrap center-content'
     );
