@@ -73,7 +73,9 @@ const AboutCoach = ({
                                     A motivated individual who creates the sPaRk in any training class. He has decades of experience in Agile Transformation. He has worked with teams iNSIDE Out and made their transformation journey – a sUccess
                                 </p>
                                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8" style={{ marginTop: 30 }}>
-                                    Write To Him
+                                    <a style={{ color: '#5658dd' }} href="mailto: vikas@booyah.training" target="_blank">
+                                        Write To Him
+                                </a>
                                 </div>
                             </div>
                             <div className={
