@@ -13,6 +13,7 @@ import KSD from './views/KSD/index';
 import KSI from './views/KSI';
 import Calendar from './views/Calendar/index';
 import Policy from './views/Policy/index';
+import Testimonial from './views/Testimonials';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -41,6 +42,7 @@ const App = () => {
       children={() => (
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+          <AppRoute exact path="/Testimonials" component={Testimonial} layout={LayoutDefault} />
           <AppRoute exact path="/KSD" component={KSD} layout={LayoutDefault} />
           <AppRoute exact path="/KSI" component={KSI} layout={LayoutDefault} />
           <AppRoute exact path="/Calendar" component={Calendar} layout={LayoutDefault} />
