@@ -91,7 +91,7 @@ const Testimonial = ({
       height: '50%'
     }
   }
-  const testimonialsMobile = [{
+  const testimonialsMobileView = [{
     name: 'Salil Gupta',
     image: require('../../assets/images/Salil.jpg'),
     company: 'Nagarro',
@@ -238,7 +238,7 @@ const Testimonial = ({
           </Carousel>
         </BrowserView>
         <MobileView>
-          {testimonialsMobile.map((parentItem) => {
+          {testimonialsMobileView.map((parentItem) => {
             return (
               <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
 
