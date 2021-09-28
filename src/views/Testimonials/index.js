@@ -252,7 +252,7 @@ const Testimonial = ({
                       </span>
                     </div>
                     <div className="testimonial-item-content">
-                      <p className="text-sm mb-0" style={{ height: 350, overflowY: "auto" }}>
+                      <p className="text-sm mb-0" style={{ minHeight: 150, maxHeight: 350, overflowY: "auto" }}>
                         {parentItem.data}
                       </p>
                     </div>
