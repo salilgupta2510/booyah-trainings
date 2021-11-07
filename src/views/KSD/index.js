@@ -61,6 +61,7 @@ const KSD = ({
         <section
             {...props}
             className={outerClasses}
+            style={{ paddingTop: 0, marginTop: 150 }}
         >
             <div className="container">
                 <div className={innerClasses} style={{ paddingBottom: 10 }}>

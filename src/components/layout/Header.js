@@ -107,7 +107,7 @@ const Header = ({
                 <div className="header-nav-inner">
                   <ul className={
                     classNames(
-                      'list-reset text-xs',
+                      'list-reset h5 ',
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
@@ -116,7 +116,7 @@ const Header = ({
                   </ul>
                   <ul className={
                     classNames(
-                      'list-reset text-xs',
+                      'list-reset h5 ',
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
@@ -125,7 +125,7 @@ const Header = ({
                   </ul>
                   <ul className={
                     classNames(
-                      'list-reset text-xs',
+                      'list-reset h5 ',
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
@@ -134,7 +134,7 @@ const Header = ({
                   </ul>
                   <ul className={
                     classNames(
-                      'list-reset text-xs',
+                      'list-reset h5 ',
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
@@ -143,7 +143,7 @@ const Header = ({
                   </ul>
                   <ul className={
                     classNames(
-                      'list-reset text-xs',
+                      'list-reset h5 ',
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
@@ -152,7 +152,7 @@ const Header = ({
                   </ul>
                   <ul className={
                     classNames(
-                      'list-reset text-xs',
+                      'list-reset h5 ',
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>

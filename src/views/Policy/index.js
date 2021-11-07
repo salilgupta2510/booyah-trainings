@@ -26,6 +26,7 @@ const Policy = ({
         <section
             {...props}
             className={outerClasses}
+            style={{ paddingTop: 0, marginTop: 200 }}
         >
             <div className="container reveal-from-bottom">
                 <div style={{ textAlign: 'left', marginTop: 40 }}>

@@ -57,7 +57,7 @@ const Hero = ({
       className={outerClasses}
     >
       <div className="container-sm">
-        <div className={innerClasses}>
+        <div className={innerClasses} style={{ paddingTop: 0, marginTop: 150 }}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
               You did not come this far to only come this far

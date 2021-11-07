@@ -41,12 +41,12 @@ const App = () => {
       ref={childRef}
       children={() => (
         <Switch>
-          <AppRoute exact path="/" component={Testimonial} layout={LayoutDefault} />
-          <AppRoute exact path="/Home" component={Home} layout={LayoutDefault} />
-          <AppRoute exact path="/KSD" component={KSD} layout={LayoutDefault} />
-          <AppRoute exact path="/KSI" component={KSI} layout={LayoutDefault} />
-          <AppRoute exact path="/Calendar" component={Calendar} layout={LayoutDefault} />
-          <AppRoute exact path="/Policy" component={Policy} layout={LayoutDefault} />
+          <AppRoute exact path="/" component={Testimonial} layout={LayoutDefault} hideFooter={false} />
+          <AppRoute exact path="/Home" component={Home} layout={LayoutDefault} hideFooter={false} />
+          <AppRoute exact path="/KSD" component={KSD} layout={LayoutDefault} hideFooter={false} />
+          <AppRoute exact path="/KSI" component={KSI} layout={LayoutDefault} hideFooter={false} />
+          <AppRoute exact path="/Calendar" component={Calendar} layout={LayoutDefault} hideFooter={true} />
+          <AppRoute exact path="/Policy" component={Policy} layout={LayoutDefault} hideFooter={false} />
         </Switch>
       )} />
   );
