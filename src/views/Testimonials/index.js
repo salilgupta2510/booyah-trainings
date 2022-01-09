@@ -313,7 +313,7 @@ const Testimonial = ({
                     <div className="tiles-item reveal-from-right" style={{ marginBottom: 50 }} data-reveal-delay="200">
                       <div className="tiles-item-inner" >
                         <img src={childItem.image} style={{ height: 100, width: 100, alignSelf: 'center', borderRadius: 50 }} />
-                        <div className="testimonial-item-header text-xl" style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div className="testimonial-item-header text-xl" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 20 }}>
                           <span className="testimonial-item-name text-color-high">{childItem.name}</span>
                           <span className="testimonial-item-link">
                             <a href="#0">{childItem.company}</a>
