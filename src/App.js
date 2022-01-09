@@ -12,6 +12,7 @@ import Home from './views/Home';
 import KSD from './views/KSD/index';
 import KSI from './views/KSI';
 import Calendar from './views/Calendar/index';
+import KnowYourTrainer from './views/KnowYourTrainer/index';
 import Policy from './views/Policy/index';
 import Testimonial from './views/Testimonials';
 
@@ -45,7 +46,7 @@ const App = () => {
           <AppRoute exact path="/Home" component={Home} layout={LayoutDefault} hideFooter={false} />
           <AppRoute exact path="/KSD" component={KSD} layout={LayoutDefault} hideFooter={false} />
           <AppRoute exact path="/KSI" component={KSI} layout={LayoutDefault} hideFooter={false} />
-          <AppRoute exact path="/Calendar" component={Calendar} layout={LayoutDefault} hideFooter={true} />
+          <AppRoute exact path="/KnowYourTrainer" component={KnowYourTrainer} layout={LayoutDefault} hideFooter={true} />
           <AppRoute exact path="/Policy" component={Policy} layout={LayoutDefault} hideFooter={false} />
         </Switch>
       )} />

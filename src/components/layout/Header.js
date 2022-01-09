@@ -147,7 +147,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/Calendar" onClick={closeMenu}>Calendar</Link>
+                      <Link to="/KnowYourTrainer" onClick={closeMenu}>Know Your Trainer</Link>
                     </li>
                   </ul>
                   <ul className={

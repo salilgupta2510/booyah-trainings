@@ -23,7 +23,7 @@ const Logo = ({
         <Link to="/">
           <div style={{ fontSize: 35, fontFamily: 'sans-serif' }}>
             <Image
-              src={require('./../../../assets/images/logo_new.png')}
+              src={require('./../../../assets/images/logo_v1.5.png')}
               alt="Open"
               width={120}
               height={60} />

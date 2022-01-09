@@ -76,7 +76,7 @@ const KSD = ({
                             <div className="reveal-from-bottom" data-reveal-delay="600">
                                 <ButtonGroup>
                                     <Button tag="a" color="primary" wideMobile href="">
-                                        <Link to="/Calendar">REGISTER FOR KSD</Link>
+                                        <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD</a>
                                     </Button>
                                 </ButtonGroup>
                             </div>

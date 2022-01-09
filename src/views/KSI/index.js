@@ -67,7 +67,7 @@ const KSI = ({
                             <div className="reveal-from-bottom" data-reveal-delay="600">
                                 <ButtonGroup>
                                     <Button tag="a" color="primary" wideMobile href="">
-                                        <Link to="/Calendar">REGISTER FOR KSI</Link>
+                                        <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI</a>
                                     </Button>
                                 </ButtonGroup>
                             </div>
