@@ -15,6 +15,7 @@ import Calendar from './views/Calendar/index';
 import KnowYourTrainer from './views/KnowYourTrainer/index';
 import Policy from './views/Policy/index';
 import Testimonial from './views/Testimonials';
+import ContactUs from './views/ContactUs';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -48,6 +49,7 @@ const App = () => {
           <AppRoute exact path="/KSI" component={KSI} layout={LayoutDefault} hideFooter={false} />
           <AppRoute exact path="/KnowYourTrainer" component={KnowYourTrainer} layout={LayoutDefault} hideFooter={true} />
           <AppRoute exact path="/Policy" component={Policy} layout={LayoutDefault} hideFooter={false} />
+          <AppRoute exact path="/queryForm" component={ContactUs}layout={LayoutDefault} hideFooter={false} />
         </Switch>
       )} />
   );
