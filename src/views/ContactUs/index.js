@@ -3,8 +3,9 @@ import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../../components/elements/ButtonGroup';
 import Button from '../../components/elements/Button';
-import Cta from '../../components/sections/Cta';
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router-dom';
+import { Triangle } from 'react-loader-spinner'
 
 // eslint-disable-next-line
 const propTypes = {
@@ -28,6 +29,9 @@ const ContactUs = ({
   const form = useRef();
   const emailRef = useRef();
   const [emailError, setEmailError] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const [sendingLoader, setSendingLoader] = useState(false);
+  const [error, setError] = useState("");
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -52,14 +56,20 @@ const ContactUs = ({
   const sendEmail = () => {
     console.log(emailRef.current.value, form.value)
     if (!emailRef.current.value) { setEmailError(true) } else {
+      setSendingLoader(true)
+      emailjs.sendForm('service_ypwhqa8', 'template_sq4cabb', form.current, 'xgUyV3c2jUpeFJVM8')
+        .then((result) => {
+          console.log(result.text);
+          setSendingLoader(false)
 
+          setEmailSent(true);
+        }, (error) => {
+          console.log(error.text);
+          setError("There was an issue in sending your response, Please try again!")
+          setSendingLoader(false)
+        });
     }
-    // emailjs.sendForm('service_ypwhqa8', 'template_sq4cabb', form.current, 'xgUyV3c2jUpeFJVM8')
-    //   .then((result) => {
-    //     console.log(result.text);
-    //   }, (error) => {
-    //     console.log(error.text);
-    //   });
+
   };
 
 
@@ -80,27 +90,41 @@ const ContactUs = ({
               marginLeft: 'auto',
               marginRight: 'auto'
             }}>
-               <h1 style={{color: '#ffffff'}} className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-              Get In Touch
-            </h1>
-              <form ref={form} onSubmit={sendEmail}>
-                <label style={styles.label}>Name</label>
-                <input style={styles.input} type="text" name="user_name" />
-                <label style={styles.label}>Mobile Number</label>
-                <input style={styles.input} type="number" name="user_number" />
-                <label style={styles.label}>Email*</label>
-                <input style={styles.input} ref={emailRef} type="email" name="email" />
-                {emailError && <div style={{ color: 'red' }}>Please enter your email address</div>}
-                <label style={{marginTop: 50, ...styles.label}}>Message</label>
-                <textarea style={styles.input} name="message" />
-              </form>
-              <div>
-                <ButtonGroup>
-                  <Button tag="button" color="primary" wideMobile onClick={() => sendEmail()}>
-                    Send Enquiry
-                  </Button>
-                </ButtonGroup>
-              </div>
+              {sendingLoader && <Triangle
+                height="100"
+                width="100"
+                color='grey'
+                ariaLabel='loading'
+              />}
+              {!emailSent && !sendingLoader && <>
+                <h1 style={{ color: '#ffffff' }} className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
+                  Get In Touch
+                </h1>
+                <form ref={form} onSubmit={sendEmail}>
+                  {/* <label style={styles.label}>Name</label> */}
+                  <input placeholder='Your Name' style={styles.input} type="text" name="user_name" />
+                  {/* <label style={styles.label}>Mobile Number</label> */}
+                  <input placeholder='Contact Number' style={styles.input} type="number" name="user_number" />
+                  {/* <label style={styles.label}>Email*</label> */}
+                  <input placeholder='Email' style={styles.input} ref={emailRef} type="email" name="email" />
+                  {emailError && <div style={{ color: 'red' }}>Please enter your email address</div>}
+                  {/* <label style={{marginTop: 50, ...styles.label}}>Message</label> */}
+                  <textarea placeholder='Let Us Know' style={styles.input} name="message" />
+                </form>
+                {error && <h5 style={{ color: 'red' }}>{error}</h5>}
+                <div>
+                  <ButtonGroup>
+                    <Button tag="button" color="primary" wideMobile onClick={() => sendEmail()}>
+                      Send
+                    </Button>
+                  </ButtonGroup>
+                </div>
+              </>} { emailSent && <>
+                <img src={require("../../assets/images/success.png")} style={{ height: 70, width: 70, alignSelf: 'center', borderRadius: 50 }} />
+                <h3 >Sent Successfully</h3>
+                <Link to="/" ><h6>Go To Home</h6></Link>
+
+              </>}
             </div>
 
           </div>
@@ -111,7 +135,7 @@ const ContactUs = ({
 }
 
 const styles = {
-  label: {color: '#ffffff'},
+  label: { color: '#ffffff' },
   input: {
     width: "100%",
     marginTop: 8,
@@ -119,6 +143,7 @@ const styles = {
     marginBottom: 20,
     borderRadius: 5,
     lineHeight: 2,
+    paddingLeft: 10
   }
 }
 

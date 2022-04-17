@@ -74,7 +74,8 @@ const Hero = ({
                     {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
                   </Button>
                   <Button tag="a" color="primary" wideMobile href="">
-                    <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a>
+                  <Link to="/queryForm" >REGISTER FOR KSI/KMP-2</Link>
+                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
                   </Button>
                 </ButtonGroup>
               </div>
