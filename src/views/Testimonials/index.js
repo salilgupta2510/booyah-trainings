@@ -93,6 +93,118 @@ const Testimonial = ({
   }
   const testimonialsMobileView = [
     {
+      name: 'Raj',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Predominantly everything was really great. It was a great learning. Now I will have to see how I convince my organization to achieve this alternate approach to agility.'
+    }, {
+      name: 'Ravi',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Expectations from a learning point has been met. I am happy with what I learnt. Now it’s just a matter of how to implement it. After this training, I can do certain things a personal level to improve agility of the organization.'
+    }, {
+      name: 'Shafaq',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I can say that this was the weekend “well spent” and I was able to learn a lot. I am hoping to send you many emails on the issues that I will be facing during the implementation of these concepts. It was a very interactive class. Thank you for all the learning.'
+    },
+    {
+      name: 'Sandeep',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'The place I work, they had Kanban and they failed to implement it. Today after the training, I can understand why they failed to implement Kanban. I think I can go back now and look at its successful implementation.'
+    }, {
+      name: 'Rhealyn',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'This was very enlightening. It was a weekend well spent. It has completely changed the way I thought about Kanban. What I like about the training is that you know that there is lot of complexity around it and you try as much to simplify to us and what’s best is you try to put a very practical example that we could easily relate and understand. Also, one of the key strengths about Vikas is that he is quite aware even if we are all virtual. He kind of finds when everybody is silent and he tries to wake everyone up. Overall, it is very engaging and very enlightening.'
+    }, {
+      name: 'Christina',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'All my questions were answered, I think the course was organised very well.'
+    },
+    {
+      name: 'Pallavi',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'It has a great depth in Kanban and helps us understand it tog the core.'
+    }, {
+      name: 'Saukhbinder',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Overall a very good experience. I will say it was a very good mix on hands on and theory. The practices that we are doing on MURAL boards and trying ourselves was very great. I really appreciate your depth of knowledge. There is an experience and knowledge behind you.'
+    }, {
+      name: 'Saurabh',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I agree it was very interactive session and not just the slides. '
+    },
+    {
+      name: 'Alka',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'It was an eye opener for me. I never thought that Kanban is such deep. We did not know all these concepts. You have covered each and every topic that most of the instructors are not covering.'
+    }, {
+      name: 'Pratik',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I appreciate the effort that you have invested in trying to highlight all the concepts, previously we thought that Kanban is just a board. Especially the statistical analysis can help us set correct expectations with the management. The exercises were good as we were able to understand the practicality of the concepts. We understood what we are doing right and what we need to improve.'
+    }, {
+      name: 'Tania',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I appreciate the knowledge and delivery of the session. The way you train is incredible.'
+    },
+    {
+      name: 'Nikhil',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Definitely, I got a deeper understanding of how Kanban works. Thanks to you, you had a very definitive material to guide us through. You also had beautiful case studies to understand how things work. Thanks for this lovely session.'
+    }, {
+      name: 'Vamsi',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Day 1 was fantastic in terms of the game. Everyone was involved and can relate to the similar situation at work and understand the essence of flow. The quizzes and fun aspects were really fantastic. Overall, it was a great learning experience.'
+    }, {
+      name: 'Aditya',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'It was a wonderful training. It was very interactive. Very good delivery of training. Apart of this, I would like to bring one point. You have a very good industry experience and you were able to help me with my real problem and how to do it in a better way.'
+    },
+    {
+      name: 'Nazir',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Before joining the class, Kanban to me was “To Do”, “Doing” and “Done”. After joining the class, a lot of things were clarified and I understood the depth of Kanban. Lot of things were clarified.'
+    }, {
+      name: 'Alan',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I wanted the deep dive to align my mind on what I am selling to people in my organization. My objective was met. I appreciate your experience as well. You did try to make it as interactive as possible. You handled the expectations of the class very well and I really enjoyed the four days. I will definitely recommend you.'
+    }, {
+      name: 'Jayshree',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'The session was extremely interactive. You were so patient to answer our questions. '
+    },
+    {
+      name: 'Mahesh',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Both modules KSD and KSI were completely covered and it kind of exceeded my expectations. You covered all the topics in details. You stick to the time. Overall designing the exercise on how to implement Kanban and where it works was amazing. We got a good idea of Kanban now.'
+    }, {
+      name: 'Adam',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'From the beginning I started sending you emails about the class, you were very helpful. There were no technical issues with the class. There was a lot of interaction in the class. You were always available even after the class to clarify any specific questions.'
+    }, {
+      name: 'Erwan',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I am very surprised by your energy and the way you pushed us to do the exercises. '
+    },
+    {
       name: 'Rajat Agrawal',
       image: require('../../assets/images/placeholder_pic.png'),
       company: 'Redhat',
@@ -189,6 +301,118 @@ const Testimonial = ({
 
   const testimonialsBrowser = [[
     {
+      name: 'Raj',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Predominantly everything was really great. It was a great learning. Now I will have to see how I convince my organization to achieve this alternate approach to agility.'
+    }, {
+      name: 'Ravi',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Expectations from a learning point has been met. I am happy with what I learnt. Now it’s just a matter of how to implement it. After this training, I can do certain things a personal level to improve agility of the organization.'
+    }, {
+      name: 'Shafaq',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I can say that this was the weekend “well spent” and I was able to learn a lot. I am hoping to send you many emails on the issues that I will be facing during the implementation of these concepts. It was a very interactive class. Thank you for all the learning.'
+    }],[
+    {
+      name: 'Sandeep',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'The place I work, they had Kanban and they failed to implement it. Today after the training, I can understand why they failed to implement Kanban. I think I can go back now and look at its successful implementation.'
+    }, {
+      name: 'Rhealyn',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'This was very enlightening. It was a weekend well spent. It has completely changed the way I thought about Kanban. What I like about the training is that you know that there is lot of complexity around it and you try as much to simplify to us and what’s best is you try to put a very practical example that we could easily relate and understand. Also, one of the key strengths about Vikas is that he is quite aware even if we are all virtual. He kind of finds when everybody is silent and he tries to wake everyone up. Overall, it is very engaging and very enlightening.'
+    }, {
+      name: 'Christina',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'All my questions were answered, I think the course was organised very well.'
+    }],[
+    {
+      name: 'Pallavi',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'It has a great depth in Kanban and helps us understand it tog the core.'
+    }, {
+      name: 'Saukhbinder',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Overall a very good experience. I will say it was a very good mix on hands on and theory. The practices that we are doing on MURAL boards and trying ourselves was very great. I really appreciate your depth of knowledge. There is an experience and knowledge behind you.'
+    }, {
+      name: 'Saurabh',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I agree it was very interactive session and not just the slides. '
+    }],
+    [{
+      name: 'Alka',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'It was an eye opener for me. I never thought that Kanban is such deep. We did not know all these concepts. You have covered each and every topic that most of the instructors are not covering.'
+    }, {
+      name: 'Pratik',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I appreciate the effort that you have invested in trying to highlight all the concepts, previously we thought that Kanban is just a board. Especially the statistical analysis can help us set correct expectations with the management. The exercises were good as we were able to understand the practicality of the concepts. We understood what we are doing right and what we need to improve.'
+    }, {
+      name: 'Tania',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I appreciate the knowledge and delivery of the session. The way you train is incredible.'
+    }],
+    [{
+      name: 'Nikhil',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Definitely, I got a deeper understanding of how Kanban works. Thanks to you, you had a very definitive material to guide us through. You also had beautiful case studies to understand how things work. Thanks for this lovely session.'
+    }, {
+      name: 'Vamsi',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Day 1 was fantastic in terms of the game. Everyone was involved and can relate to the similar situation at work and understand the essence of flow. The quizzes and fun aspects were really fantastic. Overall, it was a great learning experience.'
+    }, {
+      name: 'Aditya',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'It was a wonderful training. It was very interactive. Very good delivery of training. Apart of this, I would like to bring one point. You have a very good industry experience and you were able to help me with my real problem and how to do it in a better way.'
+    }],
+    [{
+      name: 'Nazir',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Before joining the class, Kanban to me was “To Do”, “Doing” and “Done”. After joining the class, a lot of things were clarified and I understood the depth of Kanban. Lot of things were clarified.'
+    }, {
+      name: 'Alan',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I wanted the deep dive to align my mind on what I am selling to people in my organization. My objective was met. I appreciate your experience as well. You did try to make it as interactive as possible. You handled the expectations of the class very well and I really enjoyed the four days. I will definitely recommend you.'
+    }, {
+      name: 'Jayshree',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'The session was extremely interactive. You were so patient to answer our questions. '
+    }],
+    [{
+      name: 'Mahesh',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'Both modules KSD and KSI were completely covered and it kind of exceeded my expectations. You covered all the topics in details. You stick to the time. Overall designing the exercise on how to implement Kanban and where it works was amazing. We got a good idea of Kanban now.'
+    }, {
+      name: 'Adam',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'From the beginning I started sending you emails about the class, you were very helpful. There were no technical issues with the class. There was a lot of interaction in the class. You were always available even after the class to clarify any specific questions.'
+    }, {
+      name: 'Erwan',
+      image: require('../../assets/images/placeholder_pic.png'),
+      company: '--',
+      data: 'I am very surprised by your energy and the way you pushed us to do the exercises. '
+    }],
+    [{
       name: 'Rajat Agrawal',
       image: require('../../assets/images/placeholder_pic.png'),
       company: 'Redhat',
