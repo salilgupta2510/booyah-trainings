@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
+import Image from '../elements/Image';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -83,8 +84,14 @@ const Header = ({
         <div className={
           classNames(
             'site-header-heading',
-          )}>
-          <Logo showCopyRight={false} />
+          )} style={{paddingLeft: 100, paddingRight: 100, height: 100}}>
+          {/* <Logo showCopyRight={false} />
+           */}
+           <Image
+              src={require('./../../assets/images/logo_v1.5.jpeg')}
+              alt="Open"
+              width={80}
+              height={60} />
           {!hideNav &&
             <>
               <button

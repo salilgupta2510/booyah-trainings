@@ -16,11 +16,9 @@ const Home = () => {
   return (
     <>
       {/* <Hero className="illustration-section-01" /> */}
-      <InfoSection data={sectionHeader} invertMobile topDivider imageFill className="illustration-section-02" />
-
-      <FeaturesTiles />
-      <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" />
-      <Cta split />
+      <InfoSection data={sectionHeader} invertMobile topDivider imageFill className="illustration-section-01" />
+      {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}
+      {/* <Cta split /> */}
     </>
   );
 }

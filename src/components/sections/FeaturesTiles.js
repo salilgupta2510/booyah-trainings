@@ -60,94 +60,48 @@ const FeaturesTiles = ({
       <div className="container ">
         <div className={innerClasses}>
           <div className={tilesClasses}>
-
-            <div className="tiles-item">
+            <div className="tiles-item" style={{backgroundColor: '#eceded', borderRadius: 5, marginBottom: 10, padding: 20}}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                <h4 className="mt-0 mb-8">
+                <h4 className="mt-0 mb-8" style={{color: '#0e1012', fontSize: 18}}>
                     Kanban System Design
                     </h4>
                 </div>
                 <div className="features-tiles-item-content">
                 <ButtonGroup>
                   <Button tag="a" color="primary" wideMobile href="">
-                  <Link to="/queryForm" >Find KSD</Link>
+                  <Link to="/queryForm" style={{fontSize: 14}} >Find KSD</Link>
                     {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
                   </Button>
                   <Button tag="a" color="primary" wideMobile href="">
-                  <Link to="/queryForm" >Explore KSD</Link>
+                  <Link to="/queryForm" style={{fontSize: 14}} >Explore KSD</Link>
                     {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
                   </Button>
                 </ButtonGroup>
                 </div>
               </div>
             </div>
-
-            <div className="tiles-item">
+            <div className="tiles-item" style={{backgroundColor: '#eceded', borderRadius: 5, marginBottom: 20, padding: 20}}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                <h4 className="mt-0 mb-8">
+                <h4 className="mt-0 mb-8" style={{color: '#0e1012', fontSize: 18}}>
                     Kanban Systems Improvement
                     </h4>
                 </div>
                 <div className="features-tiles-item-content">
                 <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile href="">
-                  <Link to="/queryForm" >Find KSI</Link>
-                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
+                  <Button tag="a" color="primary" fo wideMobile href="" size='1'>
+                  <Link to="/queryForm" style={{fontSize: 14}} >Find KSI</Link>
+                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-1</a> */}
                   </Button>
                   <Button tag="a" color="primary" wideMobile href="">
-                  <Link to="/queryForm" >Explore KSI</Link>
+                  <Link to="/queryForm" style={{fontSize: 14}} >Explore KSI</Link>
                     {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
                   </Button>
                 </ButtonGroup>
                 </div>
               </div>
             </div>
-
-            {/* <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
-              <div className="tiles-item-inner">
-                <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-03.svg')}
-                      alt="Features tile icon 03"
-                      width={64}
-                      height={64} />
-                  </div>
-                </div>
-                <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    KSI
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Kanban Systems Improvement – Manage and evolve a kanban initiative. Scale beyond the team level.
-                    </p>
-                </div>
-              </div>
-            </div> */}
-
-            {/* <div className="tiles-item reveal-from-bottom">
-              <div className="tiles-item-inner">
-                <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-04.svg')}
-                      alt="Features tile icon 04"
-                      width={64}
-                      height={64} />
-                  </div>
-                </div>
-                <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    Robust Workflow
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
