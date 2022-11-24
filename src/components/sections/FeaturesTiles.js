@@ -3,6 +3,10 @@ import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
+import InfoSection from './partials/InfoSection';
+import ButtonGroup from '../elements/ButtonGroup';
+import Button from '../elements/Button';
+import { Link } from 'react-router-dom';
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -44,8 +48,8 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Our Training Programs',
-    paragraph: 'Our trainers have real-life experience in Agile Transformation. As a result, we follow an iNSIDE Out approach to Agile training. We provide inclusive and immersive training with personalized attention to each attendee. In addition, our group exercises, group discussions, and fun activities enhance collaboration and make our training more effective.'
+    title: 'Kanban Management Professional (KMP)',
+    paragraph: 'This credential is granted upon the completion of two classes. Kanban System Design, which teaches the basics of Kanban, flow, and how to design a Kanban system. Kanban Systems Improvement, which teaches how to evolve, improve, and scale a Kanban system. KMPs should be able to design a Kanban system and evolve and scale it beyond the team.'
   };
 
   return (
@@ -53,56 +57,55 @@ const FeaturesTiles = ({
       {...props}
       className={outerClasses}
     >
-      <div className="container reveal-from-bottom" data-reveal-delay="400">
+      <div className="container ">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
           <div className={tilesClasses}>
 
-            <div className="tiles-item reveal-from-bottom">
+            <div className="tiles-item">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-01.svg')}
-                      alt="Features tile icon 01"
-                      width={64}
-                      height={64} />
-                  </div>
+                <h4 className="mt-0 mb-8">
+                    Kanban System Design
+                    </h4>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    TKP
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Team Kanban Practitioner – The basics of kanban to enable a team to get started.
-                    </p>
+                <ButtonGroup>
+                  <Button tag="a" color="primary" wideMobile href="">
+                  <Link to="/queryForm" >Find KSD</Link>
+                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
+                  </Button>
+                  <Button tag="a" color="primary" wideMobile href="">
+                  <Link to="/queryForm" >Explore KSD</Link>
+                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
+                  </Button>
+                </ButtonGroup>
                 </div>
               </div>
             </div>
 
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="200">
+            <div className="tiles-item">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-02.svg')}
-                      alt="Features tile icon 02"
-                      width={64}
-                      height={64} />
-                  </div>
+                <h4 className="mt-0 mb-8">
+                    Kanban Systems Improvement
+                    </h4>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    KSD
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Kanban System Design – The core of kanban practices to design and evolve a kanban system.
-                    </p>
+                <ButtonGroup>
+                  <Button tag="a" color="primary" wideMobile href="">
+                  <Link to="/queryForm" >Find KSI</Link>
+                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
+                  </Button>
+                  <Button tag="a" color="primary" wideMobile href="">
+                  <Link to="/queryForm" >Explore KSI</Link>
+                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
+                  </Button>
+                </ButtonGroup>
                 </div>
               </div>
             </div>
 
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
+            {/* <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -122,7 +125,7 @@ const FeaturesTiles = ({
                     </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* <div className="tiles-item reveal-from-bottom">
               <div className="tiles-item-inner">

@@ -79,7 +79,7 @@ const Header = ({
       {...props}
       className={classes}
     >
-      <div className="container">
+      <div className="" style={{backgroundColor:"white"}}>
         <div className={
           classNames(
             'site-header-heading',
@@ -120,7 +120,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/KSD" onClick={closeMenu}>KSD</Link>
+                      <Link to="/KSD" onClick={closeMenu}>Training Calendar</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -129,7 +129,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/KSI" onClick={closeMenu}>KSI</Link>
+                      <Link to="/KSI" onClick={closeMenu}>Know Your Trainer</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -138,27 +138,10 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/Testimonial" onClick={closeMenu}>Testimonials</Link>
+                      <Link to="/Testimonial" onClick={closeMenu}>About Us</Link>
                     </li>
                   </ul>
-                  <ul className={
-                    classNames(
-                      'list-reset h5 ',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="/KnowYourTrainer" onClick={closeMenu}>Know Your Trainer</Link>
-                    </li>
-                  </ul>
-                  <ul className={
-                    classNames(
-                      'list-reset h5 ',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="/Policy" onClick={closeMenu}>Privacy Policy</Link>
-                    </li>
-                  </ul>
+            
                 </div>
               </nav>
             </>}
