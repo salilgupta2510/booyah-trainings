@@ -5,6 +5,8 @@ import FeaturesTiles from '../components/sections/FeaturesTiles';
 import Cta from '../components/sections/Cta';
 import AboutCoach from '../components/sections/AboutCoach';
 import InfoSection from '../components/sections/partials/InfoSection';
+import TrainingCalendar from '../components/sections/TrainingCalendar';
+import WhyUS from '../components/sections/WhyUs';
 
 const Home = () => {
 
@@ -17,6 +19,8 @@ const Home = () => {
     <>
       {/* <Hero className="illustration-section-01" /> */}
       <InfoSection data={sectionHeader} invertMobile topDivider imageFill className="illustration-section-01" />
+      <TrainingCalendar />
+      <WhyUS />
       {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}
       {/* <Cta split /> */}
     </>

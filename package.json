@@ -9,9 +9,10 @@
     "classnames": "^2.2.6",
     "formik": "^2.2.9",
     "lodash": "^4.17.15",
-    "react": "18.0.0",
+    "react": "^18.2.0",
+    "react-calendar-icon": "^0.10.0",
     "react-device-detect": "^2.0.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^18.0.0",
     "react-ga": "^2.7.0",
     "react-loader-spinner": "^6.0.0-0",
     "react-phone-number-input": "^3.1.49",
@@ -20,7 +21,7 @@
     "react-scripts": "^3.4.1",
     "sass": "^1.49.9",
     "yup": "^0.32.11",
-    "zustand": "^4.1.4"
+    "zustand": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
