@@ -56,14 +56,15 @@ const FeaturesTiles = ({
     <section
       {...props}
       className={outerClasses}
+      style={{paddingTop: 50}}
     >
       <div className="container ">
-        <div className={innerClasses}>
-          <div className={tilesClasses}>
-            <div className="tiles-item" style={{backgroundColor: '#eceded', borderRadius: 5, marginBottom: 10, padding: 20}}>
+        <div className={innerClasses} style={{paddingBottom: 20}}>
+          <div className={tilesClasses} style={{display: 'flex', justifyContent: 'space-around'}}>
+            <div className="tiles-item" style={{borderRadius: 5, marginBottom: 10, padding: 20, height: 100}}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                <h4 className="mt-0 mb-8" style={{color: '#0e1012', fontSize: 18}}>
+                <h4 className="mt-0 mb-8" style={{fontSize: 18}}>
                     Kanban System Design
                     </h4>
                 </div>
@@ -81,7 +82,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div className="tiles-item" style={{backgroundColor: '#eceded', borderRadius: 5, marginBottom: 20, padding: 20}}>
+            <div className="tiles-item" style={{backgroundColor: '#eceded', borderRadius: 5, marginBottom: 20, padding: 20, height: 100}}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                 <h4 className="mt-0 mb-8" style={{color: '#0e1012', fontSize: 18}}>

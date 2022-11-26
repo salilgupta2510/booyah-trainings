@@ -70,24 +70,18 @@ const InfoSection = ({
       className={outerClasses}
     >
       <div className="container">
-        <div className={innerClasses} style={{ padding: 30}}>
-          <div className={splitClasses}>
-            <div className="split-item" style={{padding: 0, marginTop: 40}}>
-              <div className={'split-item-content center-content-mobile center-content'}>
-                <Image
-                  src={require('../../../assets/images/kmp_badge.png')}
-                  alt="Features split 01"
-                  style={{ height: 125, width: 250, marginBottom: 10 }}
-                />
-                <p className="m-0" style={{fontSize: 16}}>
-                  {data.paragraph}
-                </p>
-              </div>
-              <div className="split-item-content center-content-mobile" >
-                <FeaturesTiles />
-              </div>
-            </div>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+          <Image
+            src={require('../../../assets/images/kmp_badge.png')}
+            alt="Features split 01"
+            style={{ height: 125, width: 250, marginBottom: 10 }}
+          />
+          <div className="m-0" style={{ fontSize: 16 }}>
+            {data.paragraph}
           </div>
+        </div>
+        <div className="center-content-mobile" >
+          <FeaturesTiles />
         </div>
       </div>
     </section>

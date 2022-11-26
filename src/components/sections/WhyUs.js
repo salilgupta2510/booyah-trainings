@@ -60,22 +60,21 @@ const WhyUs = ({
             className={outerClasses}
         >
             <div className="container">
-                <div className={innerClasses}>
-                    <SectionHeader data={sectionHeader} className="center-content" />
+                <div className={innerClasses} style={{paddingTop: 20}}>
+                    <h2>{sectionHeader.title}</h2>
                     <div className={splitClasses}>
-
-                        <div className="split-item">
-                            <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
+                        <div className="split-item" style={{paddingBottom: 0}}>
+                            <div className="split-item-content center-content-mobile" >
                                 <p className="m-0">
-                                Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
+                                    Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
                                 </p>
                             </div>
                             <div className={
                                 classNames(
-                                    'split-item-image center-content-mobile reveal-from-bottom',
+                                    'split-item-image center-content-mobile',
                                     imageFill && 'split-item-image-fill'
                                 )}
-                                data-reveal-container=".split-item">
+                            >
                                 <Image
                                     src={require('./../../assets/images/WhyUs.png')}
                                     alt="Features split 01"
@@ -86,51 +85,48 @@ const WhyUs = ({
                     </div>
                     {/* Section 2 */}
                     <div className={splitClasses}>
-
-                        <div className="split-item">
-                            <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
+                        <div className="split-item" style={{paddingBottom: 0}}>
+                            <div className="split-item-content center-content-mobile" >
                                 <Image
                                     src={require('./../../assets/images/WhyUs.png')}
                                     alt="Features split 01"
                                     width={528}
-                                    height={396} /> 
-                                    
+                                    height={396} />
                             </div>
                             <div className={
                                 classNames(
-                                    'split-item-image center-content-mobile reveal-from-bottom',
+                                    'split-item-image center-content-mobile',
                                     imageFill && 'split-item-image-fill'
                                 )}
-                                data-reveal-container=".split-item">
-                               <p className="m-0">
-                                Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
+                            >
+                                <p className="m-0">
+                                    Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
                                 </p>
                             </div>
                         </div>
                     </div>
                     {/* Section 3 */}
                     <div className={splitClasses}>
-
-<div className="split-item">
-    <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
-        <p className="m-0">
-        Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
-        </p>
-    </div>
-    <div className={
-        classNames(
-            'split-item-image center-content-mobile reveal-from-bottom',
-            imageFill && 'split-item-image-fill'
-        )}
-        data-reveal-container=".split-item">
-        <Image
-            src={require('./../../assets/images/WhyUs.png')}
-            alt="Features split 01"
-            width={528}
-            height={396} />
-    </div>
-</div>
-</div>
+                        <div className="split-item" style={{paddingBottom: 0}}>
+                            <div className="split-item-content center-content-mobile" >
+                                <p className="m-0">
+                                    Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
+                                </p>
+                            </div>
+                            <div className={
+                                classNames(
+                                    'split-item-image center-content-mobile',
+                                    imageFill && 'split-item-image-fill'
+                                )}
+                            >
+                                <Image
+                                    src={require('./../../assets/images/WhyUs.png')}
+                                    alt="Features split 01"
+                                    width={528}
+                                    height={396} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
-import Image from '../elements/Image';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -80,18 +79,12 @@ const Header = ({
       {...props}
       className={classes}
     >
-      <div className="" style={{backgroundColor:"white"}}>
+      <div className="container">
         <div className={
           classNames(
             'site-header-heading',
-          )} style={{paddingLeft: 100, paddingRight: 100, height: 100}}>
-          {/* <Logo showCopyRight={false} />
-           */}
-           <Image
-              src={require('./../../assets/images/logo_v1.5.jpeg')}
-              alt="Open"
-              width={80}
-              height={60} />
+          )}>
+          <Logo showCopyRight={false} />
           {!hideNav &&
             <>
               <button
@@ -127,7 +120,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/KSD" onClick={closeMenu}>Training Calendar</Link>
+                      <Link to="/KSD" onClick={closeMenu}>KSD</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -136,7 +129,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/KSI" onClick={closeMenu}>Know Your Trainer</Link>
+                      <Link to="/KSI" onClick={closeMenu}>KSI</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -145,10 +138,27 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/Testimonial" onClick={closeMenu}>About Us</Link>
+                      <Link to="/Testimonial" onClick={closeMenu}>Testimonials</Link>
                     </li>
                   </ul>
-            
+                  <ul className={
+                    classNames(
+                      'list-reset h5 ',
+                      navPosition && `header-nav-${navPosition}`
+                    )}>
+                    <li>
+                      <Link to="/KnowYourTrainer" onClick={closeMenu}>Know Your Trainer</Link>
+                    </li>
+                  </ul>
+                  <ul className={
+                    classNames(
+                      'list-reset h5 ',
+                      navPosition && `header-nav-${navPosition}`
+                    )}>
+                    <li>
+                      <Link to="/Policy" onClick={closeMenu}>Privacy Policy</Link>
+                    </li>
+                  </ul>
                 </div>
               </nav>
             </>}
