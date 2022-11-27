@@ -18,7 +18,7 @@ const CalendarControl = ({month='', date, year}) => {
         style={{
           color: 'white', 
           fontSize: 12,
-          backgroundColor: 'red',
+          backgroundColor: '#ff4653',
           borderTopRightRadius: 10, 
           borderTopLeftRadius: 10,
           height: 20,
@@ -43,7 +43,7 @@ const CalendarControl = ({month='', date, year}) => {
         style={{
           color: 'white', 
           fontSize: 12,
-          backgroundColor: 'red',
+          backgroundColor: '#ff4653',
           borderBottomRightRadius: 10, 
           borderBottomLeftRadius: 10,
           textAlign: 'center',

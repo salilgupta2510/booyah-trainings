@@ -42,7 +42,7 @@ const TrainingCalendar = ({
     );
 
     const innerClasses = classNames(
-        'hero-inner section-inner',
+        'hero-inner',
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
@@ -106,7 +106,12 @@ const TrainingCalendar = ({
                     year={new Date(item.trainingStartDate).getFullYear()}
 
                 />
-                <CalendarControl />
+                <CalendarControl
+                    month={new Date(item.trainingEndDate).getMonth()}
+                    date={new Date(item.trainingEndDate).getDate()}
+                    year={new Date(item.trainingEndDate).getFullYear()}
+
+                />
                 <div>
                     <Button tag="a" color="primary" wideMobile href="">
                         <Link to="/queryForm" style={{ fontSize: 14 }} >REGISTER</Link>
@@ -127,7 +132,7 @@ const TrainingCalendar = ({
             className='container'
             style={{ paddingTop: 0, marginTop: 0 }}
         >
-            <div style={{
+            <div  className={innerClasses} style={{
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
