@@ -7,6 +7,7 @@ import AboutCoach from '../components/sections/AboutCoach';
 import InfoSection from '../components/sections/partials/InfoSection';
 import TrainingCalendar from '../components/sections/TrainingCalendar';
 import WhyUS from '../components/sections/WhyUs';
+import Testimonials from '../components/sections/Testimonials';
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
       <InfoSection data={sectionHeader} invertMobile topDivider imageFill className="illustration-section-01" />
       <TrainingCalendar invertMobile topDivider imageFill className="illustration-section-02" />
       <WhyUS invertMobile topDivider imageFill className="illustration-section-02" />
+      <Testimonials invertMobile topDivider imageFill className="illustration-section-02" />
       {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}
       {/* <Cta split /> */}
     </>

@@ -2,14 +2,11 @@ import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import Button from '../elements/Button';
-import Cta from './Cta';
 import { Link } from 'react-router-dom';
 import Image from '../elements/Image';
-import TrainingCalendarStore from "../../services/trainingCalendar/trainingCalendarStore";
-import { TrainingCalendarService } from "../../services/trainingCalendar/trainingCalendarService";
-import { CalendarIcon } from 'react-calendar-icon';
+import TrainingCalendarStore from "../../store/trainingCalendarStore";
+import { TrainingCalendarService } from "../../services/trainingCalendarService";
 import CalendarControl from '../elements/CalendarControl';
-import SectionHeader from './partials/SectionHeader';
 
 // eslint-disable-next-line
 const propTypes = {

@@ -10,11 +10,6 @@ const TrainingCalendarStore = create(
             trainingCalendarData:inputData
         })
     }
-    // set(() => (
-    //     {
-    //         trainingCalendarData: inputData
-    //     }
-    // ))
   })))
 
   export default TrainingCalendarStore;

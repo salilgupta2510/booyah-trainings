@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June",
+  "July", "Aug", "Sept", "Oct", "Nov", "Dec"
+];
+
 const CalendarControl = ({month='', date, year}) => {
 
   return (
@@ -27,7 +31,7 @@ const CalendarControl = ({month='', date, year}) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        {month}
+        {monthNames[month]}
       </div>
       <div
         style={{
