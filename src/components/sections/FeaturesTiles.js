@@ -3,6 +3,10 @@ import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
 import Image from '../elements/Image';
+import InfoSection from './partials/InfoSection';
+import ButtonGroup from '../elements/ButtonGroup';
+import Button from '../elements/Button';
+import { Link } from 'react-router-dom';
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -44,107 +48,73 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Our Training Programs',
-    paragraph: 'Our trainers have real-life experience in Agile Transformation. As a result, we follow an iNSIDE Out approach to Agile training. We provide inclusive and immersive training with personalized attention to each attendee. In addition, our group exercises, group discussions, and fun activities enhance collaboration and make our training more effective.'
+    title: 'Kanban Management Professional (KMP)',
+    paragraph: 'This credential is granted upon the completion of two classes. Kanban System Design, which teaches the basics of Kanban, flow, and how to design a Kanban system. Kanban Systems Improvement, which teaches how to evolve, improve, and scale a Kanban system. KMPs should be able to design a Kanban system and evolve and scale it beyond the team.'
   };
 
   return (
     <section
       {...props}
       className={outerClasses}
+      style={{ paddingTop: 50 }}
     >
-      <div className="container reveal-from-bottom" data-reveal-delay="400">
-        <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
-          <div className={tilesClasses}>
-
-            <div className="tiles-item reveal-from-bottom">
+      <div className="container ">
+        <div className={innerClasses} style={{ paddingBottom: 20 }}>
+          <div className={tilesClasses} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+          <div className="tiles-item" style={{
+              backgroundColor: '#273345',
+              borderRadius: 5,
+              marginBottom: 20,
+              padding: 20,
+              height: 100,
+            }}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-01.svg')}
-                      alt="Features tile icon 01"
-                      width={64}
-                      height={64} />
-                  </div>
+                  <h4 className="mt-0 mb-8" style={{ fontSize: 18 }}>
+                    Kanban Systems Design
+                  </h4>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    TKP
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Team Kanban Practitioner – The basics of kanban to enable a team to get started.
-                    </p>
+                  <ButtonGroup>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Find KSD</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
+                    </Button>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSD</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-2</a> */}
+                    </Button>
+                  </ButtonGroup>
                 </div>
               </div>
             </div>
-
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="200">
+            <div className="tiles-item" style={{
+              backgroundColor: '#273345',
+              borderRadius: 5,
+              marginBottom: 20,
+              padding: 20,
+              height: 100,
+            }}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-02.svg')}
-                      alt="Features tile icon 02"
-                      width={64}
-                      height={64} />
-                  </div>
+                  <h4 className="mt-0 mb-8" style={{ fontSize: 18 }}>
+                    Kanban Systems Improvement
+                  </h4>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    KSD
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Kanban System Design – The core of kanban practices to design and evolve a kanban system.
-                    </p>
+                  <ButtonGroup>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Find KSI</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-1</a> */}
+                    </Button>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSI</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
+                    </Button>
+                  </ButtonGroup>
                 </div>
               </div>
             </div>
-
-            <div className="tiles-item reveal-from-bottom" data-reveal-delay="400">
-              <div className="tiles-item-inner">
-                <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-03.svg')}
-                      alt="Features tile icon 03"
-                      width={64}
-                      height={64} />
-                  </div>
-                </div>
-                <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    KSI
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Kanban Systems Improvement – Manage and evolve a kanban initiative. Scale beyond the team level.
-                    </p>
-                </div>
-              </div>
-            </div>
-
-            {/* <div className="tiles-item reveal-from-bottom">
-              <div className="tiles-item-inner">
-                <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <Image
-                      src={require('./../../assets/images/feature-tile-icon-04.svg')}
-                      alt="Features tile icon 04"
-                      width={64}
-                      height={64} />
-                  </div>
-                </div>
-                <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">
-                    Robust Workflow
-                    </h4>
-                  <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-                    </p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

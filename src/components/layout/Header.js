@@ -120,27 +120,11 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/KSD" onClick={closeMenu}>KSD</Link>
+                      <Link to="/KSD" onClick={closeMenu}>Training Calendar</Link>
                     </li>
                   </ul>
-                  <ul className={
-                    classNames(
-                      'list-reset h5 ',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="/KSI" onClick={closeMenu}>KSI</Link>
-                    </li>
-                  </ul>
-                  <ul className={
-                    classNames(
-                      'list-reset h5 ',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="/Testimonial" onClick={closeMenu}>Testimonials</Link>
-                    </li>
-                  </ul>
+                
+                 
                   <ul className={
                     classNames(
                       'list-reset h5 ',
@@ -156,7 +140,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/Policy" onClick={closeMenu}>Privacy Policy</Link>
+                      <Link to="/Policy" onClick={closeMenu}>About Us</Link>
                     </li>
                   </ul>
                 </div>

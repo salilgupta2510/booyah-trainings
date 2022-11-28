@@ -40,7 +40,8 @@ const SectionHeader = ({
         >
           <div className="container-xs">
             {children}
-            {data.title &&
+            {
+            data.title &&
               <Component className={
                 classNames(
                   'mt-0',
