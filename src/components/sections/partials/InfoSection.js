@@ -69,7 +69,7 @@ const InfoSection = ({
       {...props}
       className={outerClasses}
     >
-      <div className="container">
+      <div className="container" style={{borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20}}>
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
           <Image
             src={require('../../../assets/images/kmp_badge.png')}

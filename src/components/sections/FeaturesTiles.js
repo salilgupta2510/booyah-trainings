@@ -56,50 +56,62 @@ const FeaturesTiles = ({
     <section
       {...props}
       className={outerClasses}
-      style={{paddingTop: 50}}
+      style={{ paddingTop: 50 }}
     >
       <div className="container ">
-        <div className={innerClasses} style={{paddingBottom: 20}}>
-          <div className={tilesClasses} style={{display: 'flex', justifyContent: 'space-around'}}>
-            <div className="tiles-item" style={{borderRadius: 5, marginBottom: 10, padding: 20, height: 100}}>
+        <div className={innerClasses} style={{ paddingBottom: 20 }}>
+          <div className={tilesClasses} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+          <div className="tiles-item" style={{
+              backgroundColor: '#273345',
+              borderRadius: 5,
+              marginBottom: 20,
+              padding: 20,
+              height: 100,
+            }}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                <h4 className="mt-0 mb-8" style={{fontSize: 18}}>
-                    Kanban System Design
-                    </h4>
+                  <h4 className="mt-0 mb-8" style={{ fontSize: 18 }}>
+                    Kanban Systems Design
+                  </h4>
                 </div>
                 <div className="features-tiles-item-content">
-                <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile href="">
-                  <Link to="/queryForm" style={{fontSize: 14}} >Find KSD</Link>
-                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
-                  </Button>
-                  <Button tag="a" color="primary" wideMobile href="">
-                  <Link to="/queryForm" style={{fontSize: 14}} >Explore KSD</Link>
-                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
-                  </Button>
-                </ButtonGroup>
+                  <ButtonGroup>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Find KSD</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
+                    </Button>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSD</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-2</a> */}
+                    </Button>
+                  </ButtonGroup>
                 </div>
               </div>
             </div>
-            <div className="tiles-item" style={{backgroundColor: '#eceded', borderRadius: 5, marginBottom: 20, padding: 20, height: 100}}>
+            <div className="tiles-item" style={{
+              backgroundColor: '#273345',
+              borderRadius: 5,
+              marginBottom: 20,
+              padding: 20,
+              height: 100,
+            }}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
-                <h4 className="mt-0 mb-8" style={{color: '#0e1012', fontSize: 18}}>
+                  <h4 className="mt-0 mb-8" style={{ fontSize: 18 }}>
                     Kanban Systems Improvement
-                    </h4>
+                  </h4>
                 </div>
                 <div className="features-tiles-item-content">
-                <ButtonGroup>
-                  <Button tag="a" color="primary" fo wideMobile href="" size='1'>
-                  <Link to="/queryForm" style={{fontSize: 14}} >Find KSI</Link>
-                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-1</a> */}
-                  </Button>
-                  <Button tag="a" color="primary" wideMobile href="">
-                  <Link to="/queryForm" style={{fontSize: 14}} >Explore KSI</Link>
-                    {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
-                  </Button>
-                </ButtonGroup>
+                  <ButtonGroup>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Find KSI</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-1</a> */}
+                    </Button>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
+                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSI</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
+                    </Button>
+                  </ButtonGroup>
                 </div>
               </div>
             </div>

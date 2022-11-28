@@ -59,9 +59,9 @@ const WhyUs = ({
             {...props}
             className={outerClasses}
         >
-            <div className="container">
+            <div className="container" style={{ marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20}}>
                 <div className={innerClasses} style={{paddingTop: 20}}>
-                    <h2>{sectionHeader.title}</h2>
+                    <h2 style={{marginTop: 0}}>{sectionHeader.title}</h2>
                     <div className={splitClasses}>
                         <div className="split-item" style={{paddingBottom: 0}}>
                             <div className="split-item-content center-content-mobile" >

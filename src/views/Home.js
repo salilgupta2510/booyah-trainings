@@ -17,8 +17,8 @@ const Home = () => {
   
   return (
     <>
-      {/* <Hero className="illustration-section-01" /> */}
-      <InfoSection data={sectionHeader} invertMobile topDivider imageFill className="illustration-section-01" />
+      <Hero className="illustration-section-01" />
+      <InfoSection data={sectionHeader} topDivider imageFill className="illustration-section-02" />
       <TrainingCalendar />
       <WhyUS />
       {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}

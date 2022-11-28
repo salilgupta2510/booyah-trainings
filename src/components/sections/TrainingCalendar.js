@@ -106,7 +106,12 @@ const TrainingCalendar = ({
                     year={new Date(item.trainingStartDate).getFullYear()}
 
                 />
-                <CalendarControl />
+                <CalendarControl
+                    month={new Date(item.trainingEndDate).getMonth()}
+                    date={new Date(item.trainingEndDate).getDate()}
+                    year={new Date(item.trainingEndDate).getFullYear()}
+
+                />
                 <div>
                     <Button tag="a" color="primary" wideMobile href="">
                         <Link to="/queryForm" style={{ fontSize: 14 }} >REGISTER</Link>
@@ -125,19 +130,19 @@ const TrainingCalendar = ({
         <section
             {...props}
             className='container'
-            style={{ paddingTop: 0, marginTop: 0 }}
+            style={{ paddingTop: 0, marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between'
+                alignItems: 'flex-start',
+                justifyContent: 'space-between',
             }}>
-                <h2>{sectionHeader.title}</h2>
-                <Button tag="a" color="primary" wideMobile href="" style={{}}>
-                    <Link to="/queryForm" style={{ fontSize: 16, marginRight: 40 }} >Know You Trainer</Link>
-                    <img src={require('../../assets/images/Salil.jpg')} style={{ height: 40, width: 40, alignSelf: 'center', borderRadius: 50 }} />
-                </Button>
+                <h2 style={{marginTop: 0}}>{sectionHeader.title}</h2>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                    <Link to="/queryForm" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold' }} >Know Your Trainer</Link>
+                    <img src={require('../../assets/images/Salil.jpg')} style={{ height: 40, width: 40, alignSelf: 'center', borderRadius: 10 }} />
+                </div>
             </div>
             <div>
                 {typeof trainingCalendarData !== "string" && trainingCalendarData.length > 0 &&
