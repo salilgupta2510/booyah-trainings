@@ -2,14 +2,11 @@ import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import Button from '../elements/Button';
-import Cta from './Cta';
 import { Link } from 'react-router-dom';
 import Image from '../elements/Image';
-import TrainingCalendarStore from "../../services/trainingCalendar/trainingCalendarStore";
-import { TrainingCalendarService } from "../../services/trainingCalendar/trainingCalendarService";
-import { CalendarIcon } from 'react-calendar-icon';
+import TrainingCalendarStore from "../../store/trainingCalendarStore";
+import { TrainingCalendarService } from "../../services/trainingCalendarService";
 import CalendarControl from '../elements/CalendarControl';
-import SectionHeader from './partials/SectionHeader';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -42,7 +39,7 @@ const TrainingCalendar = ({
     );
 
     const innerClasses = classNames(
-        'hero-inner section-inner',
+        'hero-inner',
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
@@ -78,43 +75,63 @@ const TrainingCalendar = ({
         return (
             <div style={{
                 display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
+                flexDirection: 'column',
                 justifyContent: 'space-between',
-                marginTop: 20,
-                marginBottom: 20
+                padding: 20,
+                borderStyle: 'solid',
+                borderWidth: 1,
+                borderColor: '#273345',
+                width: '40%'
             }} >
-                <Image
-                    src={require('../../assets/images/kmp_badge.png')}
-                    alt="Features split 01"
-                    style={{ height: 75, width: 130 }}
-                />
-                <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifySelf: 'center',
-                    width: '50%'
-                }}>
-                    <div className="text-sm" style={{ display: 'flex', flexDirection: 'column' }}>
-                        {item.trainingTitle} ({item.venue})
-                        <span>{getTimeZonesInfo(item)}</span>
-                    </div>
-                </div>
-                <CalendarControl
-                    month={new Date(item.trainingStartDate).getMonth()}
-                    date={new Date(item.trainingStartDate).getDate()}
-                    year={new Date(item.trainingStartDate).getFullYear()}
-
-                />
-                <CalendarControl
-                    month={new Date(item.trainingEndDate).getMonth()}
-                    date={new Date(item.trainingEndDate).getDate()}
-                    year={new Date(item.trainingEndDate).getFullYear()}
-
-                />
                 <div>
-                    <Button tag="a" color="primary" wideMobile href="">
-                        <Link to="/queryForm" style={{ fontSize: 14 }} >REGISTER</Link>
+                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <Image
+                            src={require('../../assets/images/kmp_badge.png')}
+                            alt="Features split 01"
+                            style={{ height: 75, width: 130, marginBottom: 5 }}
+                        />
+                        <div style={{
+                            fontSize: 14,
+                            borderStyle: 'solid',
+                            borderWidth: 1,
+                            borderColor: '#273345',
+                            color: '#ff4653',
+                            height: 30,
+                            paddingLeft: 5,
+                            paddingRight: 5,
+                            borderRadius: 10
+                        }}>
+                            {`Live ${item.venue}`}
+                        </div>
+                    </div>
+
+                    <div style={{ marginBottom: 10, height: '30%', fontSize: 17 }}>{item.trainingTitle}</div>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
+                    <CalendarControl
+                        month={new Date(item.trainingStartDate).getMonth()}
+                        date={new Date(item.trainingStartDate).getDate()}
+                        year={new Date(item.trainingStartDate).getFullYear().toString()}
+
+                    />
+                    <CalendarControl
+                        month={new Date(item.trainingEndDate).getMonth()}
+                        date={new Date(item.trainingEndDate).getDate()}
+                        year={new Date(item.trainingEndDate).getFullYear().toString()}
+
+                    />
+                </div>
+
+                {/* <div style={{ marginBottom: 10, height: '20%', fontSize: 16 }}>{`${getTimeZonesInfo(item)}`}</div> */}
+                <div style={{ height: '15%' }}>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone1 ?? ''}`}</div>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone2 ?? ''}`}</div>
+
+                </div>
+                <div style={{ marginTop: 10 }}>
+                    <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center' }}>
+                        <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Enroll Now</Link>
                     </Button>
                 </div>
             </div>
@@ -132,19 +149,19 @@ const TrainingCalendar = ({
             className='container'
             style={{ paddingTop: 0, marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
-            <div style={{
+            <div className={innerClasses} style={{
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'flex-start',
                 justifyContent: 'space-between',
             }}>
-                <h2 style={{marginTop: 0}}>{sectionHeader.title}</h2>
-                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <h2 style={{ marginTop: 0 }}>{sectionHeader.title}</h2>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                     <Link to="/queryForm" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold' }} >Know Your Trainer</Link>
                     <img src={require('../../assets/images/Salil.jpg')} style={{ height: 40, width: 40, alignSelf: 'center', borderRadius: 10 }} />
                 </div>
             </div>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
                 {typeof trainingCalendarData !== "string" && trainingCalendarData.length > 0 &&
                     trainingCalendarData.map(item => (
                         renderTile(item)

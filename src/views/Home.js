@@ -7,6 +7,7 @@ import AboutCoach from '../components/sections/AboutCoach';
 import InfoSection from '../components/sections/partials/InfoSection';
 import TrainingCalendar from '../components/sections/TrainingCalendar';
 import WhyUS from '../components/sections/WhyUs';
+import Testimonials from '../components/sections/Testimonials';
 
 const Home = () => {
 
@@ -17,10 +18,11 @@ const Home = () => {
   
   return (
     <>
-      <Hero className="illustration-section-01" />
-      <InfoSection data={sectionHeader} topDivider imageFill className="illustration-section-02" />
-      <TrainingCalendar />
-      <WhyUS />
+      {/* <Hero className="illustration-section-01" /> */}
+      <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" />
+      <TrainingCalendar invertMobile imageFill className="illustration-section-02" />
+      <WhyUS invertMobile imageFill className="illustration-section-02" />
+      <Testimonials invertMobile imageFill className="illustration-section-02" />
       {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}
       {/* <Cta split /> */}
     </>

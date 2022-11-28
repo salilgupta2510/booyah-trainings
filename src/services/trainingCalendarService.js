@@ -1,4 +1,4 @@
-import { RestEndPoint } from "../../utils/RestEndPoint";
+import { RestEndPoint } from "../utils/RestEndPoint";
 
 export class TrainingCalendarService{
 

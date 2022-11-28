@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June",
+  "July", "Aug", "Sept", "Oct", "Nov", "Dec"
+];
+
 const CalendarControl = ({month='', date, year}) => {
 
   return (
@@ -8,17 +12,19 @@ const CalendarControl = ({month='', date, year}) => {
       dispaly: 'flex',
       flexDirection: 'row',
       // justifyContent: 'space-evenly',
-      height: 70,
-      width: 70,
+      // height: 70,
+      width: 60,
       backgroundColor: 'white',
       borderRadius: 10,
+      maginLeft: 10,
+      marginRight: 10
 
     }}>
       <div
         style={{
           color: 'white', 
           fontSize: 12,
-          backgroundColor: 'red',
+          backgroundColor: '#ff4653',
           borderTopRightRadius: 10, 
           borderTopLeftRadius: 10,
           height: 20,
@@ -27,7 +33,7 @@ const CalendarControl = ({month='', date, year}) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        {month}
+        {`${monthNames[month]} ${year.slice(-2)}`}
       </div>
       <div
         style={{
@@ -39,11 +45,11 @@ const CalendarControl = ({month='', date, year}) => {
         }}>
         {date}
       </div>
-      <div
+      {/* <div
         style={{
           color: 'white', 
           fontSize: 12,
-          backgroundColor: 'red',
+          backgroundColor: '#ff4653',
           borderBottomRightRadius: 10, 
           borderBottomLeftRadius: 10,
           textAlign: 'center',
@@ -54,7 +60,7 @@ const CalendarControl = ({month='', date, year}) => {
           alignItems: 'center'
         }}>
         {year}
-      </div>
+      </div> */}
     </div>
   );
 
