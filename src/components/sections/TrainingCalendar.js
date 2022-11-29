@@ -158,7 +158,7 @@ const TrainingCalendar = ({
                 <h2 style={{ marginTop: 0 }}>{sectionHeader.title}</h2>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                     <Link to="/queryForm" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold' }} >Know Your Trainer</Link>
-                    <img src={require('../../assets/images/Salil.jpg')} style={{ height: 40, width: 40, alignSelf: 'center', borderRadius: 10 }} />
+                    <img src={require('../../assets/images/Vikas.jpg')} style={{ height: 40, width: 40, alignSelf: 'center', borderRadius: 10 }} />
                 </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row' }}>
