@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import { TestimonialService } from '../../services/testimonialService';
@@ -47,40 +47,44 @@ const Testimonials = ({
     );
 
     useEffect(() => {
-        TestimonialService.GetTestimonialData(6)
+        getData();
+    }, []);
+
+    const getData = () => {
+        return TestimonialService.GetTestimonialData(6)
             .then((response) => {
                 console.log("Received response ", response);
                 setTestimonialData(response);
             })
-    }, [])
+    }
 
     const rating = (currentRating) => {
-        let remainingRating = 5-currentRating;
+        let remainingRating = 5 - currentRating;
         currentRating = currentRating > 5 ? 5 : currentRating;
         let result = [];
         for (let index = 0; index < currentRating; index++) {
-           result.push("Y")
+            result.push("Y")
         }
         for (let index = 0; index < remainingRating; index++) {
             result.push("N")
-         }
-        return(
+        }
+        return (
             <>
-            {result.map((value, index) => {
-                return value == 'Y' ? <span className='fa fa-star checked'></span> : <span className='fa fa-star'></span>
-                
-            })}
+                {result.map((value, index) => {
+                    return value == 'Y' ? <span className='fa fa-star checked'></span> : <span className='fa fa-star'></span>
+
+                })}
             </>
         );
     }
 
     const renderTestimonialTile = (testimonialData) => {
         return (
-            <div className="reveal-from-right" data-reveal-delay={200} style={{ padding: 0, width:470, marginBottom:6 }}>
-                <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(39, 51, 69)', color: '#eceded', borderRadius:5, marginRight:6 }}>
-                    <span style={{textAlign:"left", color:"#eceded", fontFamily:"Arial Ancient Runes serif",fontWeight:"bold"}}>Trainer Rating: {rating(testimonialData.trainerRating)}</span>
-                    <span style={{textAlign:"left", color:"#eceded", fontFamily:"Arial Ancient Runes serif",fontWeight:"bold"}}>Content Rating: {rating(testimonialData.contentRating)}</span>
-                    <p className="m-0 text-sm" style={{textAlign:"left", color:"#eceded", fontFamily:"Arial Ancient Runes serif"}}>
+            <div style={{ padding: 0, marginRight: 10, width: '30%', marginBottom: 10 }}>
+                <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(39, 51, 69)', color: '#eceded', borderRadius: 5, marginRight: 6 }}>
+                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial Ancient Runes serif", fontWeight: "bold" }}>Trainer Rating: {rating(testimonialData.trainerRating)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial Ancient Runes serif", fontWeight: "bold" }}>Content Rating: {rating(testimonialData.contentRating)}</span>
+                    <p className="m-0 text-sm" style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial Ancient Runes serif" }}>
                         {testimonialData.like}
                     </p>
                 </div>
@@ -91,24 +95,19 @@ const Testimonials = ({
     return (
         <section
             {...props}
-            className={outerClasses}
-            style={{ paddingTop: 0 }}
+            className='container'
+            style={{ paddingTop: 10, width: '89%', margin: 'auto', borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
             <div className={innerClasses}>
-                
-            
-
-            <div className ="section-inner reveal-from-bottom" data-reveal-delay="400" style={{ paddingTop: 10, width: '89%', margin: 'auto',borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10,padding: 20 }}>
-            <h2 style={{textAlign:"left"}}>Testimonial</h2>
-                <div className='tiles-wrap' style={{justifyContent:'left'}} >
-                    {typeof testimonialData !== "string" && testimonialData.length>0 &&
-                     testimonialData.map(item => (
-                        renderTestimonialTile(item)
-                    ))
+                <h2 style={{ textAlign: "left", marginTop: 0 }}>Testimonial</h2>
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
+                    {typeof testimonialData !== "string" && testimonialData.length > 0 &&
+                        testimonialData.map(item => (
+                            renderTestimonialTile(item)
+                        ))
                     }
                 </div>
             </div>
-          </div>
         </section >
     );
 }
