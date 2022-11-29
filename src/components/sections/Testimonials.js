@@ -77,10 +77,10 @@ const Testimonials = ({
     const renderTestimonialTile = (testimonialData) => {
         return (
             <div className="reveal-from-right" data-reveal-delay={200} style={{ padding: 0, width:470, marginBottom:6 }}>
-                <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(236, 237, 237)', color: 'black', borderRadius:5, marginRight:6 }}>
-                    <span style={{textAlign:"left", color:"rgb(14, 16, 18)", fontFamily:"Arial Ancient Runes serif",fontWeight:"bold"}}>Trainer Rating: {rating(testimonialData.trainerRating)}</span>
-                    <span style={{textAlign:"left", color:"rgb(14, 16, 18)", fontFamily:"Arial Ancient Runes serif",fontWeight:"bold"}}>Content Rating: {rating(testimonialData.contentRating)}</span>
-                    <p className="m-0 text-sm" style={{textAlign:"left", color:"rgb(14, 16, 18)", fontFamily:"Arial Ancient Runes serif"}}>
+                <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(39, 51, 69)', color: '#eceded', borderRadius:5, marginRight:6 }}>
+                    <span style={{textAlign:"left", color:"#eceded", fontFamily:"Arial Ancient Runes serif",fontWeight:"bold"}}>Trainer Rating: {rating(testimonialData.trainerRating)}</span>
+                    <span style={{textAlign:"left", color:"#eceded", fontFamily:"Arial Ancient Runes serif",fontWeight:"bold"}}>Content Rating: {rating(testimonialData.contentRating)}</span>
+                    <p className="m-0 text-sm" style={{textAlign:"left", color:"#eceded", fontFamily:"Arial Ancient Runes serif"}}>
                         {testimonialData.like}
                     </p>
                 </div>
@@ -98,7 +98,7 @@ const Testimonials = ({
                 
             
 
-            <div className ="section-inner reveal-from-bottom" data-reveal-delay="400" style={{ paddingTop: 10, width: '80%', margin: 'auto' }}>
+            <div className ="section-inner reveal-from-bottom" data-reveal-delay="400" style={{ paddingTop: 10, width: '89%', margin: 'auto',borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10,padding: 20 }}>
             <h2 style={{textAlign:"left"}}>Testimonial</h2>
                 <div className='tiles-wrap' style={{justifyContent:'left'}} >
                     {typeof testimonialData !== "string" && testimonialData.length>0 &&

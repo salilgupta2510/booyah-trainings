@@ -58,14 +58,17 @@ const WhyUs = ({
             {...props}
             className={outerClasses}
         >
-            <div className="container" style={{ marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20}}>
+            <div className="container" style={{ marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20, marginBottom:20}}>
                 <div className={innerClasses} style={{paddingTop: 20}}>
                     <h2 style={{marginTop: 0}}>{sectionHeader.title}</h2>
                     <div className={splitClasses}>
                         <div className="split-item" style={{paddingBottom: 0}}>
                             <div className="split-item-content center-content-mobile" >
                                 <p className="m-0">
-                                    Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
+                                You get one re-training attempt Free of Cost within a year of training.
+You get one-year consultation Free of Cost within a year of training.
+You get access to his innovative MURAL Board designs.
+Vikas pays individual attention to each training participant and ensures that you understand Kanban concepts to the core.
                                 </p>
                             </div>
                             <div className={
@@ -99,7 +102,7 @@ const WhyUs = ({
                                 )}
                             >
                                 <p className="m-0">
-                                    Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
+                                Vikas has converted this PowerPoint training to collaborative and interactive training. He follows an Inside Out Approach to training. He uses MURAL Boards for Group Exercises, Kahoot Quizzes for recapitulations, YouTube videos to explain concepts otherwise difficult to understand, and Ice Breakers to enlighten you. Vikas supports the Kanban concepts with successful case studies from the industry.
                                 </p>
                             </div>
                         </div>
@@ -109,7 +112,7 @@ const WhyUs = ({
                         <div className="split-item" style={{paddingBottom: 0}}>
                             <div className="split-item-content center-content-mobile" >
                                 <p className="m-0">
-                                    Lorem ipsum dolor sit amet. At explicabo dolor eum accusantium tempora At vero consectetur et iure inventore aut dolore excepturi et optio officia eum odit tempore. Et quia voluptas ut consequatur laudantium aut sunt unde est ratione odio non quam dolores
+                                Vikas has practical knowledge of implementing Kanban using tools like JIRA, Kanbanize, and Azure DevOps.  
                                 </p>
                             </div>
                             <div className={
