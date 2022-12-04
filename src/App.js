@@ -12,10 +12,11 @@ import Home from './views/Home';
 import KSD from './views/KSD/index';
 import KSI from './views/KSI';
 import Calendar from './views/Calendar/index';
-import KnowYourTrainer from './views/KnowYourTrainer/index';
+// import KnowYourTrainer from './views/KnowYourTrainer/index';
 import Policy from './views/Policy/index';
 import Testimonial from './views/Testimonials';
 import ContactUs from './views/ContactUs';
+import KnowYourTrainer from './components/sections/KnowYourTrainer';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
