@@ -20,7 +20,7 @@ const Home = () => {
     <>
       {/* <Hero className="illustration-section-01" /> */}
       <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" />
-      <TrainingCalendar invertMobile imageFill className="illustration-section-02" />
+      <TrainingCalendar invertMobile imageFill className="illustration-section-02" calenderLimit={4} showHeader={true} showTrainerInfo={true} showSearchOption={false} />
       <WhyUS invertMobile imageFill className="illustration-section-02" />
       <Testimonials invertMobile imageFill className="illustration-section-02" />
       {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}

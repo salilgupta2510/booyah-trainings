@@ -53,7 +53,6 @@ const Testimonials = ({
     const getData = () => {
         return TestimonialService.GetTestimonialData(6)
             .then((response) => {
-                console.log("Received response ", response);
                 setTestimonialData(response);
             })
     }
