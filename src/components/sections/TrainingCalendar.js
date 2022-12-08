@@ -89,7 +89,6 @@ const TrainingCalendar = ({
     }
 
     useEffect(() => {
-        console.log("Inside useEffect");
       makeDataCall(trainingFilter);
     }, [trainingCount])
 
@@ -115,7 +114,6 @@ const TrainingCalendar = ({
     
      const renderRow = (index) => {
         let dataToRender = getDataToRender(index);
-        console.log("Data to Render ", dataToRender);
         return(
             <>
             {dataToRender.map((item,index) => {

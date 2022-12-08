@@ -62,7 +62,6 @@ const ContactUs = ({
   );
 
   const onEmailChange = (event) =>{
-    console.log(event);
     setEmail(event.target.value);
     setEmailError(false);
   }
