@@ -3,6 +3,8 @@ import { useLocation, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
+// import { ToastContainer, toast } from 'react-toastify';
+
 
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
@@ -17,6 +19,7 @@ import Policy from './views/Policy/index';
 import Testimonial from './views/Testimonials';
 import ContactUs from './views/ContactUs';
 import KnowYourTrainer from './components/sections/KnowYourTrainer';
+import TrainingCalendarPage from './views/TrainingCalendar/TrainingCalendarPage';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -51,6 +54,9 @@ const App = () => {
           <AppRoute exact path="/KnowYourTrainer" component={KnowYourTrainer} layout={LayoutDefault} hideFooter={true} />
           <AppRoute exact path="/Policy" component={Policy} layout={LayoutDefault} hideFooter={false} />
           <AppRoute exact path="/queryForm" component={ContactUs}layout={LayoutDefault} hideFooter={false} />
+          <AppRoute exact path="/calendar" component={TrainingCalendarPage} layout={LayoutDefault} hideFooter={false}/>
+        
+        {/* <ToastContainer/> */}
         </Switch>
       )} />
   );

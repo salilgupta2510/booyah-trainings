@@ -6,6 +6,7 @@ import Button from '../../components/elements/Button';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
 import { Triangle } from 'react-loader-spinner'
+import { QueryService } from '../../services/queryService';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -28,10 +29,17 @@ const ContactUs = ({
 
   const form = useRef();
   const emailRef = useRef();
+  const nameRef = useRef();
   const [emailError, setEmailError] = useState(false);
+  const [nameError, setNameError] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [sendingLoader, setSendingLoader] = useState(false);
   const [error, setError] = useState("");
+
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [mobileNo, setMobileNo] = useState('');
+  const [comments, setComments] = useState('');
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -53,22 +61,77 @@ const ContactUs = ({
     'tiles-wrap center-content'
   );
 
-  const sendEmail = () => {
-    console.log(emailRef.current.value, form.value)
-    if (!emailRef.current.value) { setEmailError(true) } else {
-      setSendingLoader(true)
-      emailjs.sendForm('service_ypwhqa8', 'template_sq4cabb', form.current, 'xgUyV3c2jUpeFJVM8')
-        .then((result) => {
-          console.log(result.text);
-          setSendingLoader(false)
+  const onEmailChange = (event) =>{
+    console.log(event);
+    setEmail(event.target.value);
+    setEmailError(false);
+  }
 
-          setEmailSent(true);
-        }, (error) => {
-          console.log(error.text);
-          setError("There was an issue in sending your response, Please try again!")
-          setSendingLoader(false)
-        });
+  const onNameChange = (event) =>{
+    setName(event.target.value);
+    setNameError(false);
+  }
+
+  const onMobileChange = (event) =>{
+    setMobileNo(event.target.value);
+  }
+
+  const onCommentsChange = (event) =>{
+    setComments(event.target.value);
+  }
+  
+  const validateValue = async() =>{
+    if (!emailRef.current.value) { setEmailError(true) } 
+    if (!nameRef.current.value) { setNameError(true) } 
+  }
+
+  const createResponseObj = () =>{
+    let trainingEnquiry = {
+      trainingEnquiryId : 0,
+      trainingRequestNumber : '',
+      userId : 0,
+      userName : name,
+      email : email,
+      mobileNo : mobileNo,
+      requestedOn : new Date,
+      comments : comments
     }
+    return trainingEnquiry;
+  }
+
+
+  const sendEmail = async () => {
+    setEmailError(false);
+    setNameError(false);
+    console.log(emailRef.current.value, form.value);
+    setSendingLoader(true);
+    await validateValue();
+    if(email === '' || name === ''){
+      setSendingLoader(false);
+      
+    }
+    else{
+      var enquiry = createResponseObj();
+      await QueryService.PostTrainingQuery(enquiry);
+      setSendingLoader(false);
+      setEmailSent(true);
+
+    }
+
+    // if (!emailRef.current.value) { setEmailError(true) } else {
+    //   setSendingLoader(true)
+      // emailjs.sendForm('service_ypwhqa8', 'template_sq4cabb', form.current, 'xgUyV3c2jUpeFJVM8')
+      //   .then((result) => {
+      //     console.log(result.text);
+      //     setSendingLoader(false)
+
+      //     setEmailSent(true);
+      //   }, (error) => {
+      //     console.log(error.text);
+      //     setError("There was an issue in sending your response, Please try again!")
+      //     setSendingLoader(false)
+      //   });
+    // }
 
   };
 
@@ -97,19 +160,20 @@ const ContactUs = ({
                 ariaLabel='loading'
               />}
               {!emailSent && !sendingLoader && <>
-                <h1 style={{ color: '#ffffff' }} className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-                  Get In Touch
+                <h1 style={{ color: '#ffffff' }} className="mt-0 mb-16" >
+                  Post Your Query
                 </h1>
                 <form ref={form} onSubmit={sendEmail}>
                   {/* <label style={styles.label}>Name</label> */}
-                  <input placeholder='Your Name' style={styles.input} type="text" name="user_name" />
-                  {/* <label style={styles.label}>Mobile Number</label> */}
-                  <input placeholder='Contact Number' style={styles.input} type="number" name="user_number" />
+                  <input placeholder='Your Name' style={styles.input} type="text" name="user_name" ref={nameRef} onChange={onNameChange} />
+                  {nameError && <div style={{ color: 'red' }}>Please enter your name</div>}
                   {/* <label style={styles.label}>Email*</label> */}
-                  <input placeholder='Email' style={styles.input} ref={emailRef} type="email" name="email" />
+                  <input placeholder='Email' style={styles.input} ref={emailRef} type="email" name="email" onChange={onEmailChange}/>
                   {emailError && <div style={{ color: 'red' }}>Please enter your email address</div>}
+                  {/* <label style={styles.label}>Mobile Number</label> */}
+                  <input placeholder='Contact Number' style={styles.input} type="number" name="user_number" onChange={onMobileChange} />
                   {/* <label style={{marginTop: 50, ...styles.label}}>Message</label> */}
-                  <textarea placeholder='Let Us Know' style={styles.input} name="message" />
+                  <textarea placeholder='Let Us Know' style={styles.input} name="message" onChange={onCommentsChange}/>
                 </form>
                 {error && <h5 style={{ color: 'red' }}>{error}</h5>}
                 <div>
@@ -121,7 +185,7 @@ const ContactUs = ({
                 </div>
               </>} { emailSent && <>
                 <img src={require("../../assets/images/success.png")} style={{ height: 70, width: 70, alignSelf: 'center', borderRadius: 50 }} />
-                <h3 >Sent Successfully</h3>
+                <p>Your request for KMP enrolment has been sent successfully. Vikas will connect with you within 24 hours with further details. Alternatively, you can connect with him over WhatsApp / Call @ +91 98100 47018</p>
                 <Link to="/" ><h6>Go To Home</h6></Link>
 
               </>}
