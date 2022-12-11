@@ -77,7 +77,7 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-content">
                   <ButtonGroup>
                     <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
-                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Find KSD</Link>
+                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }} >Find KSD</Link>
                       {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
                     </Button>
                     <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
@@ -104,7 +104,7 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-content">
                   <ButtonGroup>
                     <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
-                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Find KSI</Link>
+                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }} >Find KSI</Link>
                       {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-1</a> */}
                     </Button>
                     <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
