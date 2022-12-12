@@ -81,7 +81,7 @@ const FeaturesTiles = ({
                       {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
                     </Button>
                     <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
-                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSD</Link>
+                      <Link to="/KSD" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSD</Link>
                       {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-2</a> */}
                     </Button>
                   </ButtonGroup>
@@ -108,7 +108,7 @@ const FeaturesTiles = ({
                       {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-1</a> */}
                     </Button>
                     <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
-                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSI</Link>
+                      <Link to="/KSI" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSI</Link>
                       {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
                     </Button>
                   </ButtonGroup>
