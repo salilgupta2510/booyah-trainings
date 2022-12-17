@@ -1,12 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../../components/elements/ButtonGroup';
 import Button from '../../components/elements/Button';
 import emailjs from '@emailjs/browser';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Triangle } from 'react-loader-spinner'
 import { QueryService } from '../../services/queryService';
+import { useHistory } from 'react-router-dom';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -27,6 +28,7 @@ const ContactUs = ({
   ...props
 }) => {
 
+  let history = useHistory();
   const form = useRef();
   const emailRef = useRef();
   const nameRef = useRef();
@@ -39,7 +41,15 @@ const ContactUs = ({
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [mobileNo, setMobileNo] = useState('');
-  const [comments, setComments] = useState('');
+  const [comments, setComments] = useState('I would like to enroll for KMP Class, please send course, fee and registration details');
+
+  const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    onTop()
+  }, [routePath]);
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -98,8 +108,13 @@ const ContactUs = ({
     return trainingEnquiry;
   }
 
+  const goBack = async() =>{
+    history.goBack()
+
+  }
 
   const sendEmail = async () => {
+    onTop();
     setEmailError(false);
     setNameError(false);
     console.log(emailRef.current.value, form.value);
@@ -159,26 +174,29 @@ const ContactUs = ({
                 ariaLabel='loading'
               />}
               {!emailSent && !sendingLoader && <>
-                <h1 style={{ color: '#ffffff' }} className="mt-0 mb-16" >
-                  Post Your Query
+                <h1 style={{ color: '#ffffff', fontSize:33 }} className="mt-0 mb-16" >
+                Please provide the following details
                 </h1>
                 <form ref={form} onSubmit={sendEmail}>
                   {/* <label style={styles.label}>Name</label> */}
-                  <input placeholder='Your Name' style={styles.input} type="text" name="user_name" ref={nameRef} onChange={onNameChange} />
+                  <input placeholder='Your Name' style={styles.requiredInput} type="text" name="user_name" ref={nameRef} onChange={onNameChange} />
                   {nameError && <div style={{ color: 'red' }}>Please enter your name</div>}
                   {/* <label style={styles.label}>Email*</label> */}
-                  <input placeholder='Email' style={styles.input} ref={emailRef} type="email" name="email" onChange={onEmailChange}/>
+                  <input placeholder='Email' style={styles.requiredInput} ref={emailRef} type="email" name="email" onChange={onEmailChange}/>
                   {emailError && <div style={{ color: 'red' }}>Please enter your email address</div>}
                   {/* <label style={styles.label}>Mobile Number</label> */}
                   <input placeholder='Contact Number' style={styles.input} type="number" name="user_number" onChange={onMobileChange} />
                   {/* <label style={{marginTop: 50, ...styles.label}}>Message</label> */}
-                  <textarea placeholder='Let Us Know' style={styles.input} name="message" onChange={onCommentsChange}/>
+                  <textarea placeholder='Let Us Know' style={styles.input} name="message" onChange={onCommentsChange} value={comments}/>
                 </form>
                 {error && <h5 style={{ color: 'red' }}>{error}</h5>}
                 <div>
                   <ButtonGroup>
                     <Button tag="button" color="primary" wideMobile onClick={() => sendEmail()}>
                       Send
+                    </Button>
+                    <Button tag="button" color="primary" wideMobile onClick={() => goBack()}>
+                      Back
                     </Button>
                   </ButtonGroup>
                 </div>
@@ -204,9 +222,19 @@ const styles = {
     marginTop: 8,
     display: "inline-block",
     marginBottom: 20,
-    borderRadius: 5,
+    borderRadius: 8,
     lineHeight: 2,
-    paddingLeft: 10
+    paddingLeft: 10,
+  },
+  requiredInput: {
+    width: "100%",
+    marginTop: 8,
+    display: "inline-block",
+    marginBottom: 20,
+    borderRadius: 8,
+    lineHeight: 2,
+    paddingLeft: 10,
+    borderColor:'red'
   }
 }
 

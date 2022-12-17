@@ -62,11 +62,12 @@ const FeaturesTiles = ({
         <div className={innerClasses} style={{ paddingBottom: 20 }}>
           <div className={tilesClasses} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <div className="tiles-item" style={{
-              backgroundColor: '#273345',
+              backgroundColor: '#8363ff',
               borderRadius: 5,
               marginBottom: 20,
               padding: 20,
               height: 100,
+              boxShadow: '8px 8px 5px lightblue, 20px 20px 10px #273345'
             }}>
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">

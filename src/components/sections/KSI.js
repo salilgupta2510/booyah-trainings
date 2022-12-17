@@ -50,7 +50,7 @@ const KSI = ({
 
     const renderTile = (text, color) => {
         return (
-            <div className="tiles-item reveal-from-right" data-reveal-delay={200} style={{ padding: 0 }}>
+            <div className="tiles-item" style={{ padding: 0 }}>
                 <div className="tiles-item-inner" style={{ backgroundColor: `${color}`, color: 'black' }}>
                     <p className="m-0 text-sm">
                         {text}
@@ -76,14 +76,17 @@ const KSI = ({
                     <div  className="hero-content" style={{marginTop:30}}>
 <div className='col-lg-9' style={{float:'left'}}>
                 <ButtonGroup>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '30%', textAlign:'top'}}>
-                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }} >Find A KSI Class</Link>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
+                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }}>Find A KSI Class</Link>
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '30%' }}>
-                    <a href="/ExploreKSI.docx" download style={{ fontSize: 14, color: '#6163ff' }}>Download KSI Flyer</a>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
+                    <a href="/KSIFlyer.pdf" download style={{ fontSize: 14, color: '#6163ff' }}>Download KSI Flyer</a>
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '30%' }}>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
                       <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Ques? Contact Us</Link>
+                    </Button>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
+                      <Link to="/KSD" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSD</Link>
                     </Button>
                     
                   </ButtonGroup>
@@ -99,20 +102,21 @@ const KSI = ({
 
                     <div  className="hero-content" style={{marginTop:30}}>
 <div style={{width:'75%', float:'left', marginTop:20}}>
-<h2 className="reveal-from-bottom" data-reveal-delay="200" style={{textAlign:'left'}}>
+<h2 style={{textAlign:'left'}}>
                 KMP-II (Kanban Systems Improvement)
             </h2>
-
             <div style={{ marginRight: '20%', float:'left' }}>
-            <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 80 }}>
-                        <p className="m-0 text-sm">
+            <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
+            <a href="/ExploreKSI.docx" download style={{ fontSize: 16, color: '#6163ff', marginLeft:0, textDecoration:'underline' }}>Sample KSI Certificate</a>
+            
+                        <p className="text-sm" style={{marginTop:20}}>
                         This training systematically builds upon the foundations established in the Kanban System Design (KMP 1) training. This course, known as Kanban Systems Improvement (KMP II), is the final course towards the Kanban Management Professional (KMP) credential.
 Kanban Management Professional is an advanced level course that will help participants build on their existing knowledge of Kanban Method and will help them take their current Kanban implementation to the next level.
 
                     </p>
                 </div>
 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 80 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
                     <h4 className="mt-0 mb-8">
                         Learning objectives:
                     </h4>
@@ -137,7 +141,7 @@ Kanban Management Professional is an advanced level course that will help partic
                     </li>
                     </ul>
                 </div>
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 80 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
                     <h4 className="mt-0 mb-8">
                         Benefits
                     </h4>
@@ -154,7 +158,7 @@ Kanban Management Professional is an advanced level course that will help partic
                     </ul>
                 </div>
                 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                 <h4 className="mt-0 mb-8">
                         Course Contents
                     </h4>
@@ -186,7 +190,7 @@ Kanban Management Professional is an advanced level course that will help partic
 </table>
                 </div>
 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                     <table class="table" style={{color:'#9ca9b3'}}>
   <thead>
     <tr>
@@ -218,7 +222,7 @@ Kanban Management Professional is an advanced level course that will help partic
 <br></br>
                 </div>
 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                     <table class="table" style={{color:'#9ca9b3'}}>
   <thead>
     <tr>
@@ -237,7 +241,7 @@ Kanban Management Professional is an advanced level course that will help partic
 <br></br>
                 </div>
 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                     <table class="table" style={{color:'#9ca9b3'}}>
   <thead>
     <tr>

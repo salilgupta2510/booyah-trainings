@@ -49,7 +49,7 @@ const KSD = ({
 
     const renderTile = (text, color) => {
         return (
-            <div className="tiles-item reveal-from-right" data-reveal-delay={200} style={{ padding: 0 }}>
+            <div className="tiles-item" style={{ padding: 0 }}>
                 <div className="tiles-item-inner" style={{ backgroundColor: `${color}`, color: 'black' }}>
                     <p className="m-0 text-sm">
                         {text}
@@ -75,14 +75,17 @@ const KSD = ({
                     <div  className="hero-content" style={{marginTop:30}}>
 <div className='col-lg-9' style={{float:'left'}}>
                 <ButtonGroup>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '30%', textAlign:'top'}}>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
                       <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }} >Find A KSD Class</Link>
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '30%' }}>
-                    <a href="/ExploreKSD.docx" download style={{ fontSize: 14, color: '#6163ff' }}>Download KSD Flyer</a>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
+                    <a href="/KSDFlyer.pdf" download style={{ fontSize: 14, color: '#6163ff' }}>Download KSD Flyer</a>
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '30%' }}>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
                       <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Ques? Contact Us</Link>
+                    </Button>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
+                      <Link to="/KSI" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSI</Link>
                     </Button>
                     
                   </ButtonGroup>
@@ -98,18 +101,20 @@ const KSD = ({
 
                     <div  className="hero-content" style={{marginTop:30}}>
 <div style={{width:'75%', float:'left', marginTop:20}}>
-<h2 className="reveal-from-bottom" data-reveal-delay="200" style={{textAlign:'left'}}>
+<h2  style={{textAlign:'left'}}>
             KMP-I (Kanban System Design)
             </h2>
 
             <div style={{ marginRight: '20%', float:'left' }}>
-            <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 80 }}>
-                        <p className="m-0 text-sm">
+            <div className="features-tiles-item-content"  style={{ textAlign: 'left', marginBottom: 80 }}>
+                    <a href="/ExploreKSD.docx" download style={{ fontSize: 16, color: '#6163ff', marginLeft:0, textDecoration:'underline' }}>Sample KSD Certificate</a>
+            
+                        <p className="text-sm" style={{marginTop:20}}>
                         This course, known as Kanban Management Professional 1 (KMP I), is the first of two courses towards the Kanban Management Professional (KMP) credential. KMP I is the prerequisite to KMP II. By completing both KMP I and KMP II, participants can achieve the KMP credential with the Lean Kanban University®.
                     </p>
                 </div>
 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 80 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
                     <h4 className="mt-0 mb-8">
                         Learning objectives:
                     </h4>
@@ -140,7 +145,7 @@ const KSD = ({
                     </li>
                     </ul>
                 </div>
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 80 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
                     <h4 className="mt-0 mb-8">
                         Benefits
                     </h4>
@@ -157,7 +162,7 @@ const KSD = ({
                     </ul>
                 </div>
                 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                 <h4 className="mt-0 mb-8">
                         Course Contents
                     </h4>
@@ -185,7 +190,7 @@ const KSD = ({
 </table>
                 </div>
 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                     <table class="table" style={{color:'#9ca9b3'}}>
   <thead>
     <tr>
@@ -219,7 +224,7 @@ const KSD = ({
 </table>
                 </div>
 
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                     <table class="table" style={{color:'#9ca9b3'}}>
   <thead>
     <tr>
@@ -240,7 +245,7 @@ const KSD = ({
   </tbody>
 </table>
                 </div>
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 40 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 40 }}>
                     <table class="table" style={{color:'#9ca9b3'}}>
   <thead>
     <tr>

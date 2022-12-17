@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { SectionSplitProps } from '../../utils/SectionProps';
 import Image from '../elements/Image';
+import { Link } from 'react-router-dom';
 
 const propTypes = {
     ...SectionSplitProps.types
@@ -63,15 +64,47 @@ const WhyUs = ({
                     <h2 style={{marginTop: 0}}>{sectionHeader.title}</h2>
                     <div className={splitClasses}>
                         <div className="split-item" style={{paddingBottom: 0}}>
-                            <div className="split-item-content center-content-mobile" >
-                                <p className="m-0">
+                            {/* <div className="split-item-content center-content-mobile" > */}
+                            <ul>
+                                <li>
+                                Vikas practices Kanban in real-world scenarios and enables business agility. He is not just a trainer but brings practical implementation scenarios during the training.
+                                </li>
+                                <li>
+                                Vikas follows an Inside-Out Approach to training and follows an inquiry-practice-concepts approach to train.
+                                </li>
+                                <li>
+                                Train with Vikas and get individual attention to your questions. No question gets unanswered during his training.
+                                </li>
+                                <li>
+                                Collaboration and learning from each other are other vital elements during the training. Through innovative icebreakers, Vikas helps build collaboration and contribution during the training.
+                                </li>
+                                <li>
+                                His Kahoot quizzes help you recapitulate the concepts so that you remember the key elements of Kanban.
+                                </li>
+                                <li>
+                                Vikas uses MURAL Board and Excel Sheets to explain complicated concepts like Lead Time Distribution, Cumulative Flow Diagrams, Little's Law, Scaling Kanban, Dependency Management, Risk Management to trim the tail, Kanban Board Designs, and many others.
+                                </li>
+                                <li>
+                                Vikas has experience working on tools like JIRA, Azure DevOps, Kanbanize, Tally, and others. You can get your tool-specific questions answered by him.
+                                </li>
+                                <li>
+                                You get one "re-training attempt" free when you train with Vikas. You can attend any of his future classes for FREE.
+                                </li>
+                                <li>
+                                Also, you get a one-year email/chat consultancy FREE. Vikas's primary focus is that you succeed and grow in your career when you get back to work after attaining the KMP credential.
+                                </li>
+                                Still, have doubts? 
+                                <Link to="/queryForm" style={{ fontSize: 20, color: '#6163ff' }}> Talk to him today</Link>
+                                
+                            </ul>
+                                {/* <p className="m-0">
                                 You get one re-training attempt Free of Cost within a year of training.
 You get one-year consultation Free of Cost within a year of training.
 You get access to his innovative MURAL Board designs.
 Vikas pays individual attention to each training participant and ensures that you understand Kanban concepts to the core.
-                                </p>
-                            </div>
-                            <div className={
+                                </p> */}
+                            {/* </div> */}
+                            {/* <div className={
                                 classNames(
                                     'split-item-image center-content-mobile',
                                     imageFill && 'split-item-image-fill'
@@ -82,11 +115,11 @@ Vikas pays individual attention to each training participant and ensures that yo
                                     alt="Features split 01"
                                     width={528}
                                     height={396} />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {/* Section 2 */}
-                    <div className={splitClasses}>
+                    {/* <div className={splitClasses}>
                         <div className="split-item" style={{paddingBottom: 0}}>
                             <div className="split-item-content center-content-mobile" >
                                 <Image
@@ -106,9 +139,9 @@ Vikas pays individual attention to each training participant and ensures that yo
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/* Section 3 */}
-                    <div className={splitClasses}>
+                    {/* <div className={splitClasses}>
                         <div className="split-item" style={{paddingBottom: 0}}>
                             <div className="split-item-content center-content-mobile" >
                                 <p className="m-0">
@@ -128,7 +161,7 @@ Vikas pays individual attention to each training participant and ensures that yo
                                     height={396} />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

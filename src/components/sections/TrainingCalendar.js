@@ -149,7 +149,7 @@ const TrainingCalendar = ({
                             </div>
                         </div>
     
-                        <div style={{ marginBottom: 10, height: '30%', fontSize: 17 }}>{item.trainingTitle}</div>
+                        <div style={{ marginBottom: 10, height: '30%', fontSize: 17, fontWeight: 'bold' }}>{item.trainingTitle}</div>
                     </div>
     
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
@@ -311,8 +311,9 @@ const TrainingCalendar = ({
                 {showHeader && <h2 style={{ marginTop: 0 }}>{sectionHeader.title}</h2>}
               {  showTrainerInfo &&
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                    <Link to="/KnowYourTrainer" style={{ fontSize: 16, marginRight: 80, textDecoration: 'underline', fontWeight: 'bold' }} >Sample KMP Certificate</Link>
                     <Link to="/KnowYourTrainer" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold' }} >Know Your Trainer</Link>
-                    <img src={require('../../assets/images/Vikas.jpg')} style={{ height: 40, width: 40, alignSelf: 'center', borderRadius: 10 }} />
+                    <img src={require('../../assets/images/Vikas.JPG')} style={{ height: 45, width: 40, alignSelf: 'center', borderRadius: 10 }} />
                 </div>}
             </div>
             {/* <div style={{ display: 'flex', flexDirection: 'row' }}>
