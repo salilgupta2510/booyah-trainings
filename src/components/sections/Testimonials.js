@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import { TestimonialService } from '../../services/testimonialService';
 import TestimonialStore from '../../store/testimonialStore';
+import Button from '../elements/Button';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -110,7 +112,13 @@ const Testimonials = ({
                     }
                 </div>
             </div>
-        </section >
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
+                <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
+                      <Link to="/Testimonial" style={{ fontSize: 14, color: '#6163ff' }} >Read More Testimonials Here</Link>
+                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
+                    </Button>
+                </div>
+        </section>
     );
 }
 

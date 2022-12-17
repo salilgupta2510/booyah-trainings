@@ -6,6 +6,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { BrowserView, MobileView } from 'react-device-detect';
 import Testimonials from '../../components/sections/Testimonials';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -511,6 +513,15 @@ const Testimonial = ({
       data: 'Thank you for spending weekends with us and giving us insights about Kanban. Given this training, you are a wonderful coach. '
     }
   ]]
+
+  
+  const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    onTop()
+  }, [routePath]);
 
   return (
     <section
