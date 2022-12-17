@@ -65,36 +65,38 @@ const WhyUs = ({
                     <div className={splitClasses}>
                         <div className="split-item" style={{paddingBottom: 0}}>
                             {/* <div className="split-item-content center-content-mobile" > */}
-                            <ul>
+                           <ul>
                                 <li>
-                                Vikas practices Kanban in real-world scenarios and enables business agility. He is not just a trainer but brings practical implementation scenarios during the training.
+                                Vikas has been practicing Kanban and has addressed real-world challenges.
                                 </li>
                                 <li>
-                                Vikas follows an Inside-Out Approach to training and follows an inquiry-practice-concepts approach to train.
+                                Vikas follows an inquiry-practice-concepts approach to train his class.
                                 </li>
                                 <li>
-                                Train with Vikas and get individual attention to your questions. No question gets unanswered during his training.
+                                No question gets unanswered during his training.
                                 </li>
                                 <li>
-                                Collaboration and learning from each other are other vital elements during the training. Through innovative icebreakers, Vikas helps build collaboration and contribution during the training.
+                                Through innovative icebreakers, Vikas helps build collaboration during the training.
                                 </li>
                                 <li>
-                                His Kahoot quizzes help you recapitulate the concepts so that you remember the key elements of Kanban.
+                                His Kahoot quizzes help you remember the key elements of Kanban.
                                 </li>
                                 <li>
                                 Vikas uses MURAL Board and Excel Sheets to explain complicated concepts like Lead Time Distribution, Cumulative Flow Diagrams, Little's Law, Scaling Kanban, Dependency Management, Risk Management to trim the tail, Kanban Board Designs, and many others.
                                 </li>
                                 <li>
-                                Vikas has experience working on tools like JIRA, Azure DevOps, Kanbanize, Tally, and others. You can get your tool-specific questions answered by him.
+                                Vikas has experience working on tools like JIRA, Azure DevOps, Kanbanize, Tally, and others. Get your tool-specific questions answered by him.
                                 </li>
                                 <li>
-                                You get one "re-training attempt" free when you train with Vikas. You can attend any of his future classes for FREE.
+                                Get one "re-training attempt" FREE.
                                 </li>
                                 <li>
-                                Also, you get a one-year email/chat consultancy FREE. Vikas's primary focus is that you succeed and grow in your career when you get back to work after attaining the KMP credential.
+                                Get a one-year email/chat consultancy FREE. 
                                 </li>
+                                <li>
                                 Still, have doubts? 
                                 <Link to="/queryForm" style={{ fontSize: 20, color: '#6163ff' }}> Talk to him today</Link>
+                                </li>
                                 
                             </ul>
                                 {/* <p className="m-0">
