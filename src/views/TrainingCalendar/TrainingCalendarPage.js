@@ -14,7 +14,7 @@ const TrainingCalendarPage = () =>{
       {/* <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" /> */}
 
       <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} />
-      <Testimonials invertMobile imageFill className="illustration-section-02" />
+      <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} />
        
         </>
     )

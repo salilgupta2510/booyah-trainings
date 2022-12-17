@@ -20,6 +20,8 @@ const Testimonials = ({
     bottomDivider,
     hasBgColor,
     invertColor,
+    countToFetch,
+    showHeader,
     ...props
 }) => {
     const setTestimonialData = TestimonialStore((state) => state.setTestimonialData);
@@ -51,7 +53,7 @@ const Testimonials = ({
     }, []);
 
     const getData = () => {
-        return TestimonialService.GetTestimonialData(6)
+        return TestimonialService.GetTestimonialData(countToFetch)
             .then((response) => {
                 setTestimonialData(response);
             })
@@ -79,11 +81,11 @@ const Testimonials = ({
 
     const renderTestimonialTile = (testimonialData) => {
         return (
-            <div style={{ padding: 0, marginRight: 10, width: '30%', marginBottom: 10 }}>
+            <div style={{ padding: 0, marginRight: 10, width: '32%', marginBottom: 10 }}>
                 <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(39, 51, 69)', color: '#eceded', borderRadius: 5, marginRight: 6 }}>
-                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial Ancient Runes serif", fontWeight: "bold" }}>Trainer Rating: {rating(testimonialData.trainerRating)}</span>
-                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial Ancient Runes serif", fontWeight: "bold" }}>Content Rating: {rating(testimonialData.contentRating)}</span>
-                    <p className="m-0 text-sm" style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial Ancient Runes serif" }}>
+                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:17 }}>Trainer Rating: {rating(testimonialData.trainerRating)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:17}}>Content Rating: {rating(testimonialData.contentRating)}</span>
+                    <p className="m-0 text-sm" style={{ textAlign: "left", color: "#eceded", fontFamily: "system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Noto Sans,Liberation Sans,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" }}>
                         {testimonialData.like}
                     </p>
                 </div>
@@ -98,7 +100,7 @@ const Testimonials = ({
             style={{ paddingTop: 10, width: '89%', margin: 'auto', borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
             <div className={innerClasses}>
-                <h2 style={{ textAlign: "left", marginTop: 0 }}>Testimonial</h2>
+               {showHeader && <h2 style={{ textAlign: "left", marginTop: 0 }}>Testimonials</h2>}
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
                     {typeof testimonialData !== "string" && testimonialData.length > 0 &&
                         testimonialData.map(item => (

@@ -5,6 +5,7 @@ import SectionHeader from '../../components/sections/partials/SectionHeader';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { BrowserView, MobileView } from 'react-device-detect';
+import Testimonials from '../../components/sections/Testimonials';
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -529,32 +530,8 @@ const Testimonial = ({
             autoPlay={true}
             interval={8000}
           > */}
-          {testimonialsBrowser.map((parentItem) => {
-            return (
-              <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
-                {parentItem.map((childItem) => {
-                  return (
-                    <div className="tiles-item reveal-from-right" style={{ marginBottom: 50 }} data-reveal-delay="200">
-                      <div className="tiles-item-inner" >
-                        <img src={childItem.image} style={{ height: 100, width: 100, alignSelf: 'center', borderRadius: 50 }} />
-                        <div className="testimonial-item-header text-xl" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 20 }}>
-                          <span className="testimonial-item-name text-color-high">{childItem.name}</span>
-                          <span className="testimonial-item-link">
-                            <a href="#0">{childItem.company}</a>
-                          </span>
-                        </div>
-                        <div className="testimonial-item-content">
-                          <p className="text-sm mb-0" style={{ height: 350, overflowY: "auto" }}>
-                            {childItem.data}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            )
-          })}
+                      <Testimonials  invertMobile imageFill className="illustration-section-02" showHeader={false} countToFetch={0}/> 
+           
           {/* </Carousel> */}
         </BrowserView>
         <MobileView>

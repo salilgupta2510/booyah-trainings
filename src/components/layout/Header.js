@@ -123,6 +123,15 @@ const Header = ({
                       <Link to="/calendar" onClick={closeMenu}>Training Calendar</Link>
                     </li>
                   </ul>
+                  <ul className={
+                    classNames(
+                      'list-reset h5 ',
+                      navPosition && `header-nav-${navPosition}`
+                    )}>
+                    <li>
+                      <Link to="/KSD" onClick={closeMenu}>Become KMP</Link>
+                    </li>
+                  </ul>
                 
                  
                   <ul className={
@@ -132,6 +141,15 @@ const Header = ({
                     )}>
                     <li>
                       <Link to="/KnowYourTrainer" onClick={closeMenu}>Know Your Trainer</Link>
+                    </li>
+                  </ul>
+                  <ul className={
+                    classNames(
+                      'list-reset h5 ',
+                      navPosition && `header-nav-${navPosition}`
+                    )}>
+                    <li>
+                      <Link to="/Testimonial" onClick={closeMenu}>Testimonials</Link>
                     </li>
                   </ul>
                   <ul className={
