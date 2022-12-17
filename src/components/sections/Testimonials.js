@@ -59,7 +59,7 @@ const Testimonials = ({
             })
     }
 
-    const rating = (currentRating) => {
+    const rating = (currentRating, leftMargin) => {
         let remainingRating = 5 - currentRating;
         currentRating = currentRating > 5 ? 5 : currentRating;
         let result = [];
@@ -70,12 +70,12 @@ const Testimonials = ({
             result.push("N")
         }
         return (
-            <>
+            <span style={{marginLeft:leftMargin}}>
                 {result.map((value, index) => {
-                    return value == 'Y' ? <span className='fa fa-star checked'></span> : <span className='fa fa-star'></span>
+                    return value == 'Y' ? <span className='fa fa-star checked' style={{paddingLeft:1}}></span> : <span className='fa fa-star' style={{paddingLeft:1}}></span>
 
                 })}
-            </>
+            </span>
         );
     }
 
@@ -83,8 +83,9 @@ const Testimonials = ({
         return (
             <div style={{ padding: 0, marginRight: 10, width: '32%', marginBottom: 10 }}>
                 <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(39, 51, 69)', color: '#eceded', borderRadius: 5, marginRight: 6 }}>
-                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:17 }}>Trainer Rating: {rating(testimonialData.trainerRating)}</span>
-                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:17}}>Content Rating: {rating(testimonialData.contentRating)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:17 }}>Trainer Rating: {rating(testimonialData.trainerRating,9)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:17}}>Content Rating: {rating(testimonialData.contentRating,2)}</span>
+                    <br/>
                     <p className="m-0 text-sm" style={{ textAlign: "left", color: "#eceded", fontFamily: "system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Noto Sans,Liberation Sans,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" }}>
                         {testimonialData.like}
                     </p>
