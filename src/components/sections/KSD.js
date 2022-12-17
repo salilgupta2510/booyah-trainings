@@ -107,7 +107,7 @@ const KSD = ({
 
             <div style={{ marginRight: '20%', float:'left' }}>
             <div className="features-tiles-item-content"  style={{ textAlign: 'left', marginBottom: 80 }}>
-                    <a href="/ExploreKSD.docx" download style={{ fontSize: 16, color: '#6163ff', marginLeft:0, textDecoration:'underline' }}>Sample KSD Certificate</a>
+                    <a href="/SampleKSDCertificate.pdf" download style={{ fontSize: 16, color: '#6163ff', marginLeft:0, textDecoration:'underline' }}>Sample KSD Certificate</a>
             
                         <p className="text-sm" style={{marginTop:20}}>
                         This course, known as Kanban Management Professional 1 (KMP I), is the first of two courses towards the Kanban Management Professional (KMP) credential. KMP I is the prerequisite to KMP II. By completing both KMP I and KMP II, participants can achieve the KMP credential with the Lean Kanban University®.

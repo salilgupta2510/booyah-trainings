@@ -107,7 +107,7 @@ const KSI = ({
             </h2>
             <div style={{ marginRight: '20%', float:'left' }}>
             <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
-            <a href="/ExploreKSI.docx" download style={{ fontSize: 16, color: '#6163ff', marginLeft:0, textDecoration:'underline' }}>Sample KSI Certificate</a>
+            <a href="/SampleKSICertificate.pdf" download style={{ fontSize: 16, color: '#6163ff', marginLeft:0, textDecoration:'underline' }}>Sample KSI Certificate</a>
             
                         <p className="text-sm" style={{marginTop:20}}>
                         This training systematically builds upon the foundations established in the Kanban System Design (KMP 1) training. This course, known as Kanban Systems Improvement (KMP II), is the final course towards the Kanban Management Professional (KMP) credential.
