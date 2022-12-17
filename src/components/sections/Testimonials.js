@@ -113,8 +113,8 @@ const Testimonials = ({
                 </div>
             </div>
                 {showHeader &&  <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
-               <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
-                      <Link to="/Testimonial" style={{ fontSize: 14, color: '#6163ff' }} >Read More Testimonials Here</Link>
+               <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', backgroundColor:'#0e1012'}}>
+                      <Link to="/Testimonial" style={{ fontSize: 16, color: '#6163ff' }} >Read More Testimonials Here</Link>
                     </Button>
                 </div>
                }

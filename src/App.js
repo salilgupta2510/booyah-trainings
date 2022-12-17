@@ -34,12 +34,16 @@ const App = () => {
 
   const childRef = useRef();
   let location = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
 
   useEffect(() => {
     const page = location.pathname;
     document.body.classList.add('is-loaded')
     childRef.current.init();
     trackPage(page);
+    onTop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 

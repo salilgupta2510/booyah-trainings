@@ -1,13 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
-import SectionHeader from '../../components/sections/partials/SectionHeader';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import { BrowserView, MobileView } from 'react-device-detect';
 import Testimonials from '../../components/sections/Testimonials';
-import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -515,13 +511,7 @@ const Testimonial = ({
   ]]
 
   
-  const routePath = useLocation();
-  const onTop = () => {
-    window.scrollTo(0, 0);
-  }
-  useEffect(() => {
-    onTop()
-  }, [routePath]);
+  
 
   return (
     <section
