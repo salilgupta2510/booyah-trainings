@@ -65,7 +65,7 @@ const WhyUs = ({
                     <div className={splitClasses}>
                         <div className="split-item" style={{paddingBottom: 0}}>
                             {/* <div className="split-item-content center-content-mobile" > */}
-                            <ul>
+                           <ul>
                                 <li>
                                 Vikas has been practicing Kanban and has addressed real-world challenges.
                                 </li>
