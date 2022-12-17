@@ -313,7 +313,7 @@ const TrainingCalendar = ({
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                     <Link to="/KnowYourTrainer" style={{ fontSize: 16, marginRight: 80, textDecoration: 'underline', fontWeight: 'bold' }} >Sample KMP Certificate</Link>
                     <Link to="/KnowYourTrainer" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold' }} >Know Your Trainer</Link>
-                    <img src={require('../../assets/images/Vikas.JPG')} style={{ height: 45, width: 40, alignSelf: 'center', borderRadius: 10 }} />
+                    <img src={require('../../assets/images/Vikas.jpg')} style={{ height: 45, width: 40, alignSelf: 'center', borderRadius: 10 }} />
                 </div>}
             </div>
             {/* <div style={{ display: 'flex', flexDirection: 'row' }}>

@@ -74,7 +74,7 @@ const KnowYourTrainer = ({
    
                             <div className="reveal-from-bottom" data-reveal-delay="600">
                                 <Image 
-                                src={require('./../../assets/images/Vikas.JPG')}
+                                src={require('./../../assets/images/Vikas.jpg')}
                                 width={400}
                                 height={400}/>
                              
