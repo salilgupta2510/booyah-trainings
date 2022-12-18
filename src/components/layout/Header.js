@@ -84,7 +84,7 @@ const Header = ({
           classNames(
             'site-header-heading',
           )}>
-          <Logo showCopyRight={false} />
+          {/* <Logo showCopyRight={false} /> */}
           {!hideNav &&
             <>
               <button
