@@ -49,7 +49,7 @@ const KnowYourTrainer = ({
         <section
             {...props}
             className={outerClasses}
-            style={{ paddingTop: 0, marginTop: 10 }}
+            style={{ paddingTop: 0, marginTop: 40 }}
         >
             <div className="container">
                 <div className={innerClasses} style={{ paddingBottom: 10 }}>

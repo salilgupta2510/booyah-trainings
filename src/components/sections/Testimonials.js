@@ -122,9 +122,12 @@ const Testimonials = ({
                }
          </BrowserView>
          <MobileView>
-         {typeof testimonialData !== "string" && testimonialData.length > 0 &&
+            <>
+            {typeof testimonialData !== "string" && testimonialData.length > 0 &&
                         testimonialData.map((parentItem) => {
             return (
+                <>
+
               <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
 
                 <div className="tiles-item reveal-from-right" style={{ marginBottom: 50 }} data-reveal-delay="200">
@@ -139,8 +142,18 @@ const Testimonials = ({
                   </div>
                 </div>
               </div>
+              
+                </>
             )
           })}
+            {showHeader &&  <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
+               <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', backgroundColor:'#0e1012'}}>
+                      <Link to="/Testimonial" style={{ fontSize: 22, color: 'white' }} >Read More</Link>
+                    </Button>
+                </div>
+               }
+            </>
+
          </MobileView>
             
         </section>
