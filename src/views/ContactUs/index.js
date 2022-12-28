@@ -36,7 +36,7 @@ const ContactUs = ({
   const [nameError, setNameError] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [sendingLoader, setSendingLoader] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -117,7 +117,6 @@ const ContactUs = ({
     onTop();
     setEmailError(false);
     setNameError(false);
-    console.log(emailRef.current.value, form.value);
     setSendingLoader(true);
     await validateValue();
     if(email === '' || name === ''){
@@ -126,26 +125,16 @@ const ContactUs = ({
     }
     else{
       var enquiry = createResponseObj();
-      await QueryService.PostTrainingQuery(enquiry);
-      setSendingLoader(false);
-      setEmailSent(true);
-
+        let response = await QueryService.PostTrainingQuery(enquiry);
+        if(response !== "Enquiry Send"){
+          setError(true);
+        }
+        setTimeout(() => {
+          setSendingLoader(false);
+          setEmailSent(true);
+          
+        }, 300);
     }
-
-    // if (!emailRef.current.value) { setEmailError(true) } else {
-    //   setSendingLoader(true)
-      // emailjs.sendForm('service_ypwhqa8', 'template_sq4cabb', form.current, 'xgUyV3c2jUpeFJVM8')
-      //   .then((result) => {
-      //     console.log(result.text);
-      //     setSendingLoader(false)
-
-      //     setEmailSent(true);
-      //   }, (error) => {
-      //     console.log(error.text);
-      //     setError("There was an issue in sending your response, Please try again!")
-      //     setSendingLoader(false)
-      //   });
-    // }
 
   };
 
@@ -179,10 +168,10 @@ const ContactUs = ({
                 </h1>
                 <form ref={form} onSubmit={sendEmail}>
                   {/* <label style={styles.label}>Name</label> */}
-                  <input placeholder='Your Name' style={styles.requiredInput} type="text" name="user_name" ref={nameRef} onChange={onNameChange} />
+                  <input placeholder='Your Name*' style={styles.requiredInput} type="text" name="user_name" ref={nameRef} onChange={onNameChange} />
                   {nameError && <div style={{ color: 'red' }}>Please enter your name</div>}
                   {/* <label style={styles.label}>Email*</label> */}
-                  <input placeholder='Email' style={styles.requiredInput} ref={emailRef} type="email" name="email" onChange={onEmailChange}/>
+                  <input placeholder='Email*' style={styles.requiredInput} ref={emailRef} type="email" name="email" onChange={onEmailChange}/>
                   {emailError && <div style={{ color: 'red' }}>Please enter your email address</div>}
                   {/* <label style={styles.label}>Mobile Number</label> */}
                   <input placeholder='Contact Number' style={styles.input} type="number" name="user_number" onChange={onMobileChange} />
@@ -202,7 +191,9 @@ const ContactUs = ({
                 </div>
               </>} { emailSent && <>
                 <img src={require("../../assets/images/success.png")} style={{ height: 70, width: 70, alignSelf: 'center', borderRadius: 50 }} />
-                <p>Your request for KMP enrolment has been sent successfully. Vikas will connect with you within 24 hours with further details. Alternatively, you can connect with him over WhatsApp / Call @ +91 98100 47018</p>
+                <p>
+                {error === true ? 'There has been an error. Please try again after some time' :
+                'Your request for KMP enrolment has been sent successfully. Vikas will connect with you within 24 hours with further details.'} Alternatively, you can connect with him over WhatsApp / Call @ +91 98100 47018</p>
                 <Link to="/" ><h6>Go To Home</h6></Link>
 
               </>}
@@ -211,7 +202,7 @@ const ContactUs = ({
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 }
 
@@ -234,7 +225,7 @@ const styles = {
     borderRadius: 8,
     lineHeight: 2,
     paddingLeft: 10,
-    borderColor:'red'
+    // borderColor:'red'
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,9 @@ import { TrainingCalendarService } from "../../services/trainingCalendarService"
 import CalendarControl from '../elements/CalendarControl';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { useHistory } from 'react-router-dom';
+
 // eslint-disable-next-line
 const propTypes = {
     ...SectionProps.types
@@ -36,6 +39,14 @@ const TrainingCalendar = ({
     const [trainingCount, setTrainingCount] = useState(0);
     const [trainingFilter, setTrainingFilter] = useState('All');
 
+    const [selectedBtn, setSelectedBtn] = useState('');
+
+    const history = useHistory();
+
+    const routeToQueryForm = () =>{ 
+        history.push('/queryForm');
+        }
+
     const outerClasses = classNames(
         'hero section center-content',
         topOuterDivider && 'has-top-divider',
@@ -56,22 +67,25 @@ const TrainingCalendar = ({
         'tiles-wrap center-content'
     );
 
-    const onKSDClick = async(event) =>{
+    const onKSDClick = async(event, data) =>{
         event.preventDefault();
         setTrainingFilter("KSD");
             makeDataCall("KSD");
+            setSelectedBtn(data);
     }
 
-    const onKSIClick = async(event) =>{
+    const onKSIClick = async(event, data) =>{
         event.preventDefault();
         await setTrainingFilter("KSI");
         makeDataCall("KSI");
+        setSelectedBtn(data);
     }
 
-    const onAllDataClick = async(event) =>{
+    const onAllDataClick = async(event, data) =>{
         event.preventDefault();
         await setTrainingFilter('All');
         makeDataCall("All");
+        setSelectedBtn(data);
     }
 
     function getTimeZonesInfo(calendarItem) {
@@ -110,6 +124,79 @@ const TrainingCalendar = ({
             let trainingCalendarToRender = trainingCalendarData.slice(index*4,(index*4)+4);
             return trainingCalendarToRender;
         }
+    }
+    
+    const renderRowMobile = (index) =>{
+        let dataToRender = getDataToRender(index);
+        return(
+            <>
+                {dataToRender.map((item, index) =>{
+                    return <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
+                    <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    padding: 20,
+                    borderStyle: 'solid',
+                    borderWidth: 1,
+                    borderColor: '#273345',
+                    width: '100%'
+                }} >
+
+<div>
+                        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <Image
+                                src={require('../../assets/images/kmp_badge.png')}
+                                alt="Features split 01"
+                                style={{ height: 75, width: 130, marginBottom: 5 }}
+                            />
+                            <div style={{
+                                fontSize: 14,
+                                borderStyle: 'solid',
+                                borderWidth: 1,
+                                borderColor: '#273345',
+                                color: '#ff4653',
+                                height: 30,
+                                paddingLeft: 5,
+                                paddingRight: 5,
+                                borderRadius: 10
+                            }}>
+                                {`Live ${item.venue}`}
+                            </div>
+                        </div>
+    
+                        <div style={{ marginBottom: 10, height: '30%', fontSize: 17, fontWeight: 'bold' }}>{item.trainingTitle}</div>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
+                        <CalendarControl
+                            month={new Date(item.trainingStartDate).getMonth()}
+                            date={new Date(item.trainingStartDate).getDate()}
+                            year={new Date(item.trainingStartDate).getFullYear().toString()}
+    
+                        />
+                        <CalendarControl
+                            month={new Date(item.trainingEndDate).getMonth()}
+                            date={new Date(item.trainingEndDate).getDate()}
+                            year={new Date(item.trainingEndDate).getFullYear().toString()}
+    
+                        />
+                    </div>
+                    <div style={{ height: '15%' }}>
+                        <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone1 ?? ''}`}</div>
+                        <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone2 ?? ''}`}</div>
+                        <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone3 ?? ''}`}</div>
+                    </div>
+                    <div style={{ marginTop: 25 }}>
+                        <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center',fontSize: 14, color: '#6163ff' }} onClick={routeToQueryForm}>Enroll Now
+                        </Button>
+                    </div>
+                </div>
+</div>
+                })}
+            </>
+        )
+
+
     }
     
      const renderRow = (index) => {
@@ -174,8 +261,7 @@ const TrainingCalendar = ({
     
                     </div>
                     <div style={{ marginTop: 10 }}>
-                        <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center' }}>
-                            <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Enroll Now</Link>
+                    <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center',fontSize: 14, color: '#6163ff' }} onClick={routeToQueryForm}>Enroll Now
                         </Button>
                     </div>
                 </div>
@@ -196,9 +282,17 @@ const TrainingCalendar = ({
             <>
            {
             rowCount.map((value,index) =>{
-                return  <div style={{ display: 'flex', flexDirection: 'row', marginTop:10 }}>
+                return <>
+                <BrowserView>
+                <div style={{ display: 'flex', flexDirection: 'row', marginTop:10 }}>
                     {renderRow(index)}
                 </div>
+                </BrowserView>
+
+                <MobileView>
+                    {renderRowMobile(index)}
+                </MobileView>
+                </>  
             })
            }
             </>
@@ -278,30 +372,24 @@ const TrainingCalendar = ({
     };
 
     return (
-        <>
-        {showSearchOption && <div className='container' style={{borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20, marginTop:150}}>
-        <h3 style={{ marginTop: 0 }}>Search....</h3>
-             <div className="center-content-mobile" >
-             <div className="features-tiles-item-content">
-                  <ButtonGroup style={{marginLeft:30}}>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: '#6163ff'}} onClick={onAllDataClick}>All Classes
-                    </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '20%', fontSize: 14, color: '#6163ff' }} onClick={onAllDataClick}>KMP Class
-                    </Button>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: '#6163ff'}} onClick={onKSDClick}>KSD Class
-                    </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: '#6163ff' }} onClick={onKSIClick}>KSI Class
-                    </Button>
-                  </ButtonGroup>
-                </div>
-        </div>
-        </div>}
         <section
             {...props}
             className='container'
-            style={{ paddingTop: 0, marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
+            style={{ paddingTop: 0, marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20,marginTop:100 }}
             >
-            
+           {showSearchOption && <div>
+
+            <ButtonGroup style={{marginLeft:30, marginBottom:10}}>
+                    <Button tag="a"   fo wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "ALL" ? '#6163ff' : '#eceded'}} onClick={event => onAllDataClick(event, "ALL")}>All Classes
+                    </Button>
+                    <Button tag="a" wideMobile href="" style={{ borderRadius: 7, width: '20%', fontSize: 14, color: selectedBtn === "KMP" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KMP" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "KMP")}>KMP Class
+                    </Button>
+                    <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: selectedBtn === "KSD" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KSD" ? '#6163ff' : '#eceded' }} onClick={event => onKSDClick(event, "KSD")}>KSD Class
+                    </Button>
+                    <Button tag="a" wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: selectedBtn === "KSI" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KSI" ? '#6163ff' : '#eceded' }} onClick={event => onKSIClick(event, "KSI")}>KSI Class
+                    </Button>
+                  </ButtonGroup>
+            </div>}
             <div className={innerClasses} style={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -310,28 +398,15 @@ const TrainingCalendar = ({
             }}>
                 {showHeader && <h2 style={{ marginTop: 0 }}>{sectionHeader.title}</h2>}
               {  showTrainerInfo &&
-                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                    {/* <Link style={{ fontSize: 16, marginRight: 80, textDecoration: 'underline', fontWeight: 'bold' }} > */}
-                    <a href="/SampleKMPCertificate.pdf" download style={{ fontSize: 16, marginRight: 80, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)' }}>Sample KMP Certificate</a>
-                    {/* </Link> */}
-                    <Link to="/KnowYourTrainer" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)'  }} >Know Your Trainer</Link>
-                    <img src={require('../../assets/images/Vikas.jpeg')} style={{ height: 45, width: 40, alignSelf: 'center', borderRadius: 10 }} />
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <a href="/SampleKMPCertificate.pdf" download style={{ fontSize: 16, marginRight: 80, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)', textAlign:'left' }}>Sample KMP Certificate</a>
+                    <Link to="/KnowYourTrainer" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)' , textAlign:'left'  }} >Know Your Trainer</Link>
                 </div>}
             </div>
-            {/* <div style={{ display: 'flex', flexDirection: 'row' }}>
-                {typeof trainingCalendarData !== "string" && trainingCalendarData.length > 0 &&
-                trainingCalendarData.map((item,index) => (
-                    
-                    renderTile(item)
-                    ))
-                }
-            </div> */}
-
             {typeof trainingCalendarData !== 'string' && trainingCalendarData.length>0 &&
                     renderTrainingCalendarData()
                 }
-        </section >
-                </>
+        </section>
     );
 }
 

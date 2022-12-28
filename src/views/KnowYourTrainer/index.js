@@ -35,7 +35,7 @@ const KnowYourTrainer = ({
 
     const renderTile = (text, color) => {
         return (
-            <div className="tiles-item reveal-from-right" data-reveal-delay={200} style={{ padding: 0 }}>
+            <div className="tiles-item" style={{ padding: 0 }}>
                 <div className="tiles-item-inner" style={{ backgroundColor: `${color}`, color: 'black' }}>
                     <p className="m-0 text-sm">
                         {text}
@@ -49,35 +49,53 @@ const KnowYourTrainer = ({
         <section
             {...props}
             className={outerClasses}
-            style={{ paddingTop: 0, marginTop: 150 }}
+            style={{ paddingTop: 0, marginTop: 40 }}
         >
             <div className="container">
                 <div className={innerClasses} style={{ paddingBottom: 10 }}>
                     <div className="hero-content">
-                        <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
+                        <h1 className="mt-0 mb-16">
                             Trainer Profile
             </h1>
                     </div>
                 </div>
             </div>
-            <div className='section-inner reveal-from-bottom' data-reveal-delay="400" style={{ paddingTop: 10, width: '80%', margin: 'auto' }}>
+            <div className='section-inner' style={{ paddingTop: 10, width: '80%', margin: 'auto' }}>
                 <Image
                     src={require('./../../assets/images/Coach.jpeg')}
                     alt="Features split 01"
                     width={700}
                     height={500} />
-                <h2 className="reveal-from-bottom">
+                <h2>
                     Vikas Agarwal
             </h2>
                 <div className="container-xs">
-                    <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="200">
-                        AKT, PSM-III, PMP®, PSM-I, PSM-II, PSM-III, KMP, PSPO-I, SPC, PSD-I, PAL-e, CAL-1, ITIL V3 F
+                    <p className="m-0 mb-32">
+                        AKT, PMP®, PSM-I, PSM-II, PSM-III, KMP, PSPO-I, SPC, PSD-I, PAL-e, CAL-1, ITIL V3 F
                 </p>
+                </div>
+                
+            </div>
+            <div className='row' style={{marginBottom:20}}>
+            <div className='col'>
+                <Image
+                src={require('./../../assets/images/AKT_Badge.svg')}
+                height={300}
+                width={200}
+                style={{marginLeft:'60%'}}
+                />
+                </div>
+                <div className='col m-6'>
+                <Image
+                src={require('./../../assets/images/PSMIII_Badge.svg')}
+                width={200}
+                style={{marginRight:'60%', height:'125px'}}
+                />
                 </div>
             </div>
 
             <div style={{ marginRight: '20%', marginLeft: '20%' }}>
-                <div className="features-tiles-item-content reveal-from-bottom" data-reveal-delay="200" style={{ textAlign: 'left', marginBottom: 80 }}>
+                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
                     <ul>
                         <li className="m-0 text-sm">
                             Accredited Kanban Trainer (by Kanban University) since March 2020.

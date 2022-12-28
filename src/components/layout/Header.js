@@ -78,13 +78,14 @@ const Header = ({
     <header
       {...props}
       className={classes}
+      style={{position:'fixed', backgroundColor:'#0e1012'}}
     >
       <div className="container">
         <div className={
           classNames(
             'site-header-heading',
           )}>
-          {/* <Logo showCopyRight={false} /> */}
+          <Logo showCopyRight={false} className="d-none d-sm-block d-md-none" />
           {!hideNav &&
             <>
               <button
@@ -120,7 +121,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/calendar" onClick={closeMenu}>Training Calendar</Link>
+                      <Link to="/calendar" onClick={closeMenu}>Calendar</Link>
                     </li>
                   </ul>
                   <ul className={
@@ -129,18 +130,7 @@ const Header = ({
                       navPosition && `header-nav-${navPosition}`
                     )}>
                     <li>
-                      <Link to="/KSD" onClick={closeMenu}>Become KMP</Link>
-                    </li>
-                  </ul>
-                
-                 
-                  <ul className={
-                    classNames(
-                      'list-reset h5 ',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                      <Link to="/KnowYourTrainer" onClick={closeMenu}>Know Your Trainer</Link>
+                      <Link to="/KnowYourTrainer" onClick={closeMenu}>Trainer</Link>
                     </li>
                   </ul>
                   <ul className={

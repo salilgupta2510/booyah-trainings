@@ -3,23 +3,18 @@ import { useLocation, Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ScrollReveal from './utils/ScrollReveal';
 import ReactGA from 'react-ga';
-// import { ToastContainer, toast } from 'react-toastify';
-
-
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
-
 // Views 
 import Home from './views/Home';
 import KSD from './components/sections/KSD'
-// import KSD from './views/KSD/index';
 import KSI from './components/sections/KSI';
 import Calendar from './views/Calendar/index';
-// import KnowYourTrainer from './views/KnowYourTrainer/index';
+import KnowYourTrainer from './views/KnowYourTrainer/index';
 import Policy from './views/Policy/index';
 import Testimonial from './views/Testimonials';
 import ContactUs from './views/ContactUs';
-import KnowYourTrainer from './components/sections/KnowYourTrainer';
+// import KnowYourTrainer from './components/sections/KnowYourTrainer';
 import TrainingCalendarPage from './views/TrainingCalendar/TrainingCalendarPage';
 
 // Initialize Google Analytics

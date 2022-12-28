@@ -5,6 +5,7 @@ import { TestimonialService } from '../../services/testimonialService';
 import TestimonialStore from '../../store/testimonialStore';
 import Button from '../elements/Button';
 import { Link } from 'react-router-dom';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -102,7 +103,8 @@ const Testimonials = ({
             className='container'
             style={{ paddingTop: 10, width: '89%', margin: 'auto', borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
-            <div className={innerClasses}>
+         <BrowserView>
+         <div className={innerClasses}>
                {showHeader && <h2 style={{ textAlign: "left", marginTop: 0 }}>Testimonials</h2>}
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
                     {typeof testimonialData !== "string" && testimonialData.length > 0 &&
@@ -114,10 +116,46 @@ const Testimonials = ({
             </div>
                 {showHeader &&  <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
                <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', backgroundColor:'#0e1012'}}>
-                      <Link to="/Testimonial" style={{ fontSize: 16, color: '#6163ff' }} >Read More Testimonials Here</Link>
+                      <Link to="/Testimonial" style={{ fontSize: 22, color: 'white' }} >Read More</Link>
                     </Button>
                 </div>
                }
+         </BrowserView>
+         <MobileView>
+            <>
+            {typeof testimonialData !== "string" && testimonialData.length > 0 &&
+                        testimonialData.map((parentItem) => {
+            return (
+                <>
+
+              <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
+
+                <div className="tiles-item reveal-from-right" style={{ marginBottom: 50 }} data-reveal-delay="200">
+                  <div className="tiles-item-inner" >
+                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:15 }}>Trainer Rating: {rating(parentItem.trainerRating,9)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:15}}>Content Rating: {rating(parentItem.contentRating,2)}</span>
+                    <div className="testimonial-item-content">
+                      <p className="text-sm mb-0" style={{ minHeight: 150, maxHeight: 350, overflowY: "auto" }}>
+                        {parentItem.like}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+                </>
+            )
+          })}
+            {showHeader &&  <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
+               <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', backgroundColor:'#0e1012'}}>
+                      <Link to="/Testimonial" style={{ fontSize: 22, color: 'white' }} >Read More</Link>
+                    </Button>
+                </div>
+               }
+            </>
+
+         </MobileView>
+            
         </section>
     );
 }

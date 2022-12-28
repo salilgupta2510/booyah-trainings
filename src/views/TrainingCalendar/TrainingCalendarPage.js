@@ -11,11 +11,10 @@ const TrainingCalendarPage = () =>{
 
     return(
         <>
-      {/* <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" /> */}
-
       <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} />
+      <div style={{marginTop:10}}>
       <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} />
-       
+      </div>
         </>
     )
 }

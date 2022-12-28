@@ -3,9 +3,8 @@ import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../../components/elements/ButtonGroup';
 import Button from '../../components/elements/Button';
-import Cta from '../../components/sections/Cta';
-import { Link } from 'react-router-dom';
 import Image from '../elements/Image';
+import { useHistory } from 'react-router-dom';
 
 
 // eslint-disable-next-line
@@ -27,6 +26,20 @@ const KSD = ({
     ...props
 }) => {
 
+  const history = useHistory();
+
+  const routeToQueryForm = () =>{ 
+    history.push('/queryForm');
+    }
+
+    const routeToCalendar= () =>{ 
+      history.push('/calendar');
+      }
+
+      const routeToKSI = () =>{ 
+        history.push('/KSI');
+        }
+
     const outerClasses = classNames(
         'hero section center-content',
         topOuterDivider && 'has-top-divider',
@@ -46,6 +59,78 @@ const KSD = ({
     const tilesClasses = classNames(
         'tiles-wrap center-content'
     );
+
+    const moduleData = [
+      {
+        moduleName:'Module1',
+        data:'Experience flow and Kanban through an online simulation game.',
+      },
+      {
+        moduleName:'Module1',
+        data:'Understand how to plot Cumulative Flow Diagram, Control Chart and Lead time.',
+      },
+      {
+        moduleName:'Module1',
+        data:'Real-time experience of managing variations in demand, handling capacity and managing priorities.',
+      },
+      {
+        moduleName:'Module1',
+        data:'Play online simulation game using MURAL Boards.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn Kanban method.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn six general practices of Kanban.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn two Kanban principles.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Understand how to define a service and follow a service – oriented approach.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Understand commitment points.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn core Kanban metrics and charts.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn four classes of service and how they differ from work types.',
+      },
+      {
+        moduleName:'Module3',
+        data:'Experience flow and Kanban through an online simulation game. Learn Kanban method. Learn STATIK (Systems Thinking Approach to Introducing Kanban) Design a Kanban System.',
+      },
+      {
+        moduleName:'Module3',
+        data:'Apply STATIK using Microsoft XIT Case Study.',
+      },
+      {
+        moduleName:'Module3',
+        data:'Apply real-life case studies through 8 embedded group exercises.',
+      },
+      {
+        moduleName:'Module4',
+        data:'Design a Kanban System.',
+      },
+      {
+        moduleName:'Module4',
+        data:'Learn Visual Board Designs.',
+      },
+      {
+        moduleName:'Module4',
+        data:'Learn Ticket Designs.',
+      },
+
+    ]
 
     const renderTile = (text, color) => {
         return (
@@ -75,19 +160,14 @@ const KSD = ({
                     <div  className="hero-content" style={{marginTop:30}}>
 <div className='col-lg-9' style={{float:'left'}}>
                 <ButtonGroup>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }} >Find A KSD Class</Link>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToCalendar}>Find A KSD Class
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                    <a href="/KSDFlyer.pdf" download style={{ fontSize: 14, color: '#6163ff' }}>Download KSD Flyer</a>
+                    <Button tag="a" color="white" wideMobile href="/KSDFlyer.pdf" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" download>Download KSD Flyer
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Ques? Contact Us</Link>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToQueryForm}>Ques? Contact Us
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                      <Link to="/KSI" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSI</Link>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToKSI}>Explore KSI
                     </Button>
-                    
                   </ButtonGroup>
                  
 </div>
@@ -126,7 +206,7 @@ const KSD = ({
                         Design a Kanban system (or improve an existing system) for optimal flow and faster delivery.
                     </li>
                         <li className="m-0 text-sm">
-                        Learn the fundamentals of the Kanban Method
+                        Learn the fundamentals of the Kanban Method.
                     </li>
                         <li className="m-0 text-sm">
                         Experience Kanban with a simulation game and hands-on exercises to design a Kanban board.
@@ -138,10 +218,10 @@ const KSD = ({
                         Visual board design and ticket design.
                     </li>
                     <li className="m-0 text-sm">
-                        Deal with shifting priorities
+                        Deal with shifting priorities.
                     </li>
                     <li className="m-0 text-sm">
-                        Deal with interruptions in work
+                        Deal with interruptions in work.
                     </li>
                     </ul>
                 </div>
@@ -174,18 +254,20 @@ const KSD = ({
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Experience flow and Kanban through an online simulation game.</td>
+  {moduleData.filter(x => x.moduleName==="Module1").map((value, index, arr)=>{
+    return <tr key={index}>
+    {
+      arr.length-1 === index ?
+
+<td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+{value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      }
     </tr>
-    <tr>
-      <td>Understand how to plot Cumulative Flow Diagram, Control Chart and Lead time.</td>
-    </tr>
-    <tr>
-      <td>Real-time experience of managing variations in demand, handling capacity and managing priorities.</td>
-    </tr>
-    <tr>
-      <td>Play online simulation game using MURAL Boards</td>
-    </tr>
+  })}
   </tbody>
 </table>
                 </div>
@@ -198,27 +280,20 @@ const KSD = ({
     </tr>
   </thead>
   <tbody>
-    <tr>
-    <td>Learn Kanban method.</td>
+  {moduleData.filter(x => x.moduleName==="Module2").map((value, index, arr)=>{
+    return <tr key={index}>
+    {
+      arr.length-1 === index ?
+
+<td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+{value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      }
     </tr>
-    <tr>
-    <td>Learn six general practices of Kanban</td>
-    </tr>
-    <tr>
-    <td>Learn two Kanban principles</td>
-    </tr>
-    <tr>
-      <td>Understand how to define a service and follow a service – oriented approach</td>
-    </tr>
-    <tr>
-      <td>Understand commitment points</td>
-    </tr>
-    <tr>
-      <td>Learn core Kanban metrics and charts</td>
-    </tr>
-    <tr>
-      <td>Learn four classes of service and how they differ from work types</td>
-    </tr>
+  })}
    
   </tbody>
 </table>
@@ -232,16 +307,20 @@ const KSD = ({
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Experience flow and Kanban through an online simulation game.	Learn Kanban method. Learn STATIK (Systems Thinking Approach to Introducing Kanban)	Design a Kanban System</td>
+  {moduleData.filter(x => x.moduleName==="Module3").map((value, index, arr)=>{
+    return <tr key={index}>
+    {
+      arr.length-1 === index ?
+
+<td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+{value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      }
     </tr>
-    <tr>
-      <td>Apply STATIK using Microsoft XIT Case Study</td>
-    </tr>
-    <tr>
-      <td>Apply real-life case studies through 8 embedded group exercises</td>
-    </tr>
-   
+  })}
   </tbody>
 </table>
                 </div>
@@ -253,16 +332,20 @@ const KSD = ({
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Design a Kanban System</td>
+  {moduleData.filter(x => x.moduleName==="Module4").map((value, index, arr)=>{
+    return <tr key={index}>
+    {
+      arr.length-1 === index ?
+
+<td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+{value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      }
     </tr>
-    <tr>
-      <td>Learn Visual Board Designs</td>
-    </tr>
-    <tr>
-      <td>Learn Ticket Designs</td>
-    </tr>
-   
+  })}
   </tbody>
 </table>
 <br></br>
