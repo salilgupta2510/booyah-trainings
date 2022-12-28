@@ -3,10 +3,9 @@ import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../../components/elements/ButtonGroup';
 import Button from '../../components/elements/Button';
-import Cta from '../../components/sections/Cta';
 import { Link } from 'react-router-dom';
 import Image from '../elements/Image';
-import { keysIn } from 'lodash';
+import { useHistory } from 'react-router-dom';
 
 
 // eslint-disable-next-line
@@ -28,6 +27,20 @@ const KSI = ({
     ...props
 }) => {
 
+  const history = useHistory();
+
+  const routeToQueryForm = () =>{ 
+    history.push('/queryForm');
+    }
+
+    const routeToCalendar= () =>{ 
+      history.push('/calendar');
+      }
+
+      const routeToKSD = () =>{ 
+        history.push('/KSD');
+        }
+
     const outerClasses = classNames(
         'hero section center-content',
         topOuterDivider && 'has-top-divider',
@@ -47,6 +60,82 @@ const KSI = ({
     const tilesClasses = classNames(
         'tiles-wrap center-content'
     );
+
+    const moduleData = [
+      {
+        moduleName:'Module1',
+        data:'Learn the motivation and appropriateness for the Kanban Method’s evolutionary change approach.',
+      },
+      {
+        moduleName:'Module1',
+        data:'Learn System 1 and System 2 thinking approach.',
+      },
+      {
+        moduleName:'Module1',
+        data:'Learn the various levels of Maturity in Kanban (ML0 to ML4).',
+      },{
+        moduleName:'Module1',
+        data:'Understand a typical ScrumBan / Proto-Kanban evolution based on the Posit Science case study.',
+      },{
+        moduleName:'Module1',
+        data:'Understand the various types of Kanban boards at each Maturity Level.',
+      },{
+        moduleName:'Module2',
+        data:'Learn how Kanban method can be applied across the enterprise.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn to see service through Kanban Lens.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn three scaling principles of Kanban.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn three scaling dimensions of Kanban.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn about upstream Kanban.',
+      },
+      {
+        moduleName:'Module2',
+        data:'Learn about Kanban emerging roles.',
+      },
+      {
+        moduleName:'Module3',
+        data:'Learn the feedback loops from ML1 to ML4.',
+      },
+      {
+        moduleName:'Module3',
+        data:'Learn to run some of the Kanban cadences.',
+      },
+      {
+        moduleName:'Module4&5',
+        data:'Learn the strategies for improving capabilities.',
+      },
+      {
+        moduleName:'Module4&5',
+        data:'Learn to identify demand patterns and shape the demand.',
+      },
+      {
+        moduleName:'Module4&5',
+        data:'Understand Lead Time Distribution.',
+      },{
+        moduleName:'Module4&5',
+        data:'Learn to manage dependencies and remove delays.',
+      },{
+        moduleName:'Module4&5',
+        data:'Learn the different approaches to handle variations.',
+      },{
+        moduleName:'Module4&5',
+        data:'Learn to reveal and remove bottlenecks using theory of constraints.',
+      },{
+        moduleName:'Module4&5',
+        data:'Learn to bring evolutionary change in your organization.',
+      }
+    ]
 
     const renderTile = (text, color) => {
         return (
@@ -76,17 +165,13 @@ const KSI = ({
                     <div  className="hero-content" style={{marginTop:30}}>
 <div className='col-lg-9' style={{float:'left'}}>
                 <ButtonGroup>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }}>Find A KSI Class</Link>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToCalendar}>Find A KSI Class
                     </Button>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                    <a href="/KSIFlyer.pdf" download style={{ fontSize: 14, color: '#6163ff' }}>Download KSI Flyer</a>
+                    <Button tag="a" color="white" fo wideMobile href="/KSIFlyer.pdf" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff' }} className="btn-lg" download>Download KSI Flyer
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                      <Link to="/queryForm" style={{ fontSize: 14, color: '#6163ff' }} >Ques? Contact Us</Link>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToQueryForm}>Ques? Contact Us
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7}} className="btn-lg">
-                      <Link to="/KSD" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSD</Link>
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToKSD}>Explore KSD
                     </Button>
                     
                   </ButtonGroup>
@@ -122,22 +207,22 @@ Kanban Management Professional is an advanced level course that will help partic
                     </h4>
                     <ul>
                         <li className="m-0 text-sm">
-                        Managing Evolutionary Change
+                        Managing Evolutionary Change.
                     </li>
                         <li className="m-0 text-sm">
-                        Dealing with Resistance to Change
+                        Dealing with Resistance to Change.
                     </li>
                         <li className="m-0 text-sm">
-                        Feedback Loops and Continuous Learning
+                        Feedback Loops and Continuous Learning.
                     </li>
                         <li className="m-0 text-sm">
-                        Implementing and Scaling out Kanban
+                        Implementing and Scaling out Kanban.
                     </li>
                         <li className="m-0 text-sm">
-                        Balancing Demand and Capability
+                        Balancing Demand and Capability.
                     </li>
                         <li className="m-0 text-sm">
-                        Optimizing Flow and Predictability
+                        Optimizing Flow and Predictability.
                     </li>
                     </ul>
                 </div>
@@ -170,22 +255,20 @@ Kanban Management Professional is an advanced level course that will help partic
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Learn the motivation and appropriateness for the Kanban Method’s evolutionary change approach.</td>
+  {moduleData.filter(x => x.moduleName==="Module1").map((value, index, arr)=>{
+    return <tr key={index}>
+    {
+      arr.length-1 === index ?
+
+<td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+{value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      }
     </tr>
-    <tr>
-      <td>Learn System 1 and System 2 thinking approach</td>
-    </tr>
-    <tr>
-      <td>Learn the various levels of Maturity in Kanban (ML0 to ML4)</td>
-    </tr>
-    <tr>
-      <td>Understand a typical ScrumBan / Proto-Kanban evolution based on the Posit Science case study </td>
-    </tr>
-    <tr>
-      <td>Understand the various types of Kanban boards at each Maturity Level</td>
-    </tr>
-   
+  })}
   </tbody>
 </table>
                 </div>
@@ -198,25 +281,17 @@ Kanban Management Professional is an advanced level course that will help partic
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Learn how Kanban method can be applied across the enterprise.</td>
+  {moduleData.filter(x => x.moduleName==="Module2").map((value, index, arr)=>{
+    return <tr key={index}>
+    {arr.length-1 === index ?
+      <td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>}
     </tr>
-    <tr>
-      <td>Learn to see service through Kanban Lens</td>
-    </tr>
-    <tr>
-      <td>Learn three scaling principles of Kanban</td>
-    </tr>
-    <tr>
-      <td>Learn three scaling dimensions of Kanban</td>
-    </tr>
-    <tr>
-      <td>Learn about upstream Kanban</td>
-    </tr>
-    <tr>
-      <td>Learn about Kanban emerging roles</td>
-    </tr>
-
+  })}
   </tbody>
 </table>
 <br></br>
@@ -230,12 +305,17 @@ Kanban Management Professional is an advanced level course that will help partic
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Learn the feedback loops from ML1 to ML4</td>
+  {moduleData.filter(x => x.moduleName==="Module3").map((value, index, arr)=>{
+    return <tr key={index}>
+    {arr.length-1 === index ?
+      <td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>}
     </tr>
-    <tr>
-      <td>Learn to run some of the Kanban cadences</td>
-    </tr>
+  })}
   </tbody>
 </table>
 <br></br>
@@ -249,28 +329,17 @@ Kanban Management Professional is an advanced level course that will help partic
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Learn the strategies for improving capabilities</td>
+  {moduleData.filter(x => x.moduleName==="Module4&5").map((value, index, arr)=>{
+    return <tr key={index}>
+    {arr.length-1 === index ?
+      <td style={{borderBottomColor:'#0e1012'}}>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>
+      : <td>
+<i class="fa fa-regular fa-hand-point-right" style={{ marginRight:10}}></i>
+      {value.data}</td>}
     </tr>
-    <tr>
-      <td>Learn to identify demand patterns and shape the demand</td>
-    </tr>
-    <tr>
-      <td>Understand Lead Time Distribution</td>
-    </tr>
-    <tr>
-      <td>Learn to manage dependencies and remove delays</td>
-    </tr>
-    <tr>
-      <td>Learn the different approaches to handle variations</td>
-    </tr>
-    <tr>
-      <td>Learn to reveal and remove bottlenecks using theory of constraints</td>
-    </tr>
-    <tr>
-      <td>Learn to bring evolutionary change in your organization</td>
-    </tr>
-   
+  })}
   </tbody>
 </table>
 <br></br>
@@ -279,19 +348,13 @@ Kanban Management Professional is an advanced level course that will help partic
 Get access to private KMP-only forums for professional collaboration.
 </h5>
 
-                    
                 </div>
             </div>
-                 
 </div>
-                  
                     </div>
-                    
                 </div>
             </div>
-           
-           
-        </section >
+        </section>
     );
 }
 

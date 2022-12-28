@@ -7,6 +7,7 @@ import InfoSection from './partials/InfoSection';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -26,6 +27,21 @@ const FeaturesTiles = ({
   pushLeft,
   ...props
 }) => {
+
+  const history = useHistory();
+
+
+  const routeToCalendar = () =>{ 
+    history.push('/calendar');
+    }
+
+    const routeToKSI = () =>{ 
+      history.push('/KSI');
+    }
+
+    const routeToKSD = () =>{ 
+      history.push('/KSD');
+    }
 
   const outerClasses = classNames(
     'features-tiles section',
@@ -62,7 +78,7 @@ const FeaturesTiles = ({
         <div className={innerClasses} style={{ paddingBottom: 20 }}>
           <div className={tilesClasses} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <div className="tiles-item" style={{
-              backgroundColor: '#856aaa',
+              backgroundColor: '#6163ff',
               borderRadius: 5,
               marginBottom: 20,
               padding: 20,
@@ -77,20 +93,17 @@ const FeaturesTiles = ({
                 </div>
                 <div className="features-tiles-item-content">
                   <ButtonGroup>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
-                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }} >Find KSD</Link>
-                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-1</a> */}
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 14, color: '#6163ff'}} onClick={routeToCalendar}>
+                    Find KSD
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
-                      <Link to="/KSD" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSD</Link>
-                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSD/KMP-2</a> */}
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 14, color: '#6163ff' }} onClick={routeToKSD}>Explore KSD
                     </Button>
                   </ButtonGroup>
                 </div>
               </div>
             </div>
             <div className="tiles-item" style={{
-              backgroundColor: '#856aaa',
+              backgroundColor: '#6163ff',
               borderRadius: 5,
               marginBottom: 20,
               padding: 20,
@@ -105,13 +118,9 @@ const FeaturesTiles = ({
                 </div>
                 <div className="features-tiles-item-content">
                   <ButtonGroup>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%'}}>
-                      <Link to="/calendar" style={{ fontSize: 14, color: '#6163ff' }} >Find KSI</Link>
-                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-1</a> */}
+                  <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 14, color: '#6163ff'}} onClick={routeToCalendar}>Find KSI
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%' }}>
-                      <Link to="/KSI" style={{ fontSize: 14, color: '#6163ff' }} >Explore KSI</Link>
-                      {/* <a href="mailto: vikas@booyah.training" target="_blank">REGISTER FOR KSI/KMP-2</a> */}
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 14, color: '#6163ff' }} onClick={routeToKSI}>Explore KSI
                     </Button>
                   </ButtonGroup>
                 </div>

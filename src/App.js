@@ -15,11 +15,11 @@ import KSD from './components/sections/KSD'
 // import KSD from './views/KSD/index';
 import KSI from './components/sections/KSI';
 import Calendar from './views/Calendar/index';
-// import KnowYourTrainer from './views/KnowYourTrainer/index';
+import KnowYourTrainer from './views/KnowYourTrainer/index';
 import Policy from './views/Policy/index';
 import Testimonial from './views/Testimonials';
 import ContactUs from './views/ContactUs';
-import KnowYourTrainer from './components/sections/KnowYourTrainer';
+// import KnowYourTrainer from './components/sections/KnowYourTrainer';
 import TrainingCalendarPage from './views/TrainingCalendar/TrainingCalendarPage';
 
 // Initialize Google Analytics

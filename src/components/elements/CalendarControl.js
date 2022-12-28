@@ -33,7 +33,7 @@ const CalendarControl = ({month='', date, year}) => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        {`${monthNames[month]} ${year.slice(-2)}`}
+        {`${monthNames[month]}'${year.slice(-2)}`}
       </div>
       <div
         style={{

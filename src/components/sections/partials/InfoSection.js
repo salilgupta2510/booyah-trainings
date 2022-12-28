@@ -71,12 +71,12 @@ const InfoSection = ({
     >
       <div className="container" style={{borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20}}>
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-          <Image
+          {/* <Image
             src={require('../../../assets/images/kmp_badge.png')}
             alt="Features split 01"
             style={{ height: 125, width: 250, marginBottom: 10 }}
-          />
-          <div className="m-0" style={{ fontSize: 16 }}>
+          /> */}
+          <div className="m-0" style={{ fontSize: 19 }}>
             {data.paragraph}
           </div>
         </div>

@@ -521,45 +521,7 @@ const Testimonial = ({
     >
       <div className="container">
         <h3 style={{ textAlign: 'center' }}>WE LOVE TO GET TRAINED AT BOOYAH</h3>
-        {/* <div className={tilesClasses}> */}
-        <BrowserView>
-          {/* <Carousel
-            showArrows={true}
-            infiniteLoop={true}
-            showThumbs={false}
-            showStatus={false}
-            autoPlay={true}
-            interval={8000}
-          > */}
                       <Testimonials  invertMobile imageFill className="illustration-section-02" showHeader={false} countToFetch={0}/> 
-           
-          {/* </Carousel> */}
-        </BrowserView>
-        <MobileView>
-          {testimonialsMobileView.map((parentItem) => {
-            return (
-              <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
-
-                <div className="tiles-item reveal-from-right" style={{ marginBottom: 50 }} data-reveal-delay="200">
-                  <div className="tiles-item-inner" >
-                    <img src={parentItem.image} style={{ height: 100, width: 100, alignSelf: 'center', borderRadius: 50 }} />
-                    <div className="testimonial-item-header text-xl" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <span className="testimonial-item-name text-color-high">{parentItem.name}</span>
-                      <span className="testimonial-item-link">
-                        <a href="#0">{parentItem.company}</a>
-                      </span>
-                    </div>
-                    <div className="testimonial-item-content">
-                      <p className="text-sm mb-0" style={{ minHeight: 150, maxHeight: 350, overflowY: "auto" }}>
-                        {parentItem.data}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </MobileView>
       </div>
     </section>
   );

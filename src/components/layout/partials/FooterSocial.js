@@ -1,5 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useState, useRef } from 'react';
+import Button from 'react-bootstrap/Button';
+import Overlay from 'react-bootstrap/Overlay';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const FooterSocial = ({
   className,
@@ -10,6 +14,9 @@ const FooterSocial = ({
     'footer-social',
     className
   );
+  const [show, setShow] = useState(false);
+  const target = useRef(null);
+
 
   return (
     <div
@@ -86,7 +93,7 @@ const FooterSocial = ({
           </a>
         </li>
         <li>
-          <a href="tel:+919810047018">
+          <a ref={target} onClick={() => setShow(!show)} style={{cursor:'pointer'}}>
             <svg
               width="36"
               height="36"
@@ -99,6 +106,14 @@ const FooterSocial = ({
           </a>
         </li>
       </ul>
+      
+      <Overlay target={target.current} show={show} placement="top" style={{backgroundColor:'white'}}>
+        {(props) => (
+          <Tooltip id="overlay-example" {...props}>
+          +91 9810047018
+          </Tooltip>
+        )}
+      </Overlay>
     </div>
   );
 }
