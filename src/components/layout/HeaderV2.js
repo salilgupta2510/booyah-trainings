@@ -13,7 +13,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import FooterSocial from '../layout/partials/FooterSocial';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { useLocation } from 'react-router-dom';
 
 const headersData = [
     {
@@ -70,7 +70,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Header() {
     const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
-
+    const location = useLocation();
     const [state, setState] = useState({
         mobileView: false,
         drawerOpen: false,
@@ -161,6 +161,11 @@ export default function Header() {
 
     const getDrawerChoices = () => {
         return headersData.map(({ label, href }) => {
+            const bgColor = location.pathname == href ? {   
+                backgroundColor: '#fff', 
+                color: '#6163ff', 
+                borderRadius: 10,
+            } : {}
             return (
                 <Link
                     {...{
@@ -171,7 +176,7 @@ export default function Header() {
                         key: label,
                     }}
                 >
-                    <MenuItem>{label}</MenuItem>
+                    <MenuItem style={bgColor}>{label}</MenuItem>
                 </Link>
             );
         });
@@ -186,6 +191,7 @@ export default function Header() {
 
     const getMenuButtons = () => {
         return headersData.map(({ label, href }) => {
+            const bgColor = location.pathname == href ? {backgroundColor: '#fff', color: '#6163ff'} : {}
             return (
                 <Button
                     {...{
@@ -195,6 +201,7 @@ export default function Header() {
                         component: RouterLink,
                         className: menuButton,
                     }}
+                    style={bgColor}
                 >
                     {label}
                 </Button>
