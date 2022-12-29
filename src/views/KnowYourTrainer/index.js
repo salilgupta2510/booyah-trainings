@@ -38,7 +38,7 @@ const KnowYourTrainer = ({
             {...props}
             className={outerClasses}
         >
-            <div className='section-inner' style={{ paddingTop: 10, width: '80%', marginLeft: 'auto', marginRight: 'auto', paddingBottom: 20 }}>
+            <div className='section-inner' style={{ paddingTop: 70, width: '80%', marginLeft: 'auto', marginRight: 'auto', paddingBottom: 20 }}>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                         <Image
