@@ -78,7 +78,7 @@ const InfoSection = ({
           /> */}
           <div className="m-0" style={{ fontSize: 19 }}>
           <b>Kanban Management Professional</b> credential is granted upon the completion of two classes. <b>Kanban System Design</b>, which teaches the basics of Kanban, flow, and how to design a Kanban system. <b>Kanban Systems Improvement</b>, which teaches how to evolve, improve, and scale a Kanban system. KMPs should be able to design a Kanban system and evolve and scale it beyond the team.
-            {/* {data.paragraph} */}
+
           </div>
         </div>
         <div className="center-content-mobile" >
