@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import classNames from 'classnames';
 import Image from '../../components/elements/Image';
 import Cta from '../../components/sections/Cta';
+import { useLocation} from 'react-router-dom';
 
 const KnowYourTrainer = ({
     className,
@@ -13,6 +14,14 @@ const KnowYourTrainer = ({
     invertColor,
     ...props
 }) => {
+
+    const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [routePath]);
 
     const outerClasses = classNames(
         'hero section center-content',
@@ -81,46 +90,35 @@ const KnowYourTrainer = ({
                 <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
                     <ul>
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Accredited Kanban Trainer (by Kanban University) since March 2020.
+                        Vikas is a Program Manager, Agile Coach, Scrum Master, Kanban Practitioner, author, and speaker with 23 years of experience who has previously worked as a developer, product owner, and business analyst. 
                     </li>
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Holds highly recognized PSM-III (Professional Scrum Master) credential from Scrum.org.
+                        Vikas has delivered from small-sized projects to multi-million dollar deals across the US, UK, Japan, UAE, Australia, and Asia, spanning multiple domains, including education, banking, CTRM, B2B, and B2C. He believes in enhancing business agility and creates a psychologically safe team environment.
                     </li>
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Have total 23+ years of experience in IT industry.
+                        Vikas is an AKT (Accredited Kanban Trainer) from Kanban University and holds Professional Scrum Master – III Certification.
                     </li>
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Have 12 years’ experience in Agile Transformation across multiple domains which include manufacturing, education, e-commerce, operations, business processes, financial, banking, energy trading, truck operations, dairy management, and many more.
+                        Vikas is one of the Content Creators for Kanban Maturity Model and actively contributes to the learning modules of Kanban.
                     </li>
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            I write eye-opening real case study based blogs for Agile practitioners. The blogs are available in Serious Scrum Publication. <a href="https://medium.com/@contactvix" target="_blank">https://medium.com/@contactvix</a>
+                        Vikas has created and implemented FISH Model (to enhance business agility) for the delivery of key strategic initiatives. 
                         </li>
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Created and implemented FISH Model (to enhance business agility) for the delivery of key strategic initiatives. The FISH Model was presented at Access Agility Festival on 6th Oct,2021.
+                        Vikas is one of the distinguished writers in Serious Scrum publication on Medium.com. He writes about the actual challenges in Agile transformation and how to overcome those.
                     </li>
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            One of his Kanban implementations will be presented in Kanban India Conference Dec, 2021. <a href="https://www.kanbanindia.org/speakers/vikas-agarwal/" target="_blank">https://www.kanbanindia.org/speakers/vikas-agarwal/</a>
+                        Vikas was featured in “The Agile Podcast: Scrum Mastery Challenge” run by Geoff Watt and Paul Goddard.
                         </li>
+                        
                         <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            One of the distinguished writers in Serious Scrum publication on Medium.com. He writes about the actual challenges in Agile transformation and how to overcome those.
-                    </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            He was featured in “The Agile Podcast: Scrum Mastery Challenge” run by Geoff Watt and Paul Goddard.
-                    </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Led several Agile Transformations, the largest being with a team of 350+ team members for an e-commerce retail chain.
-                    </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Follows a unique approach for training. His trainings are innovative, interactive, and collaborative. Supports theory with real-life agile transformation case studies and examples.
-                    </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
-                            Some of my recent testimonials can be read at <a href="https://www.booyah.training" target="_blank">https://www.booyah.training</a>
+                        Vikas actively participates in Agile conferences worldwide. One of his Kanban implementations was presented in Kanban India Conference in Dec, 2021. <a href="https://www.kanbanindia.org/speakers/vikas-agarwal/" target="_blank">https://www.kanbanindia.org/speakers/vikas-agarwal/</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <Cta split />
-        </section >
+        </section>
     );
 }
 

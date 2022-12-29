@@ -6,7 +6,6 @@ import Overlay from 'react-bootstrap/Overlay';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { useState, useRef } from 'react';
 
-
 const LayoutDefault = (props) => {
   const [show, setShow] = useState(false);
   const [showEmail, setShowEmail] = useState(false);

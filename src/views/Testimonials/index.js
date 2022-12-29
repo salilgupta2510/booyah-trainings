@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { BrowserView, MobileView } from 'react-device-detect';
 import Testimonials from '../../components/sections/Testimonials';
+import { useLocation} from 'react-router-dom';
+
+
 
 const propTypes = {
   ...SectionTilesProps.types
@@ -24,6 +27,15 @@ const Testimonial = ({
   pushLeft,
   ...props
 }) => {
+
+
+  const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [routePath]);
 
   const outerClasses = classNames(
     'testimonial section',

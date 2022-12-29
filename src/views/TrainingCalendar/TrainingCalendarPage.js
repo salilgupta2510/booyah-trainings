@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TrainingCalendar from "../../components/sections/TrainingCalendar";
 import InfoSection from '../../components/sections/partials/InfoSection';
 import Testimonials from '../../components/sections/Testimonials';
+import { useLocation} from 'react-router-dom';
 
 const TrainingCalendarPage = () =>{
+
+  const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [routePath]);
+
     const sectionHeader = {
         title: 'Kanban Management Professional (KMP)',
         paragraph: 'This credential is granted upon the completion of two classes. Kanban System Design, which teaches the basics of Kanban, flow, and how to design a Kanban system. Kanban Systems Improvement, which teaches how to evolve, improve, and scale a Kanban system. KMPs should be able to design a Kanban system and evolve and scale it beyond the team.'
