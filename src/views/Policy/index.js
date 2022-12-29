@@ -26,9 +26,9 @@ const Policy = ({
         <section
             {...props}
             className={outerClasses}
-            style={{ paddingTop: 0, marginTop: 200 }}
+            style={{ paddingTop: 0 }}
         >
-            <div className="container reveal-from-bottom">
+            <div className="container">
                 <div style={{ textAlign: 'left', marginTop: 40 }}>
                     <p>Effective date: 2021-06-12</p>
                     <p>1. <b>Introduction</b></p>

@@ -69,14 +69,9 @@ const InfoSection = ({
       {...props}
       className={outerClasses}
     >
-      <div className="container" style={{borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20}}>
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-          {/* <Image
-            src={require('../../../assets/images/kmp_badge.png')}
-            alt="Features split 01"
-            style={{ height: 125, width: 250, marginBottom: 10 }}
-          /> */}
-          <div className="m-0" style={{ fontSize: 19 }}>
+      <div className="container">
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', paddingTop: 50, marginBottom: 50 }}>
+          <div className="m-0" style={{ fontSize: 24, textAlign: 'center', color: '#ffffff' }}>
             {data.paragraph}
           </div>
         </div>

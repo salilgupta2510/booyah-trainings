@@ -517,7 +517,7 @@ const Testimonial = ({
     <section
       {...props}
       className={outerClasses}
-      style={{ paddingTop: 0, marginTop: 200 }}
+      style={{ paddingTop: 0 }}
     >
       <div className="container">
         <h3 style={{ textAlign: 'center' }}>WE LOVE TO GET TRAINED AT BOOYAH</h3>

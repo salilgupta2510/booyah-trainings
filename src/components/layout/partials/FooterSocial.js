@@ -30,8 +30,8 @@ const FooterSocial = ({
         <li>
           <a href="mailto: vikas@booyah.training" target="_blank">
             <svg
-              width="36"
-              height="36"
+              width="24"
+              height="24"
               viewBox="0 0 25 25"
               xmlns="http://www.w3.org/2000/svg">
               <title>Twitter</title>
@@ -43,8 +43,8 @@ const FooterSocial = ({
         <li>
           <a href="https://twitter.com/ByBooyah" target="_blank">
             <svg
-              width="36"
-              height="36"
+              width="24"
+              height="24"
               viewBox="0 0 16 16"
               xmlns="http://www.w3.org/2000/svg">
               <title>Twitter</title>
@@ -56,8 +56,8 @@ const FooterSocial = ({
         <li>
           <a href="https://wa.me/+919810047018" target="_blank">
             <svg
-              width="36"
-              height="36"
+              width="24"
+              height="24"
               viewBox="0 0 25 25"
               xmlns="http://www.w3.org/2000/svg">
               <title>Whatsapp</title>
@@ -69,8 +69,8 @@ const FooterSocial = ({
         <li>
           <a href="https://www.linkedin.com/company/agilebybooyah/" target="_blank">
             <svg
-              width="36"
-              height="36"
+              width="24"
+              height="24"
               viewBox="0 0 25 25"
               xmlns="http://www.w3.org/2000/svg">
               <title>LinkedIn</title>
@@ -82,8 +82,8 @@ const FooterSocial = ({
         <li>
           <a href="https://www.instagram.com/agilebooyah/" target="_blank">
             <svg
-              width="36"
-              height="36"
+              width="24"
+              height="24"
               viewBox="0 0 25 25"
               xmlns="http://www.w3.org/2000/svg">
               <title>Instagram</title>
@@ -95,8 +95,8 @@ const FooterSocial = ({
         <li>
           <a ref={target} onClick={() => setShow(!show)} style={{cursor:'pointer'}}>
             <svg
-              width="36"
-              height="36"
+              width="24"
+              height="24"
               viewBox="0 0 25 25"
               xmlns="http://www.w3.org/2000/svg">
               <title>Phone</title>
