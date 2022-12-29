@@ -87,31 +87,31 @@ const KnowYourTrainer = ({
             </div>
 
             <div style={{ marginRight: '20%', marginLeft: '20%' }}>
-                <div className="features-tiles-item-content" style={{ textAlign: 'left', marginBottom: 80 }}>
+                <div className="features-tiles-item-content split-item" style={{ textAlign: 'left', marginBottom: 80 }}>
                     <ul>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas is a Program Manager, Agile Coach, Scrum Master, Kanban Practitioner, author, and speaker with 23 years of experience who has previously worked as a developer, product owner, and business analyst. 
                     </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas has delivered from small-sized projects to multi-million dollar deals across the US, UK, Japan, UAE, Australia, and Asia, spanning multiple domains, including education, banking, CTRM, B2B, and B2C. He believes in enhancing business agility and creates a psychologically safe team environment.
                     </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas is an AKT (Accredited Kanban Trainer) from Kanban University and holds Professional Scrum Master – III Certification.
                     </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas is one of the Content Creators for Kanban Maturity Model and actively contributes to the learning modules of Kanban.
                     </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas has created and implemented FISH Model (to enhance business agility) for the delivery of key strategic initiatives. 
                         </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas is one of the distinguished writers in Serious Scrum publication on Medium.com. He writes about the actual challenges in Agile transformation and how to overcome those.
                     </li>
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas was featured in “The Agile Podcast: Scrum Mastery Challenge” run by Geoff Watt and Paul Goddard.
                         </li>
                         
-                        <li className="m-0 text-sm" style={{lineHeight:'32px'}}>
+                        <li className="text-sm" style={{lineHeight:'32px'}}>
                         Vikas actively participates in Agile conferences worldwide. One of his Kanban implementations was presented in Kanban India Conference in Dec, 2021. <a href="https://www.kanbanindia.org/speakers/vikas-agarwal/" target="_blank">https://www.kanbanindia.org/speakers/vikas-agarwal/</a>
                         </li>
                     </ul>
