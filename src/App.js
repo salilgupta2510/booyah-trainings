@@ -16,11 +16,10 @@ import Testimonial from './views/Testimonials';
 import ContactUs from './views/ContactUs';
 // import KnowYourTrainer from './components/sections/KnowYourTrainer';
 import TrainingCalendarPage from './views/TrainingCalendar/TrainingCalendarPage';
-import Header from '../src/components/layout/HeaderV2'
-import Footer from '../src/components/layout/Footer'
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
+
 
 const App = () => {
   return (

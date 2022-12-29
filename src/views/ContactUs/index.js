@@ -143,7 +143,7 @@ const ContactUs = ({
     <section
       {...props}
       className={outerClasses}
-      style={{ paddingTop: 0, marginTop: 150 }}
+      style={{ paddingTop: 0, marginTop: 20 }}
     >
       <div className="container">
         <div className={innerClasses} style={{ paddingBottom: 10 }}>
@@ -163,19 +163,15 @@ const ContactUs = ({
                 ariaLabel='loading'
               />}
               {!emailSent && !sendingLoader && <>
-                <h1 style={{ color: '#ffffff', fontSize:33 }} className="mt-0 mb-16" >
+                <h4 style={{ color: '#ffffff', fontSize:33 }} className="mt-0 mb-16" >
                 Please provide the following details
-                </h1>
+                </h4>
                 <form ref={form} onSubmit={sendEmail}>
-                  {/* <label style={styles.label}>Name</label> */}
                   <input placeholder='Your Name*' style={styles.requiredInput} type="text" name="user_name" ref={nameRef} onChange={onNameChange} />
                   {nameError && <div style={{ color: 'red' }}>Please enter your name</div>}
-                  {/* <label style={styles.label}>Email*</label> */}
                   <input placeholder='Email*' style={styles.requiredInput} ref={emailRef} type="email" name="email" onChange={onEmailChange}/>
                   {emailError && <div style={{ color: 'red' }}>Please enter your email address</div>}
-                  {/* <label style={styles.label}>Mobile Number</label> */}
                   <input placeholder='Contact Number' style={styles.input} type="number" name="user_number" onChange={onMobileChange} />
-                  {/* <label style={{marginTop: 50, ...styles.label}}>Message</label> */}
                   <textarea placeholder='Let Us Know' style={styles.input} name="message" onChange={onCommentsChange} value={comments}/>
                 </form>
                 {error && <h5 style={{ color: 'red' }}>{error}</h5>}
@@ -195,10 +191,8 @@ const ContactUs = ({
                 {error === true ? 'There has been an error. Please try again after some time' :
                 'Your request for KMP enrolment has been sent successfully. Vikas will connect with you within 24 hours with further details.'} Alternatively, you can connect with him over WhatsApp / Call @ +91 98100 47018</p>
                 <Link to="/" ><h6>Go To Home</h6></Link>
-
               </>}
             </div>
-
           </div>
         </div>
       </div>

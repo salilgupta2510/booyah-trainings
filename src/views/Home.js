@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // import sections
 import Hero from '../components/sections/Hero';
 import FeaturesTiles from '../components/sections/FeaturesTiles';
@@ -8,8 +8,17 @@ import InfoSection from '../components/sections/partials/InfoSection';
 import TrainingCalendar from '../components/sections/TrainingCalendar';
 import WhyUS from '../components/sections/WhyUs';
 import Testimonials from '../components/sections/Testimonials';
+import { useLocation} from 'react-router-dom';
 
 const Home = () => {
+
+  const routePath = useLocation();
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [routePath]);
 
   const sectionHeader = {
     title: 'Kanban Management Professional (KMP)',

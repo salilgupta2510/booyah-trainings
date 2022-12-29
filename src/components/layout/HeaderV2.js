@@ -31,11 +31,7 @@ const headersData = [
     {
         label: "Testimonials",
         href: "/Testimonial",
-    },
-    {
-        label: "About Us",
-        href: "/Policy",
-    },
+    }
 ];
 
 const useStyles = makeStyles(() => ({
