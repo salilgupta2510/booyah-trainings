@@ -394,55 +394,15 @@ const TrainingCalendar = ({
                         </div>
                     </BrowserView>
                     <MobileView>
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                            <div style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                marginLeft: '25%',
-                                marginBottom: '5%'
-                            }} >
-                                <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "ALL" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "ALL")}>All Classes
-                                </Button>
-                            </div>
-
-                        </div>
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                            <div style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                marginLeft: '25%',
-                                marginBottom: '5%'
-                            }} >
-                                <Button tag="a" wideMobile href="" style={{ borderRadius: 7, fontSize: 14, color: selectedBtn === "KMP" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KMP" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "KMP")}>KMP Class
-                                </Button>
-                            </div>
-
-                        </div><div style={{ display: 'flex', flexDirection: 'row' }}>
-                            <div style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                marginLeft: '25%',
-                                marginBottom: '5%'
-                            }} >
-                                <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, fontSize: 14, color: selectedBtn === "KSD" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KSD" ? '#6163ff' : '#eceded' }} onClick={event => onKSDClick(event, "KSD")}>KSD Class
-                                </Button>
-                            </div>
-
-                        </div><div style={{ display: 'flex', flexDirection: 'row' }}>
-                            <div style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                marginLeft: '25%',
-                                marginBottom: '5%'
-                            }} >
-                                <Button tag="a" wideMobile href="" style={{ borderRadius: 7, fontSize: 14, color: selectedBtn === "KSI" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KSI" ? '#6163ff' : '#eceded' }} onClick={event => onKSIClick(event, "KSI")}>KSI Class
-                                </Button>
-                            </div>
-
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 20 }}>
+                            <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "ALL" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "ALL")}>All Classes
+                            </Button>
+                            <Button tag="a" wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "KMP" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KMP" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "KMP")}>KMP Class
+                            </Button>
+                            <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "KSD" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KSD" ? '#6163ff' : '#eceded' }} onClick={event => onKSDClick(event, "KSD")}>KSD Class
+                            </Button>
+                            <Button tag="a" wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "KSI" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KSI" ? '#6163ff' : '#eceded' }} onClick={event => onKSIClick(event, "KSI")}>KSI Class
+                            </Button>
                         </div>
                     </MobileView>
                 </>
