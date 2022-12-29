@@ -39,7 +39,7 @@ const TrainingCalendar = ({
     const [trainingCount, setTrainingCount] = useState(0);
     const [trainingFilter, setTrainingFilter] = useState('All');
 
-    const [selectedBtn, setSelectedBtn] = useState('');
+    const [selectedBtn, setSelectedBtn] = useState('ALL');
 
     const history = useHistory();
 
@@ -375,21 +375,22 @@ const TrainingCalendar = ({
         <section
             {...props}
             className='container'
-            style={{ paddingTop: 0, marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20,marginTop:100 }}
+            style={{ paddingTop: 0, marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20}}
             >
-           {showSearchOption && <div>
-
-            <ButtonGroup style={{marginLeft:30, marginBottom:10}}>
-                    <Button tag="a"   fo wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "ALL" ? '#6163ff' : '#eceded'}} onClick={event => onAllDataClick(event, "ALL")}>All Classes
+           {showSearchOption && 
+           <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+            <ButtonGroup>
+                    <Button tag="a"   fo wideMobile href="" style={{ borderRadius: 7, width: '22%',fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "ALL" ? '#6163ff' : '#eceded'}} onClick={event => onAllDataClick(event, "ALL")}>All Classes
                     </Button>
-                    <Button tag="a" wideMobile href="" style={{ borderRadius: 7, width: '20%', fontSize: 14, color: selectedBtn === "KMP" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KMP" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "KMP")}>KMP Class
+                    <Button tag="a" wideMobile href="" style={{ borderRadius: 7, width: '22%', fontSize: 14, color: selectedBtn === "KMP" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KMP" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "KMP")}>KMP Class
                     </Button>
-                    <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: selectedBtn === "KSD" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KSD" ? '#6163ff' : '#eceded' }} onClick={event => onKSDClick(event, "KSD")}>KSD Class
+                    <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, width: '22%',fontSize: 14, color: selectedBtn === "KSD" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KSD" ? '#6163ff' : '#eceded' }} onClick={event => onKSDClick(event, "KSD")}>KSD Class
                     </Button>
-                    <Button tag="a" wideMobile href="" style={{ borderRadius: 7, width: '20%',fontSize: 14, color: selectedBtn === "KSI" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KSI" ? '#6163ff' : '#eceded' }} onClick={event => onKSIClick(event, "KSI")}>KSI Class
+                    <Button tag="a" wideMobile href="" style={{ borderRadius: 7, width: '22%',fontSize: 14, color: selectedBtn === "KSI" ? '#eceded' : '#6163ff', backgroundColor:selectedBtn === "KSI" ? '#6163ff' : '#eceded' }} onClick={event => onKSIClick(event, "KSI")}>KSI Class
                     </Button>
                   </ButtonGroup>
-            </div>}
+            </div>
+            }
             <div className={innerClasses} style={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -398,9 +399,9 @@ const TrainingCalendar = ({
             }}>
                 {showHeader && <h2 style={{ marginTop: 0 }}>{sectionHeader.title}</h2>}
               {  showTrainerInfo &&
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <a href="/SampleKMPCertificate.pdf" download style={{ fontSize: 16, marginRight: 80, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)', textAlign:'left' }}>Sample KMP Certificate</a>
-                    <Link to="/KnowYourTrainer" style={{ fontSize: 16, marginRight: 20, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)' , textAlign:'left'  }} >Know Your Trainer</Link>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    <a href="/SampleKMPCertificate.pdf" download style={{ fontSize: 16, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)', textAlign:'right' }}>Sample KMP Certificate</a>
+                    <Link to="/KnowYourTrainer" style={{ fontSize: 16, textDecoration: 'underline', fontWeight: 'bold', color:'rgb(97, 99, 255)' , textAlign:'right'  }} >Know Your Trainer</Link>
                 </div>}
             </div>
             {typeof trainingCalendarData !== 'string' && trainingCalendarData.length>0 &&

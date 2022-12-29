@@ -33,26 +33,13 @@ const KnowYourTrainer = ({
         'tiles-wrap center-content'
     );
 
-    const renderTile = (text, color) => {
-        return (
-            <div className="tiles-item" style={{ padding: 0 }}>
-                <div className="tiles-item-inner" style={{ backgroundColor: `${color}`, color: 'black' }}>
-                    <p className="m-0 text-sm">
-                        {text}
-                    </p>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <section
             {...props}
             className={outerClasses}
-            style={{ paddingTop: 0, marginTop: 40 }}
         >
             <div className="container">
-                <div className={innerClasses} style={{ paddingBottom: 10 }}>
+                <div className={innerClasses} style={{ paddingTop: 10, paddingBottom: 10 }}>
                     <div className="hero-content">
                         <h1 className="mt-0 mb-16">
                             Trainer Profile
