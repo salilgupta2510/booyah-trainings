@@ -78,7 +78,7 @@ const Header = ({
     <header
       {...props}
       className={classes}
-      style={{position:'fixed', backgroundColor:'#ffffff'}}
+      style={{position:'relative', backgroundColor:'#0e1012'}}
     >
       <div className="container">
         <div className={
