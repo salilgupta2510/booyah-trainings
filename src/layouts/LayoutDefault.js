@@ -7,7 +7,7 @@ const LayoutDefault = (props) => {
   return (
     <>
       <Header />
-      <div style={{ marginTop: 65 }}>
+      <div style={{ marginTop: 85 }}>
         <main className="site-content">
           {children}
         </main>

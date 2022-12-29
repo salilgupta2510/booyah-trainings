@@ -12,6 +12,8 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
+import FooterSocial from '../layout/partials/FooterSocial';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const headersData = [
     {
@@ -78,6 +80,8 @@ export default function Header() {
         drawerOpen: false,
     });
 
+    const [copied, setCopied] = useState(false);
+
     const { mobileView, drawerOpen } = state;
 
     useEffect(() => {
@@ -98,10 +102,29 @@ export default function Header() {
 
     const displayDesktop = () => {
         return (
-            <Toolbar className={toolbar}>
-                {femmecubatorLogo}
-                <div>{getMenuButtons()}</div>
-            </Toolbar>
+            <>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    paddingLeft: 24,
+                    paddingRight: 24,
+                    backgroundColor: '#fff',
+                    borderBottomLeftRadius: 5,
+                    borderBottomRightRadius: 5
+                }}>
+                    <div style={{ color: '#6163ff', verticalAlign: 'center' }}>
+                        vikas@booyah.training
+                    </div>
+                    <FooterSocial showPhoneNumber={true} style={{}} />
+                </div>
+                <Toolbar className={toolbar}>
+                    {femmecubatorLogo}
+                    <div>{getMenuButtons()}</div>
+                </Toolbar>
+            </>
+
         );
     };
 
@@ -159,9 +182,10 @@ export default function Header() {
     };
 
     const femmecubatorLogo = (
-        <Typography variant="h6" component="h1" className={logo}>
-            Booyah Training
-        </Typography>
+            <Typography variant="h6" component="h1" className={logo}>
+                BooYah Training 
+            </Typography>
+
     );
 
     const getMenuButtons = () => {
