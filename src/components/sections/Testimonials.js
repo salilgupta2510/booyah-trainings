@@ -105,7 +105,7 @@ const Testimonials = ({
         >
          <BrowserView>
          <div className={innerClasses}>
-               {showHeader && <h2 style={{ textAlign: "left", marginTop: 0 }}>Testimonials</h2>}
+               {showHeader && <h3 style={{ textAlign: "left", marginTop: 0 }}>Testimonials</h3>}
                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }} >
                     {typeof testimonialData !== "string" && testimonialData.length > 0 &&
                         testimonialData.map(item => (
@@ -123,6 +123,8 @@ const Testimonials = ({
          </BrowserView>
          <MobileView>
             <>
+            {showHeader && <h3 style={{ textAlign: "left", marginTop: 0 }}>Testimonials</h3>}
+
             {typeof testimonialData !== "string" && testimonialData.length > 0 &&
                         testimonialData.map((parentItem) => {
             return (
@@ -131,7 +133,7 @@ const Testimonials = ({
               <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
 
                 <div className="tiles-item reveal-from-right" style={{ marginBottom: 50 }} data-reveal-delay="200">
-                  <div className="tiles-item-inner" >
+                  <div className="tiles-item-inner" style={{paddingTop:0}}>
                     <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:15 }}>Trainer Rating: {rating(parentItem.trainerRating,9)}</span>
                     <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:15}}>Content Rating: {rating(parentItem.contentRating,2)}</span>
                     <div className="testimonial-item-content">

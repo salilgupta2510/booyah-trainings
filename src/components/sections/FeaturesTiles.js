@@ -72,7 +72,6 @@ const FeaturesTiles = ({
     <section
       {...props}
       className={outerClasses}
-      style={{ paddingTop: 50 }}
     >
       <div className="container ">
         <div className={innerClasses} style={{ paddingBottom: 20 }}>

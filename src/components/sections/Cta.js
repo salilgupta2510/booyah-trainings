@@ -25,7 +25,7 @@ const Cta = ({
 }) => {
 
   const outerClasses = classNames(
-    'cta section center-content-mobile reveal-from-bottom',
+    'cta section center-content-mobile',
     topOuterDivider && 'has-top-divider',
     bottomOuterDivider && 'has-bottom-divider',
     hasBgColor && 'has-bg-color',
