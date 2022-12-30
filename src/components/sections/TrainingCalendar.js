@@ -181,11 +181,7 @@ const TrainingCalendar = ({
 
                                 />
                             </div>
-                            <div style={{ height: '15%' }}>
-                                <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone1 ?? ''}`}</div>
-                                <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone2 ?? ''}`}</div>
-                                <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone3 ?? ''}`}</div>
-                            </div>
+                           
                             <div style={{ marginTop: 25 }}>
                                 <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center', fontSize: 14, color: '#6163ff' }} onClick={routeToQueryForm}>Enroll Now
                                 </Button>
@@ -255,11 +251,7 @@ const TrainingCalendar = ({
                         </div>
 
                         {/* <div style={{ marginBottom: 10, height: '20%', fontSize: 16 }}>{`${getTimeZonesInfo(item)}`}</div> */}
-                        <div style={{ height: '15%' }}>
-                            <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone1 ?? ''}`}</div>
-                            <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone2 ?? ''}`}</div>
-
-                        </div>
+                        
                         <div style={{ marginTop: 10 }}>
                             <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center', fontSize: 14, color: '#6163ff' }} onClick={routeToQueryForm}>Enroll Now
                             </Button>
@@ -284,7 +276,7 @@ const TrainingCalendar = ({
                     rowCount.map((value, index) => {
                         return <>
                             <BrowserView>
-                                <div style={{ display: 'flex', flexDirection: 'row', marginTop: 10 }}>
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
                                     {renderRow(index)}
                                 </div>
                             </BrowserView>
@@ -375,7 +367,7 @@ const TrainingCalendar = ({
         <section
             {...props}
             className='container'
-            style={{ paddingTop: 0, marginTop: 50, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
+            style={{ paddingTop: 0, marginTop: 30, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
             {showSearchOption &&
                 <>
@@ -413,7 +405,7 @@ const TrainingCalendar = ({
                 alignItems: 'flex-start',
                 justifyContent: 'space-between',
             }}>
-                {showHeader && <h2 style={{ marginTop: 0 }}>{sectionHeader.title}</h2>}
+                {showHeader && <h3 style={{ marginTop: 0 }}>{sectionHeader.title}</h3>}
                 {showTrainerInfo &&
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                         <a href="/SampleKMPCertificate.pdf" download style={{ fontSize: 16, textDecoration: 'underline', fontWeight: 'bold', color: 'rgb(97, 99, 255)', textAlign: 'right' }}>Sample KMP Certificate</a>

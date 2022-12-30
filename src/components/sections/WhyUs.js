@@ -37,7 +37,7 @@ const WhyUs = ({
     );
 
     const innerClasses = classNames(
-        'features-split-inner section-inner',
+        'features-split-inner',
         topDivider && 'has-top-divider',
         bottomDivider && 'has-bottom-divider'
     );
@@ -60,10 +60,10 @@ const WhyUs = ({
             className={outerClasses}
         >
             <div className="container" style={{ marginTop: 20, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20, marginBottom:20}}>
-                <div className={innerClasses} style={{paddingTop: 20}}>
-                    <h2 style={{marginTop: 0}}>{sectionHeader.title}</h2>
+                <div className={innerClasses} style={{paddingTop:8}}>
+                    <h3 style={{marginTop: 0}}>{sectionHeader.title}</h3>
                     <div className={splitClasses}>
-                        <div className="split-item" style={{paddingBottom: 0}}>
+                        <div className="split-item" style={{paddingBottom: 15}}>
                             {/* <div className="split-item-content center-content-mobile" > */}
                            <ul>
                                 <li>
