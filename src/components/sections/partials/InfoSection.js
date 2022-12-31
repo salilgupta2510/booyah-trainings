@@ -72,7 +72,7 @@ const InfoSection = ({
       <div className="container">
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', paddingTop: 50, marginBottom: 50 }}>
           <div className="m-0" style={{ fontSize: 22, textAlign: 'center', color: '#ffffff' }}>
-          <b style={{color:'#BF40BF'}}>Kanban Management Professional</b> credential is granted upon the completion of two classes. <b style={{color:'#BF40BF'}}>Kanban System Design</b>, which teaches the basics of Kanban, flow, and how to design a Kanban system. <b style={{color:'#BF40BF'}}>Kanban Systems Improvement</b>, which teaches how to evolve, improve, and scale a Kanban system. KMPs should be able to design a Kanban system and evolve and scale it beyond the team.
+          <b style={{color:'#578ee4'}}>Kanban Management Professional</b> credential is granted upon the completion of two classes. <b style={{color:'#578ee4'}}>Kanban System Design</b>, which teaches the basics of Kanban, flow, and how to design a Kanban system. <b style={{color:'#578ee4'}}>Kanban Systems Improvement</b>, which teaches how to evolve, improve, and scale a Kanban system. KMPs should be able to design a Kanban system and evolve and scale it beyond the team.
           </div>
         </div>
         <div className="center-content-mobile" >
