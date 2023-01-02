@@ -5,7 +5,19 @@ import validator from 'validator'
 import { TestimonialService } from "../../services/testimonialService";
 import { Triangle } from 'react-loader-spinner'
 
+import classNames from 'classnames';
+import { Link, useLocation } from 'react-router-dom';
+import ButtonGroup from '../../components/elements/ButtonGroup';
+
+
 const Survey = ({
+    className,
+  topOuterDivider,
+  bottomOuterDivider,
+  topDivider,
+  bottomDivider,
+  hasBgColor,
+  invertColor,
     ...props
 }) =>{
 
@@ -133,111 +145,149 @@ const Survey = ({
         return testimonial;
       }
 
-    return    (
-        <section style={{ paddingTop: 0, marginTop: 100, marginLeft:120, marginRight:120, marginBottom:40, backgroundColor: sendingLoader === true ? '#0e1012' : '#6163ff', minHeight:400, position:'relative', borderRadius:'1em',transition: "all .2s",}}>
-        <div style={{paddingLeft:'40%'}}>
+      const outerClasses = classNames(
+        'hero section center-content',
+        topOuterDivider && 'has-top-divider',
+        bottomOuterDivider && 'has-bottom-divider',
+        hasBgColor && 'has-bg-color',
+        invertColor && 'invert-color',
+        className
+      );
+    
+      const innerClasses = classNames(
+        'hero-inner section-inner',
+        topDivider && 'has-top-divider',
+        bottomDivider && 'has-bottom-divider'
+      );
 
-        {sendingLoader && <Triangle
+    return    (
+        <section
+      {...props}
+      className={outerClasses}
+      style={{ paddingTop: 0, marginTop: 20 }}
+    >
+      <div className="container" >
+        <div className={innerClasses} style={{ paddingBottom: 10 }}>
+          <div className="hero-content">
+            <div style={{
+              borderRadius: 5,
+              backgroundColor: sendingLoader === true ? '#0e1012' : '#6163ff',
+              padding: 20,
+              width: '70%',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              {sendingLoader && <Triangle
                 height="100"
                 width="100"
                 color='grey'
                 ariaLabel='loading'
-                
               />}
-        </div>
-        {!sendingLoader && !emailSent && <div>
-
-        {showSectionOne && 
-        <div>
-        <div className="row">
-            <div className="col" style={{marginTop:'5%', marginLeft:'10%'}}>
-            <input type="email" placeholder="Email*" style={{maxWidth:'80%', width:'100%', borderRadius:'0.25em'}} onChange={onEmailChange}/>
-            {emailError && <div style={{ color: 'red' }}>Please enter a valid Email address</div>}
-          
-            </div>
-        </div>
-        <div className="row">
-            <div className="col" style={{marginTop:'5%', marginLeft:'10%', marginBottom:'0%'}}>
-                <textarea placeholder="Like*" style={{maxWidth:'80%', width:'100%', borderRadius:'0.5em'}} rows={4} onChange={onLikeChange}/>
+              {showSectionOne &&  !emailSent && !sendingLoader && <>
+                <h4 style={{ color: '#ffffff', fontSize:33 }} className="mt-0 mb-16" >
+                Feedback
+                </h4>
+                <form >
+                  <input placeholder='Email*' style={styles.requiredInput} type="text" onChange={onEmailChange}  />
+                  {emailError && <div style={{ color: 'red' }}>Please enter a valid Email address</div>}
+                <textarea placeholder='What do you like about the training' style={styles.requiredInput} onChange={onLikeChange}   />
                 {likeError && <div style={{ color: 'red' }}>Please enter something that you like about the training</div>}
-            </div>
-
-        </div>
-        <div className="row">
-            <div className="col" style={{marginTop:'5%', marginLeft:'10%', marginBottom:'3%'}}>
-                <textarea placeholder="Dislike" style={{maxWidth:'80%', width:'100%', borderRadius:'0.5em'}} rows={4} onChange={onDislikeChange}/>
-            </div>
-        </div>
-        <div className="row" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-        <div className="col" style={{ marginLeft:'38%', marginBottom:'3%', marginRight:'27%'}}>
-        <Button tag="a" type="submit" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 20, color: '#6163ff'}} onClick={onSectionOneNext}>
-                    Next
+                <textarea placeholder='What do you dislike about the training' style={styles.requiredInput} onChange={onDislikeChange}   />
+                  
+                </form>
+                {error && <h5 style={{ color: 'red' }}>{error}</h5>}
+                <div>
+                  <ButtonGroup>
+                    <Button tag="button" color="white" wideMobile onClick={onSectionOneNext} >
+                      Next
                     </Button>
-
-            </div>
-        </div>
-        </div>
-        }
-
-        {showSectionTwo && <div>
-
-<div className="row" style={{marginTop:'5%', marginLeft:'10%', marginBottom:'0%'}}>
-    <div className="col-md-3">
-    <h4>Trainer Rating:</h4>
-    </div>
-    <div className="col-md-9" style={{paddingTop:'2.5%'}}>
-    <StarRatingComponent 
+                    
+                  </ButtonGroup>
+                </div>
+              </>} 
+              {showSectionTwo &&  !emailSent && !sendingLoader && <>
+                <form >
+                <h4 style={{ color: '#ffffff', fontSize:33 }} className="mt-0 mb-16" >
+                Feedback
+                </h4>
+              <div className="row">
+                <div className="col-md-6">
+                <h4>Trainer Rating:</h4>
+                </div>
+                <div className="col-md-6" style={{paddingTop:'2.5%'}}>
+<StarRatingComponent 
   name="rate1" 
   starCount={5}
   value={trainerRating}
- onStarClick={onTrainingStarClicked}
-/>
-
-    </div>
-</div>
-<div className="row" style={{ marginLeft:'10%', marginBottom:'0%'}}>
-<div className="col-md-3">
-    <h4>Content Rating:</h4>
-    </div>
-    <div className="col-md-9" style={{paddingTop:'2.5%'}}>
-    <StarRatingComponent 
+ onStarClick={onTrainingStarClicked}/>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                <h4>Content Rating:</h4>
+                </div>
+                <div className="col-md-6" style={{paddingTop:'2.5%'}}>
+                <StarRatingComponent 
   name="rate1" 
   starCount={5}
   value={contentRating}
- onStarClick={onContentStarClicked}
-/>
-    </div>
-    {sectionTwoError && <div style={{ color: 'red' }}>{sectionTwoError}</div>}
+ onStarClick={onContentStarClicked}/> 
+     {sectionTwoError && <div style={{ color: 'red' }}>{sectionTwoError}</div>}
+                </div>
+              </div>
+              <div className="row">
+<div className="col">
 
+              <textarea placeholder='Please share reference emails' onChange={onReferencesChange} style={styles.requiredInput} />
 </div>
-
-<div className="row" style={{  marginBottom:'0%'}}>
-<div className="col" style={{ marginLeft:'10%', marginBottom:'3%'}}>
-                <textarea placeholder="Please share emails for references" style={{maxWidth:'80%', width:'100%', borderRadius:'0.5em'}} rows={4} onChange={onReferencesChange}/>
+              </div>
+          
+                  
+                </form>
+                <div>
+                  <ButtonGroup>
+                    <Button tag="button" color="white" wideMobile onClick={submitFeedback}>
+                      Submit
+                    </Button>
+                    
+                  </ButtonGroup>
+                </div>
+              </>}
+              { emailSent && <>
+                <img src={require("../../assets/images/success.png")} style={{ height: 70, width: 70, alignSelf: 'center', borderRadius: 50 }} />
+                <p>
+                {error === true ? 'Please try again after some time.' :
+                'Thank you for your feedback.'}</p>
+              </>}
             </div>
-</div>
-
-<div className="row" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-<div className="col" style={{ marginLeft:'38%', marginBottom:'3%', marginRight:'27%'}}>
-<Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 20, color: '#6163ff'}} onClick={submitFeedback}>
-            Submit
-            </Button>
-
-    </div>
-</div>
-</div>}
-        </div>}
-
-        { emailSent && <div style={{ padding:'15%', marginLeft:'15%'}}>
-                <img src={require("../../assets/images/success.png")} style={{ height: 70, width: 70, alignSelf: 'center', borderRadius: 50, marginLeft:'24%' }} />
-                <span style={{marginLeft:'10%'}}>
-                {error === true ? 'Please try again after some time' :
-                'Thank you for your feedback.'} </span>
-              </div>}
-
-
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
     );
 }
 
+
+const styles = {
+    label: { color: '#ffffff' },
+    input: {
+      width: "100%",
+      marginTop: 8,
+      display: "inline-block",
+      marginBottom: 20,
+      borderRadius: 8,
+      lineHeight: 2,
+      paddingLeft: 10,
+    },
+    requiredInput: {
+      width: "100%",
+      marginTop: 8,
+      display: "inline-block",
+      marginBottom: 20,
+      borderRadius: 8,
+      lineHeight: 2,
+      paddingLeft: 10,
+      // borderColor:'red'
+    }
+  }
 export default Survey;
