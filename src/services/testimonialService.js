@@ -7,4 +7,9 @@ export class TestimonialService{
         var response = await RestEndPoint.GetRequest(`${process.env.REACT_APP_API_URL}Testimonial/getTestimonials?limit=${limit}`);
         return response;
     }
+
+    static async SaveTestimonial(testimonialObj){
+        var response = await RestEndPoint.PostRequest(`${process.env.REACT_APP_API_URL}Testimonial/saveUserFeedback`, testimonialObj);
+        return response;
+    }
 }
