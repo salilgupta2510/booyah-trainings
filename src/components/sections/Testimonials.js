@@ -86,8 +86,8 @@ const Testimonials = ({
         return (
             <div style={{ padding: 0, marginRight: 10, width: '32%', marginBottom: 10 }}>
                 <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(39, 51, 69)', color: '#eceded', borderRadius: 5, marginRight: 6 }}>
-                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:17 }}>Trainer Rating: {rating(testimonialData.trainerRating,9)}</span>
-                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:17}}>Content Rating: {rating(testimonialData.contentRating,2)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:16 }}>Trainer Rating: {rating(testimonialData.trainerRating,9)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:16}}>Content Rating: {rating(testimonialData.contentRating,2)}</span>
                     <br/>
                     <p className="m-0 text-sm" style={{ textAlign: "left", color: "#eceded", fontFamily: "system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Noto Sans,Liberation Sans,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" }}>
                         {testimonialData.like}
@@ -130,12 +130,12 @@ const Testimonials = ({
             return (
                 <>
 
-              <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 30, marginRight: 30 }}>
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
 
                 <div className="tiles-item reveal-from-right" style={{ marginBottom: 50 }} data-reveal-delay="200">
-                  <div className="tiles-item-inner" style={{paddingTop:0}}>
-                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:15 }}>Trainer Rating: {rating(parentItem.trainerRating,9)}</span>
-                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:15}}>Content Rating: {rating(parentItem.contentRating,2)}</span>
+                  <div className="tiles-item-inner" style={{paddingTop:20}}>
+                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:13 }}>Trainer Rating: {rating(parentItem.trainerRating,9)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:13}}>Content Rating: {rating(parentItem.contentRating,2)}</span>
                     <div className="testimonial-item-content">
                       <p className="text-sm mb-0" style={{ minHeight: 150, maxHeight: 350, overflowY: "auto" }}>
                         {parentItem.like}
