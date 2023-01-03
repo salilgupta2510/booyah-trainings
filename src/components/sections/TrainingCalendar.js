@@ -208,7 +208,7 @@ const TrainingCalendar = ({
                         borderStyle: 'solid',
                         borderWidth: 1,
                         borderColor: '#273345',
-                        width: '40%'
+                        width: '25%'
                     }} >
                         <div>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
