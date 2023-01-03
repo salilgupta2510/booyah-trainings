@@ -43,3 +43,20 @@
 .checked {
     color: #FFD700;
 }
+
+
+.survey-box {
+	opacity: 1;
+	transition: all 1s ease-out;
+	visibility: visible;  
+  }
+  
+  .survey-box-hide {
+	visibility: hidden;
+	transition: all 1s ease-out;
+	opacity: 0;  
+  }
+
+  .dv-star-rating-star i{
+	font-size: 200%;
+  }
