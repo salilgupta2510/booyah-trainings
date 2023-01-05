@@ -183,7 +183,6 @@ const Survey = ({
           required
           id="outlined-required"
           label="Email"
-          backgroundColor='white'
           fullWidth
           onChange={onEmailChange}
           error = {emailError}
