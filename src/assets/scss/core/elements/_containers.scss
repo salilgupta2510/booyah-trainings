@@ -60,3 +60,25 @@
   .dv-star-rating-star i{
 	font-size: 200%;
   }
+
+.emoji-hover{
+	height:50px; 
+	width:50px;
+	padding:5px;
+	cursor:pointer;
+	display:-webkit-inline-box
+}
+
+.emoji-hover:hover{
+	-webkit-transform: scale(1.5);
+}
+
+.emoji-selected{
+	height:50px; 
+	width:50px;
+	padding:5px;
+	cursor:pointer;
+	display:-webkit-inline-box;
+	-webkit-transform: scale(1.5);
+
+}
