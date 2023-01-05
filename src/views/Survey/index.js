@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import Button from '../../components/elements/Button';
-import StarRatingComponent from 'react-star-rating-component';
 import validator from 'validator'
 import { TestimonialService } from "../../services/testimonialService";
 import { Triangle } from 'react-loader-spinner'
-
 import classNames from 'classnames';
-import { Link, useLocation } from 'react-router-dom';
-import ButtonGroup from '../../components/elements/ButtonGroup';
-
+import { Container, TextField, Button, Slide, LinearProgress } from "@material-ui/core";
+import { Error} from '@material-ui/icons'
 
 const Survey = ({
     className,
@@ -23,6 +19,7 @@ const Survey = ({
 
     const [showSectionOne, setShowSectionOne] = useState(true);
     const [showSectionTwo, setShowSectionTwo] = useState(false);
+    const [showSectionThree, setShowSectionThree] = useState(false);
     const [sendingLoader, setSendingLoader] = useState(false);
 
     const [error, setError] = useState(false);
@@ -38,28 +35,14 @@ const Survey = ({
 
     const [emailError, setEmailError] = useState(false);
     const [likeError, setLikeError] = useState(false);
-    const [sectionTwoError, setSectionTwoError] = useState('');
+    const [trainerRatingError, setTrainerRatingError] = useState(false);
+    const [contentRatingError, setContentRatingError] = useState(false);
 
-
-
-
-    function onTrainingStarClicked(nextValue, prevValue, name){
-        setTrainerRating(nextValue);
-    }
-    function onContentStarClicked(nextValue, prevValue, name){
-        setContentRating(nextValue);
-    }
-
-    function onSectionOneNext(event){
-        event.preventDefault();
-        if(validateSectionOne() === true){
-            setShowSectionOne(false);
-            setShowSectionTwo(true);
-        }
-    }
+    const [progress, setProgress] = useState(0);
 
     const submitFeedback = async(event) =>{
         event.preventDefault();
+        setShowSectionThree(false);
         if(validateRatings() === true){
             setSendingLoader(true);
             var testimonial = createTestimonialObj();
@@ -71,39 +54,46 @@ const Survey = ({
             setTimeout(() => {
                 setSendingLoader(false);
                 setEmailSent(true);
+                setProgress(100);
             }, 300);
         }
     }
 
     function validateSectionOne(){
+      if(!validator.isEmail(email) || like === null || like === ''){
         if(!validator.isEmail(email)){
-            setEmailError(true);
-            return false;
-        }
-        else{
-            setEmailError(false);
+          setEmailError(true);
         }
         if(like === null || like === '')
         {
             setLikeError(true);
-            return false;
         }
-        else{
-            setLikeError(false);
-        }
+        return false;
+      }
         setEmailError(false);
         setLikeError(false);
         return true;
     }
 
     function validateRatings(){
-        if(trainerRating ===0 || contentRating === 0){
-            setSectionTwoError("Please provide Trainer and Content Rating");
-            return false;
-        }
-        else{
-            setSectionTwoError('');
-        }
+      let isError = false;
+      if(trainerRating === 0){
+        setTrainerRatingError(true);
+        isError = true;
+      }
+      else{
+        setTrainerRatingError(false);
+      }
+      if(contentRating === 0){
+        setContentRatingError(true);
+        isError = true;
+      }
+      else{
+        setContentRatingError(false);
+      }
+      if(isError === true){
+        return false;
+      }
         return true;
     }
 
@@ -117,16 +107,6 @@ const Survey = ({
 
     function onDislikeChange(event){
         setDisLike(event.target.value);
-    }
-
-    function onReferencesChange(event){
-        setReferences(event.target.value);
-    }
-
-    function onExitBtn(event){
-        window.opener = null;
-    window.open("", "_self");
-    window.close();
     }
 
     const createTestimonialObj = () =>{
@@ -160,109 +140,185 @@ const Survey = ({
         bottomDivider && 'has-bottom-divider'
       );
 
+      const NextClicked = () =>{
+        if(validateSectionOne() === true){
+          setShowSectionTwo(true);
+          setShowSectionOne(false);
+          setProgress(33);
+      }
+      }
+
+      const Next2Clicked = () =>{
+        setShowSectionTwo(false);
+        setShowSectionThree(true);
+        setProgress(66);
+      }
+
+      const trainerRatingClicked = (event, value)=>{
+        setTrainerRating(value);
+        setTrainerRatingError(false);
+      }
+
+      const contentRatingClicked = (event, value)=>{
+        setContentRating(value);
+        setContentRatingError(false);
+      }
+
+    
     return    (
         <section
       {...props}
       className={outerClasses}
       style={{ paddingTop: 0, marginTop: 20 }}
     >
-      <div className="container" >
-        <div className={innerClasses} style={{ paddingBottom: 10 }}>
-          <div className="hero-content">
-            <div style={{
-              borderRadius: 5,
-              backgroundColor: sendingLoader === true ? '#0e1012' : '#6163ff',
-              padding: 20,
-              width: '70%',
-              marginLeft: 'auto',
-              marginRight: 'auto'
-            }}>
-              {sendingLoader && <Triangle
+      <Container maxWidth="md" style={{ backgroundColor: '#6163ff',
+        borderRadius: 5,
+              marginTop:30}}>
+        <h3 style={{paddingTop:15}}>Feedback</h3>
+        <LinearProgress variant="determinate" value={progress} style={{marginBottom:20}}/>
+      <Slide direction="left" in={showSectionOne} mountOnEnter unmountOnExit id="sectionOneSlide">
+      <div id="sectionOne">
+      <div>
+        <TextField
+          required
+          id="outlined-required"
+          label="Email"
+          fullWidth
+          onChange={onEmailChange}
+          error = {emailError}
+        />
+      </div>
+        <div>
+
+        <TextField
+          id="outlined-multiline-static"
+          label="What do you like about us?"
+          multiline
+          rows={4}
+          fullWidth
+          required
+          style={{marginTop:20}}
+          onChange={onLikeChange}
+          error={likeError}
+        />
+
+      
+        </div>
+        <div style={{paddingTop:20, paddingBottom:20}}>
+      <Button variant="contained" onClick={NextClicked}>Next</Button>
+
+        </div>
+      </div>
+     </Slide>
+        <Slide direction="left" in={showSectionTwo} mountOnEnter unmountOnExit id="sectionTwoSlide">
+        <div id="sectionTwo">
+        <div>
+
+<TextField
+  id="outlined-multiline-static"
+  label="What do you dislike about us?"
+  multiline
+  rows={4}
+  fullWidth
+  onChange={onDislikeChange}
+  style={{marginTop:20}}
+/>
+
+
+</div>
+ <div style={{paddingTop:20, paddingBottom:20}}>
+      <Button variant="contained" onClick={Next2Clicked}>Next</Button>
+
+        </div>
+        </div>
+        </Slide>
+        <Slide direction="left" in={showSectionThree} mountOnEnter unmountOnExit id="sectionThreeSlide">
+        <div id="sectionThree">
+
+        <div style={{color:'#eceded', marginBottom:5}}>How would you rate our Trainer?</div>
+        <div style={{marginTop:15}}>
+        <img 
+        src={require('./../../assets/images/icons/angryFace.png')}
+          className= {trainerRating === 1 ? "emoji-selected" : "emoji-hover"}
+          onClick={event => trainerRatingClicked(event,1)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/slightlyFrowningFace.png')}
+        className= {trainerRating === 2 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => trainerRatingClicked(event,2)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/neutralFace.png')}
+        className= {trainerRating === 3 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => trainerRatingClicked(event,3)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/slightlySmilingFace.png')}
+        className= {trainerRating === 4 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => trainerRatingClicked(event,4)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/starStruck.png')}
+        className= {trainerRating === 5 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => trainerRatingClicked(event,5)}
+        />
+       {trainerRatingError && <Error style={{color:'red'}}/>}
+        </div>
+        <div style={{color:'#eceded', marginBottom:15, marginTop:10}}>How would you rate our Content?</div>
+        <div style={{marginTop:15}}>
+        <img 
+        src={require('./../../assets/images/icons/angryFace.png')}
+        className= {contentRating === 1 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => contentRatingClicked(event,1)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/slightlyFrowningFace.png')}
+        className= {contentRating === 2 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => contentRatingClicked(event,2)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/neutralFace.png')}
+        className= {contentRating === 3 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => contentRatingClicked(event,3)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/slightlySmilingFace.png')}
+        className= {contentRating === 4 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => contentRatingClicked(event,4)}
+        />
+         <img 
+        src={require('./../../assets/images/icons/starStruck.png')}
+        className= {contentRating === 5 ? "emoji-selected" : "emoji-hover"}
+        onClick={event => contentRatingClicked(event,5)}
+        />
+       {contentRatingError && <Error style={{color:'red'}}/>}
+        </div>
+ <div style={{paddingTop:20, paddingBottom:20}}>
+      <Button variant="contained" onClick={submitFeedback}>Submit</Button>
+
+        </div>
+        </div>
+        </Slide>
+        <Slide direction="left" in={sendingLoader} mountOnEnter unmountOnExit id="sectionLoading">
+        <div>
+        <Triangle
                 height="100"
                 width="100"
-                color='grey'
+                color='white'
                 ariaLabel='loading'
-              />}
-              {showSectionOne &&  !emailSent && !sendingLoader && <>
-                <h4 style={{ color: '#ffffff', fontSize:33 }} className="mt-0 mb-16" >
-                Feedback
-                </h4>
-                <form >
-                  <input placeholder='Email*' style={styles.requiredInput} type="text" onChange={onEmailChange}  />
-                  {emailError && <div style={{ color: 'red' }}>Please enter a valid Email address</div>}
-                <textarea placeholder='What do you like about the training' style={styles.requiredInput} onChange={onLikeChange}   />
-                {likeError && <div style={{ color: 'red' }}>Please enter something that you like about the training</div>}
-                <textarea placeholder='What do you dislike about the training' style={styles.requiredInput} onChange={onDislikeChange}   />
-                  
-                </form>
-                {error && <h5 style={{ color: 'red' }}>{error}</h5>}
-                <div>
-                  <ButtonGroup>
-                    <Button tag="button" color="white" wideMobile onClick={onSectionOneNext} >
-                      Next
-                    </Button>
-                    
-                  </ButtonGroup>
-                </div>
-              </>} 
-              {showSectionTwo &&  !emailSent && !sendingLoader && <>
-                <form >
-                <h4 style={{ color: '#ffffff', fontSize:33 }} className="mt-0 mb-16" >
-                Feedback
-                </h4>
-              <div className="row">
-                <div className="col-md-6">
-                <h4>Trainer Rating:</h4>
-                </div>
-                <div className="col-md-6" style={{paddingTop:'2.5%'}}>
-<StarRatingComponent 
-  name="rate1" 
-  starCount={5}
-  value={trainerRating}
- onStarClick={onTrainingStarClicked}/>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-6">
-                <h4>Content Rating:</h4>
-                </div>
-                <div className="col-md-6" style={{paddingTop:'2.5%'}}>
-                <StarRatingComponent 
-  name="rate1" 
-  starCount={5}
-  value={contentRating}
- onStarClick={onContentStarClicked}/> 
-     {sectionTwoError && <div style={{ color: 'red' }}>{sectionTwoError}</div>}
-                </div>
-              </div>
-              <div className="row">
-<div className="col">
-
-              <textarea placeholder='Please share reference emails' onChange={onReferencesChange} style={styles.requiredInput} />
-</div>
-              </div>
-          
-                  
-                </form>
-                <div>
-                  <ButtonGroup>
-                    <Button tag="button" color="white" wideMobile onClick={submitFeedback}>
-                      Submit
-                    </Button>
-                    
-                  </ButtonGroup>
-                </div>
-              </>}
-              { emailSent && <>
+                style={{ marginTop:50}}
+              />
+        </div>
+        </Slide>
+        <Slide direction="left" in={emailSent} mountOnEnter unmountOnExit id="sectionDone">
+        <div style={{ marginTop:50, paddingBottom:50}}>
                 <img src={require("../../assets/images/success.png")} style={{ height: 70, width: 70, alignSelf: 'center', borderRadius: 50 }} />
                 <p>
                 {error === true ? 'Please try again after some time.' :
                 'Thank you for your feedback.'}</p>
-              </>}
-            </div>
-          </div>
-        </div>
-      </div>
+              </div>
+        </Slide>
+      </Container>
     </section>
     );
 }
@@ -287,7 +343,6 @@ const styles = {
       borderRadius: 8,
       lineHeight: 2,
       paddingLeft: 10,
-      // borderColor:'red'
     }
   }
 export default Survey;
