@@ -3,7 +3,7 @@ import validator from 'validator'
 import { TestimonialService } from "../../services/testimonialService";
 import { Triangle } from 'react-loader-spinner'
 import classNames from 'classnames';
-import { Container, TextField, Button, Slide } from "@material-ui/core";
+import { Container, TextField, Button, Slide, LinearProgress } from "@material-ui/core";
 import { Error} from '@material-ui/icons'
 
 const Survey = ({
@@ -38,8 +38,11 @@ const Survey = ({
     const [trainerRatingError, setTrainerRatingError] = useState(false);
     const [contentRatingError, setContentRatingError] = useState(false);
 
+    const [progress, setProgress] = useState(0);
+
     const submitFeedback = async(event) =>{
         event.preventDefault();
+        setShowSectionThree(false);
         if(validateRatings() === true){
             setSendingLoader(true);
             var testimonial = createTestimonialObj();
@@ -51,6 +54,7 @@ const Survey = ({
             setTimeout(() => {
                 setSendingLoader(false);
                 setEmailSent(true);
+                setProgress(100);
             }, 300);
         }
     }
@@ -140,12 +144,14 @@ const Survey = ({
         if(validateSectionOne() === true){
           setShowSectionTwo(true);
           setShowSectionOne(false);
+          setProgress(33);
       }
       }
 
       const Next2Clicked = () =>{
         setShowSectionTwo(false);
         setShowSectionThree(true);
+        setProgress(66);
       }
 
       const trainerRatingClicked = (event, value)=>{
@@ -165,11 +171,11 @@ const Survey = ({
       className={outerClasses}
       style={{ paddingTop: 0, marginTop: 20 }}
     >
-    {!emailSent && !sendingLoader &&
-      <Container maxWidth="md" style={{ backgroundColor: sendingLoader === true ? '#0e1012' : '#6163ff',
+      <Container maxWidth="md" style={{ backgroundColor: '#6163ff',
         borderRadius: 5,
               marginTop:30}}>
         <h3 style={{paddingTop:15}}>Feedback</h3>
+        <LinearProgress variant="determinate" value={progress} style={{marginBottom:20}}/>
       <Slide direction="left" in={showSectionOne} mountOnEnter unmountOnExit id="sectionOneSlide">
       <div id="sectionOne">
       <div>
@@ -294,21 +300,26 @@ const Survey = ({
         </div>
         </div>
         </Slide>
-      </Container>
-      }
-      {sendingLoader && <Triangle
+        <Slide direction="left" in={sendingLoader} mountOnEnter unmountOnExit id="sectionLoading">
+        <div>
+        <Triangle
                 height="100"
                 width="100"
-                color='grey'
+                color='white'
                 ariaLabel='loading'
                 style={{ marginTop:50}}
-              />}
-      { emailSent && <div style={{ marginTop:50}}>
+              />
+        </div>
+        </Slide>
+        <Slide direction="left" in={emailSent} mountOnEnter unmountOnExit id="sectionDone">
+        <div style={{ marginTop:50, paddingBottom:50}}>
                 <img src={require("../../assets/images/success.png")} style={{ height: 70, width: 70, alignSelf: 'center', borderRadius: 50 }} />
                 <p>
                 {error === true ? 'Please try again after some time.' :
                 'Thank you for your feedback.'}</p>
-              </div>}
+              </div>
+        </Slide>
+      </Container>
     </section>
     );
 }
