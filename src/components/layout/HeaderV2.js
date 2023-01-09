@@ -112,6 +112,10 @@ export default function Header() {
                 }}>
                     <div style={{ color: '#6163ff', verticalAlign: 'center' }}>
                         vikas@booyah.training
+                        
+                    <a href="https://thevikasagarwal.github.io/Portfolio/#/" target="_blank" style={{color:'#6163ff', transition:'fill 0.15s ease', paddingLeft:15}} title="Blog">
+                    <i class="fa fa-duotone fa-blog"></i>
+          </a>
                     </div>
                     <FooterSocial showPhoneNumber={true} style={{}} />
                 </div>
