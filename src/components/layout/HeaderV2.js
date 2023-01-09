@@ -110,13 +110,19 @@ export default function Header() {
                     borderBottomLeftRadius: 5,
                     borderBottomRightRadius: 5
                 }}>
+                <div style={{color: '#6163ff', display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center'}}>
+
                     <div style={{ color: '#6163ff', verticalAlign: 'center' }}>
                         vikas@booyah.training
-                        
-                    <a href="https://thevikasagarwal.github.io/Portfolio/#/" target="_blank" style={{color:'#6163ff', transition:'fill 0.15s ease', paddingLeft:15}} title="Blog">
-                    <i class="fa fa-duotone fa-blog"></i>
-          </a>
                     </div>
+
+                    <i class="fa fa-solid fa-grip-lines-vertical" style={{marginLeft:15}}>                      
+                    </i>
+                    <a href="https://thevikasagarwal.github.io/Portfolio/#/" target="_blank" style={{color:'#ffffff', transition:'fill 0.15s ease', marginLeft:15, backgroundColor:'#6163ff', borderRadius:5, paddingLeft:5, paddingRight:5}} title="Blog">
+                    <i class="fa fa-duotone fa-blog"style={{color:'#ffffff'}}></i>
+                    {" "}Blog
+          </a>
+                </div>
                     <FooterSocial showPhoneNumber={true} style={{}} />
                 </div>
                 <Toolbar className={toolbar}>
