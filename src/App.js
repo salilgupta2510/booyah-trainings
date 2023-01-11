@@ -17,12 +17,15 @@ import ContactUs from './views/ContactUs';
 // import KnowYourTrainer from './components/sections/KnowYourTrainer';
 import TrainingCalendarPage from './views/TrainingCalendar/TrainingCalendarPage';
 import Survey from './views/Survey';
+import { gtag, install } from 'ga-gtag';
 
 // Initialize Google Analytics
-ReactGA.initialize(process.env.REACT_APP_GA_CODE);
+// ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
 
 const App = () => {
+  install("AW-11057596411"); 
+
   return (
     <>
       <BrowserRouter>
