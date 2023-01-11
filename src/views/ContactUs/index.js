@@ -8,6 +8,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Triangle } from 'react-loader-spinner'
 import { QueryService } from '../../services/queryService';
 import { useHistory } from 'react-router-dom';
+import { gtag } from 'ga-gtag';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -134,6 +135,7 @@ const ContactUs = ({
           setEmailSent(true);
           
         }, 300);
+      gtag('event', 'conversion', { 'send_to': 'AW-11057596411/opSMCPDNzocYEPuP1pgp'    });
     }
 
   };

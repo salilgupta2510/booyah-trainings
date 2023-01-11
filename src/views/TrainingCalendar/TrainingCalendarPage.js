@@ -3,8 +3,10 @@ import TrainingCalendar from "../../components/sections/TrainingCalendar";
 import InfoSection from '../../components/sections/partials/InfoSection';
 import Testimonials from '../../components/sections/Testimonials';
 import { useLocation} from 'react-router-dom';
+import { gtag } from 'ga-gtag';
 
 const TrainingCalendarPage = () =>{
+  gtag('event', 'conversion', { 'send_to': 'AW-11057596411/MvRiCJqIzocYEPuP1pgp' });
 
   const routePath = useLocation();
   const onTop = () => {

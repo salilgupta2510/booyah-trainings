@@ -9,15 +9,16 @@ import TrainingCalendar from '../components/sections/TrainingCalendar';
 import WhyUS from '../components/sections/WhyUs';
 import Testimonials from '../components/sections/Testimonials';
 import { useLocation} from 'react-router-dom';
+import { gtag } from 'ga-gtag';
 
 const Home = () => {
-
+  gtag('event', 'conversion', { 'send_to': 'AW-11057596411/A-XQCKK-zocYEPuP1pgp' });
   const routePath = useLocation();
   const onTop = () => {
     window.scrollTo(0, 0);
   }
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
   }, [routePath]);
 
   const sectionHeader = {
@@ -27,6 +28,7 @@ const Home = () => {
   
   return (
     <>
+  
       {/* <Hero className="illustration-section-01" /> */}
       <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" />
       <TrainingCalendar invertMobile imageFill className="illustration-section-02" calenderLimit={4} showHeader={true} showTrainerInfo={true} showSearchOption={false} />

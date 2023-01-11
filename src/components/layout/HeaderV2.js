@@ -34,6 +34,34 @@ const headersData = [
     }
 ];
 
+const headersDataMobile = [
+    {
+        label: "Home",
+        href: "/",
+        target: "_self"
+    },
+    {
+        label: "Calendar",
+        href: "/calendar",
+        target: "_self"
+    },
+    {
+        label: "Trainer",
+        href: "/KnowYourTrainer",
+        target: "_self"
+    },
+    {
+        label: "Testimonials",
+        href: "/Testimonial",
+        target: "_self"
+    },
+    {
+        label:"Blog",
+        href : "https://thevikasagarwal.github.io/Portfolio/#/",
+        target : "_blank"
+    }
+];
+
 const useStyles = makeStyles(() => ({
     header: {
         backgroundColor: "#6163ff",
@@ -114,10 +142,6 @@ export default function Header() {
 
                     <div style={{ color: '#6163ff', verticalAlign: 'center' }}>
                         vikas@booyah.training
-                        
-                    <a href="https://thevikasagarwal.github.io/Portfolio/#/" target="_blank" style={{color:'#6163ff', transition:'fill 0.15s ease', paddingLeft:15}} title="Blog">
-                    <i class="fa fa-duotone fa-blog"></i>
-          </a>
                     </div>
 
                     <i class="fa fa-solid fa-grip-lines-vertical" style={{marginLeft:15}}>                      
@@ -174,7 +198,7 @@ export default function Header() {
     };
 
     const getDrawerChoices = () => {
-        return headersData.map(({ label, href }) => {
+        return headersDataMobile.map(({ label, href, target }) => {
             const bgColor = location.pathname == href ? {   
                 backgroundColor: '#fff', 
                 color: '#6163ff', 
@@ -184,10 +208,11 @@ export default function Header() {
                 <Link
                     {...{
                         component: RouterLink,
-                        to: href,
+                        to: {  pathname: href },
                         color: "inherit",
                         style: { textDecoration: "none" },
                         key: label,
+                        target: target
                     }}
                 >
                     <MenuItem style={bgColor}>{label}</MenuItem>
