@@ -99,7 +99,7 @@ const TrainingCalendar = ({
         if (calendarItem.trainingDurationTimeZone2) {
             timeZoneResult.push(calendarItem.trainingDurationTimeZone3);
         }
-        return timeZoneResult.map(item => item).join('/');
+        return timeZoneResult.map(item => item).join('\r\n');
     }
 
     useEffect(() => {
@@ -181,6 +181,12 @@ const TrainingCalendar = ({
 
                                 />
                             </div>
+                            <div style={{ height: '15%' }}>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone1 ?? ''}`}</div>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone2 ?? ''}`}</div>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone3 ?? ''}`}</div>
+
+                </div>
                            
                             <div style={{ marginTop: 25 }}>
                                 <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center', fontSize: 14, color: '#6163ff' }} onClick={routeToQueryForm}>Enroll Now
@@ -251,7 +257,12 @@ const TrainingCalendar = ({
                         </div>
 
                         {/* <div style={{ marginBottom: 10, height: '20%', fontSize: 16 }}>{`${getTimeZonesInfo(item)}`}</div> */}
-                        
+                        <div style={{ height: '15%' }}>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone1 ?? ''}`}</div>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone2 ?? ''}`}</div>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone3 ?? ''}`}</div>
+
+                </div>
                         <div style={{ marginTop: 10 }}>
                             <Button tag="a" color="white" wideMobile href="" style={{ height: 40, alignItems: 'center', fontSize: 14, color: '#6163ff' }} onClick={routeToQueryForm}>Enroll Now
                             </Button>
@@ -347,6 +358,7 @@ const TrainingCalendar = ({
                 <div style={{ height: '15%' }}>
                     <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone1 ?? ''}`}</div>
                     <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone2 ?? ''}`}</div>
+                    <div style={{ fontSize: 16 }}>{`${item.trainingDurationTimeZone3 ?? ''}`}</div>
 
                 </div>
                 <div style={{ marginTop: 10 }}>
@@ -372,7 +384,7 @@ const TrainingCalendar = ({
             {showSearchOption &&
                 <>
                     <BrowserView>
-                        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: 20 }}>
                             <ButtonGroup>
                                 <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, width: '22%', fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "ALL" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "ALL")}>All Classes
                                 </Button>
