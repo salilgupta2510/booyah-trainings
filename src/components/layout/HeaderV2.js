@@ -8,12 +8,15 @@ import {
     Drawer,
     Link,
     MenuItem,
+    TextField
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import FooterSocial from '../layout/partials/FooterSocial';
 import { useLocation } from 'react-router-dom';
+import validator from 'validator';
+import { NewsletterService } from "../../services/newsletterService";
 
 const headersData = [
     {
@@ -105,6 +108,8 @@ export default function Header() {
     });
 
     const [copied, setCopied] = useState(false);
+    const [subscribeEmail, setSubscribeEmail] = useState('');
+    const [enableBtn, setEnableBtn] = useState(false);
 
     const { mobileView, drawerOpen } = state;
 
@@ -123,6 +128,21 @@ export default function Header() {
             window.removeEventListener("resize", () => setResponsiveness());
         };
     }, []);
+
+    function onEmailChange(event){
+        setSubscribeEmail(event.target.value);
+        if(validator.isEmail(event.target.value)){
+            setEnableBtn(true);
+        }
+        else{
+            setEnableBtn(false);
+        }
+    }
+
+    function onSubscribeBtnClick(event){
+        alert('hi');
+        NewsletterService.SubscribeNewsLetter(subscribeEmail);
+    }
 
     const displayDesktop = () => {
         return (
@@ -150,7 +170,10 @@ export default function Header() {
                     <i class="fa fa-duotone fa-blog"style={{color:'#ffffff'}}></i>
                     {" "}Blog
           </a>
-                </div>
+                    <input placeholder="Email" id="subscribeEmail" onChange={onEmailChange}></input>
+                    <button type="submit" id="subscribeBtn" class="btn btn-primary mb-2"
+                    disabled={!enableBtn} onClick={() => onSubscribeBtnClick()}>SUBSCRIBE</button>
+                    </div>
                     <FooterSocial showPhoneNumber={true} style={{}} />
                 </div>
                 <Toolbar className={toolbar}>
