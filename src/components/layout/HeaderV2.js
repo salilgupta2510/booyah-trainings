@@ -8,12 +8,16 @@ import {
     Drawer,
     Link,
     MenuItem,
+    TextField
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import FooterSocial from '../layout/partials/FooterSocial';
 import { useLocation } from 'react-router-dom';
+import validator from 'validator';
+import { NewsletterService } from "../../services/newsletterService";
+import { Triangle } from 'react-loader-spinner'
 
 const headersData = [
     {
@@ -105,8 +109,14 @@ export default function Header() {
     });
 
     const [copied, setCopied] = useState(false);
+    const [subscribeEmail, setSubscribeEmail] = useState('');
+    const [enableBtn, setEnableBtn] = useState(false);
 
     const { mobileView, drawerOpen } = state;
+
+    const [subscribeRequestSent, setSubscribeRequestSent] = useState(false);
+    const [subscribeResponseReceived, setSubscribeResponseReceived] = useState(false);
+
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -123,6 +133,27 @@ export default function Header() {
             window.removeEventListener("resize", () => setResponsiveness());
         };
     }, []);
+
+    function onEmailChange(event){
+        setSubscribeEmail(event.target.value);
+        if(validator.isEmail(event.target.value)){
+            setEnableBtn(true);
+        }
+        else{
+            setEnableBtn(false);
+        }
+    }
+
+    const onSubscribeBtnClick = async(event)=>{
+        setSubscribeRequestSent(true);
+        await NewsletterService.SubscribeNewsLetter(subscribeEmail);
+        setTimeout(()=>{
+            setSubscribeRequestSent(false);
+            setSubscribeResponseReceived(true);
+
+        },300)
+        
+    }
 
     const displayDesktop = () => {
         return (
@@ -150,7 +181,29 @@ export default function Header() {
                     <i class="fa fa-duotone fa-blog"style={{color:'#ffffff'}}></i>
                     {" "}Blog
           </a>
-                </div>
+          {!subscribeRequestSent && !subscribeResponseReceived &&
+          <>
+                    <input placeholder="Email" id="subscribeEmail" onChange={onEmailChange}
+                    style={{borderBottomRightRadius:0, borderTopRightRadius:0, borderRight:0, borderColor:'#9ca9b3'}}></input>
+                    <button type="submit" id="subscribeBtn" 
+                    disabled={!enableBtn} onClick={() => onSubscribeBtnClick()}
+                    style={{borderBottomLeftRadius:0, borderTopLeftRadius:0, marginTop:0, height:29, marginLeft:0, backgroundColor: enableBtn ? '#6163ff' :'#9ca9b3', color:'#ffffff', borderLeft:0,borderColor:'#9ca9b3'}}>SUBSCRIBE</button>
+          </>
+          }
+          {subscribeRequestSent && !subscribeResponseReceived &&
+          <div style={{marginLeft:85}}>
+          <Triangle
+                height="20"
+                width="20"
+                color='black'
+                ariaLabel='loading'
+              />
+              </div>}
+              {!subscribeRequestSent && subscribeResponseReceived &&
+                <div style={{ color: '#6163ff', verticalAlign: 'center', marginLeft:5, fontWeight:'bold' }}>
+                        Thank you for subscribing
+                    </div>}
+                    </div>
                     <FooterSocial showPhoneNumber={true} style={{}} />
                 </div>
                 <Toolbar className={toolbar}>

@@ -18,6 +18,7 @@ import ContactUs from './views/ContactUs';
 import TrainingCalendarPage from './views/TrainingCalendar/TrainingCalendarPage';
 import Survey from './views/Survey';
 import { gtag, install } from 'ga-gtag';
+import Unsubscribe from './views/Unsubscribe';
 
 // Initialize Google Analytics
 // ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -39,6 +40,7 @@ const App = () => {
           <AppRoute exact path="/queryForm" component={ContactUs} layout={LayoutDefault} hideFooter={false} />
           <AppRoute exact path="/calendar" component={TrainingCalendarPage} layout={LayoutDefault} hideFooter={false} />
           <AppRoute exact path="/survey" component={Survey} />
+          <AppRoute exact path="/unsubscribe" component={Unsubscribe} />
         </Switch>
       </BrowserRouter>
     </>

@@ -43,6 +43,7 @@ const ContactUs = ({
   const [name, setName] = useState('');
   const [mobileNo, setMobileNo] = useState('');
   const [comments, setComments] = useState('I would like to enroll for KMP Class, please send course, fee and registration details');
+  const [subscribeToNewsletter, setSubscribeToNewsletter] = useState(true)
 
   const routePath = useLocation();
   const onTop = () => {
@@ -89,6 +90,10 @@ const ContactUs = ({
   const onCommentsChange = (event) =>{
     setComments(event.target.value);
   }
+
+  const onSubscribeChange = (event) =>{
+    setSubscribeToNewsletter(event.target.checked);
+  }
   
   const validateValue = async() =>{
     if (!emailRef.current.value) { setEmailError(true) } 
@@ -104,7 +109,8 @@ const ContactUs = ({
       email : email,
       mobileNo : mobileNo,
       requestedOn : new Date,
-      comments : comments
+      comments : comments,
+      subscribeToNewsletter: subscribeToNewsletter
     }
     return trainingEnquiry;
   }
@@ -161,7 +167,7 @@ const ContactUs = ({
               {sendingLoader && <Triangle
                 height="100"
                 width="100"
-                color='grey'
+                color='white'
                 ariaLabel='loading'
               />}
               {!emailSent && !sendingLoader && <>
@@ -175,10 +181,11 @@ const ContactUs = ({
                   {emailError && <div style={{ color: 'red' }}>Please enter your email address</div>}
                   <input placeholder='Contact Number' style={styles.input} type="number" name="user_number" onChange={onMobileChange} />
                   <textarea placeholder='Let Us Know' style={styles.input} name="message" onChange={onCommentsChange} value={comments}/>
+                  <label style={{align:'left'}}>Subscribe to our Newsletter </label>{" " }<input type="checkbox" checked={subscribeToNewsletter} onChange={onSubscribeChange} />
                 </form>
                 {error && <h5 style={{ color: 'red' }}>{error}</h5>}
                 <div>
-                  <ButtonGroup>
+                  <ButtonGroup style={{marginTop:10}}>
                     <Button tag="button" color="primary" wideMobile onClick={() => sendEmail()}>
                       Send
                     </Button>
