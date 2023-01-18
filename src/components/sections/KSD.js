@@ -162,7 +162,7 @@ const KSD = ({
                 <ButtonGroup>
                     <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToCalendar}>Find A KSD Class
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="/KSDFlyer.pdf" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" download>Download KSD Flyer
+                    <Button tag="a" color="white" wideMobile href="https://kanban.university/wp-content/uploads/2022/11/KSD-Flyer-A4.pdf" target="_blank" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" download>Download KSD Flyer
                     </Button>
                     <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToQueryForm}>Ques? Contact Us
                     </Button>

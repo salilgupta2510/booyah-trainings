@@ -276,7 +276,7 @@ export default function Header() {
 
     const femmecubatorLogo = (
             <Typography variant="h6" component="h1" className={logo}>
-                BooYah Training 
+                Learn and Practice Agile 
             </Typography>
 
     );

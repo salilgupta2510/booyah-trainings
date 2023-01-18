@@ -167,7 +167,7 @@ const KSI = ({
                 <ButtonGroup>
                     <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToCalendar}>Find A KSI Class
                     </Button>
-                    <Button tag="a" color="white" fo wideMobile href="/KSIFlyer.pdf" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff' }} className="btn-lg" download>Download KSI Flyer
+                    <Button tag="a" color="white" fo wideMobile href=" https://kanban.university/wp-content/uploads/2022/08/KSI-Flyer-A4.pdf" target="_blank" style={{ borderRadius: 7,fontSize: 14, color: '#6163ff' }} className="btn-lg" download>Download KSI Flyer
                     </Button>
                     <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, fontSize: 14, color: '#6163ff'}} className="btn-lg" onClick={routeToQueryForm}>Ques? Contact Us
                     </Button>
