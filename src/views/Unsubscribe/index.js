@@ -10,10 +10,6 @@ const Unsubscribe = () =>{
     const [showLoader, setShowLoader] = useState(false);
     const [unsubscribed, setUnsubscribed] = useState(false);
     const [unsubscribeResponse, setUnsubscribeResponse] = useState('');
-    // const uid  = useParams();
-
-    // let userId = uid["uid"];
-    // console.log(window.location.search.split('='));
 
     const unsubscribeBtnClick = async() =>{
         setShowLoader(true);

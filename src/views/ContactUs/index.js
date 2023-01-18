@@ -92,7 +92,6 @@ const ContactUs = ({
   }
 
   const onSubscribeChange = (event) =>{
-    console.log(event);
     setSubscribeToNewsletter(event.target.checked);
   }
   
