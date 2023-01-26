@@ -10,9 +10,10 @@ import WhyUS from '../components/sections/WhyUs';
 import Testimonials from '../components/sections/Testimonials';
 import { useLocation} from 'react-router-dom';
 import { gtag } from 'ga-gtag';
+import Caraousel from '../components/elements/Carousel.js';
 
 const Home = () => {
-  gtag('event', 'conversion', { 'send_to': 'AW-11057596411/A-XQCKK-zocYEPuP1pgp' });
+  // gtag('event', 'conversion', { 'send_to': 'AW-11057596411/A-XQCKK-zocYEPuP1pgp' });
   const routePath = useLocation();
   const onTop = () => {
     window.scrollTo(0, 0);
@@ -25,15 +26,17 @@ const Home = () => {
     title: 'Kanban Management Professional (KMP)',
     paragraph: 'Kanban Management Professional credential is granted upon the completion of two classes. Kanban System Design, which teaches the basics of Kanban, flow, and how to design a Kanban system. Kanban Systems Improvement, which teaches how to evolve, improve, and scale a Kanban system. KMPs should be able to design a Kanban system and evolve and scale it beyond the team.'
   };
+
   
   return (
     <>
   
       {/* <Hero className="illustration-section-01" /> */}
-      <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" />
+      {/* <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" /> */}
+      <Caraousel showImages={true}/>
       <TrainingCalendar invertMobile imageFill className="illustration-section-02" calenderLimit={4} showHeader={true} showTrainerInfo={true} showSearchOption={false} />
       <WhyUS invertMobile imageFill className="illustration-section-02" />
-      <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} />
+      <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} showCarousel={true} />
       {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}
       {/* <Cta split /> */}
     </>

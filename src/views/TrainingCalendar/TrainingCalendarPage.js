@@ -6,7 +6,7 @@ import { useLocation} from 'react-router-dom';
 import { gtag } from 'ga-gtag';
 
 const TrainingCalendarPage = () =>{
-  gtag('event', 'conversion', { 'send_to': 'AW-11057596411/MvRiCJqIzocYEPuP1pgp' });
+  // gtag('event', 'conversion', { 'send_to': 'AW-11057596411/MvRiCJqIzocYEPuP1pgp' });
 
   const routePath = useLocation();
   const onTop = () => {
