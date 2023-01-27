@@ -15,6 +15,7 @@ import '../../assets/scss/core/elements/_carousel.scss';
 import Rating from './Rating';
 import Image from '../elements/Image';
 import Pagination from './Pagination';
+import TestimonialBackground from '../../assets/images/TestimonialBackground.jpeg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -34,6 +35,7 @@ const useStyles = makeStyles({
 const Caraousel = ({
     testimonialData,
     showImages,
+    style,
     ...props
 }) =>{
     const classes = useStyles();
@@ -42,11 +44,11 @@ const Caraousel = ({
     const [activeStep, setActiveStep] = useState(0);
     
     const carouselImages = [
-            {path: require('../../assets/images/carousel/1.jpeg')},
-            {path: require('../../assets/images/carousel/2.jpeg')},
-            {path: require('../../assets/images/carousel/3.jpeg')},
-            {path: require('../../assets/images/carousel/4.jpeg')},
-            {path: require('../../assets/images/carousel/5.jpeg')},
+            {path: require('../../assets/images/carousel/1.jpeg'), description:'Collaboration using Interactive Mural Boards'},
+            {path: require('../../assets/images/carousel/2.jpg'), description:'Attend Online Workshop and Learn from Anywhere'},
+            {path: require('../../assets/images/carousel/3.jpg'), description:'Engaging and Fun-Filled Learning Experience'},
+            {path: require('../../assets/images/carousel/4.jpg'), description:'Focus and Attention to each participant'},
+            {path: require('../../assets/images/carousel/5.jpg'), description:'Get Answer to all your questions'},
     ];
 
     const items = [
@@ -137,9 +139,39 @@ const Caraousel = ({
         setActiveStep(step);
       }
 
-      
-
     return(
+     <div>
+{showImages === true ?
+<>
+
+        <AutoPlaySwipeableViews
+          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+          animateTransitions={true}
+          interval={6000}
+          >
+         {carouselImages.map((image, i) => (
+              <Box
+              key={i}
+              sx={{ display: "flex", justifyContent: "center" }}>
+                  <article style={{height:'100%', position:'relative',  textAlign:'center'}}>
+                  <img  src={image.path} alt="background" style={{objectFit:'cover', width:'1124px', height:'400px'}} />
+                  
+                  <div style={{backgroundColor:'#6163ff', position:'absolute',position:'absolute',top:8, right:16, padding:8, opacity:0.8, borderRadius:10, fontSize:"2vw" }}>
+                  {image.description}
+                  </div>
+                  </article>
+            </Box>
+          ))}
+        </AutoPlaySwipeableViews>
+        <Grid item xs={12} style={{marginLeft:'43%'}}
+        >
+      <Pagination dots={showImages === true ? maxStepsImages : maxSteps} index={activeStep} onChangeIndex={(step)=>handleDotsClick(step)} propStyle={style} {...props}/>
+        </Grid> 
+        </>
+        :
         <Paper
         square={false}
       sx={{
@@ -147,47 +179,23 @@ const Caraousel = ({
         borderRadius: "20px",
         width: { xs: "290px", sm: "auto" }
       }}
-      style={{marginLeft:'5.5%', marginRight:'5.5%', marginTop:30}}
+      style={{marginLeft:'5.5%', marginRight:'5.5%', marginTop:30, 
+      backgroundImage: showImages === true ? '': `url(${TestimonialBackground})`
+      ,backgroundRepeat:'no-repeat'
+      ,backgroundSize:'cover'
+      ,backgroundAttachment:'fixed'
+      }}
+
       elevation={9}
     >
       <Grid container>
         <Grid item xs={12}>
-          {/* <CssBaseline /> */}
           <AutoPlaySwipeableViews
             axis={theme.direction === "rtl" ? "x-reverse" : "x"}
             index={activeStep}
             onChangeIndex={handleStepChange}
-            enableMouseEvents
-          >
-          {showImages === true ? carouselImages.map((image, i) => (
-                <Box
-                key={i}
-                sx={{ display: "flex", justifyContent: "center" }}
-              >
-                <Card
-                  sx={{
-                    width: {
-                      xs: "300px",
-                      sm: "250px",
-                      md: "350px",
-                      lg: "380px",
-                      xl: "450px"
-                    },
-                    height: { xs: "105vh", sm: "auto", md: "80vh", lg: "60vh" },
-                    display: "flex",
-                    flexDirection: "column",
-                    padding: "5px",
-                    margin: { xs: 0, sm: "10px" }
-                  }}
-                >
-                    <CardContent>
-                    <Image src={image.path}/>
-                    </CardContent>
-                </Card>
-              </Box>
-
-            ))
-          : testimonialData && typeof testimonialData !== "string" && testimonialData.length > 0 && testimonialData.map((item, i) => (
+            enableMouseEvents>
+          {testimonialData && typeof testimonialData !== "string" && testimonialData.length > 0 && testimonialData.map((item, i) => (
               <Box
                 key={item.testimonialId}
                 sx={{ display: "flex", justifyContent: "center" }}
@@ -211,21 +219,19 @@ const Caraousel = ({
                   <CardContent>
                     <Typography
                       variant="body2"
-                      color="text.secondary"
                       align="justify"
-                      backgroundColor= 'red'
+                      style={{fontStyle:'italic', fontWeight:'bolder', color:'#fff', fontFamily:'Lobster'}}
                     >
                       {item.like}
                     </Typography>
                   </CardContent>
-                  <Stack direction="row">
-                    
+                  <Stack direction="row" align="center">
                     <Typography component="h6" align="center">
-                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:16, marginLeft:15 }}>Trainer Rating: 
+                    <span style={{ fontStyle:'italic', fontWeight:'bolder', color:'#fff', fontFamily:'Lobster',  marginLeft:45 }}>Trainer Rating: 
                     <Rating currentRating={item.trainerRating} leftMargin={9} {...props}/>
                     </span>
-                      <Typography variant="subtitle2" align="center">
-                      <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:16, marginLeft:15 }}>Content Rating: 
+                      <Typography component="h6" align="center">
+                      <span style={{ fontStyle:'italic', fontWeight:'bolder', color:'#fff', fontFamily:'Lobster', marginLeft:45 }}>Content Rating: 
                     <Rating currentRating={item.contentRating} leftMargin={6} {...props}/>
                     </span>
                       </Typography>
@@ -236,11 +242,14 @@ const Caraousel = ({
             ))}
           </AutoPlaySwipeableViews>
         </Grid>
-        <Grid item xs={12} style={{marginLeft:'45%'}}>
-      <Pagination dots={showImages === true ? maxStepsImages : maxSteps} index={activeStep} onChangeIndex={(step)=>handleDotsClick(step)}  />
+        <Grid item xs={12} style={{marginLeft:'43%'}}>
+      <Pagination dots={showImages === true ? maxStepsImages : maxSteps} index={activeStep} onChangeIndex={(step)=>handleDotsClick(step)} />
         </Grid> 
       </Grid>
-    </Paper>
+    </Paper>}
+        </div>
+      
+    
     )
 }
 

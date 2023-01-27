@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PaginationDot from './PaginationDot';
 
-const styles = {
-  root: {
-    position: 'relative',
-    bottom: 8,
-    right: 8,
-    display: 'flex',
-    flexDirection: 'row',
-  },
-};
+ const styles = {
+      root: {
+        position: 'relative',
+        bottom: 8,
+        right: 8,
+        display: 'flex',
+        flexDirection: 'row',
+        // marginLeft:'40%'
+      },
+    };
 
 class Pagination extends React.Component {
   handleClick = (event, index) => {
@@ -18,9 +19,14 @@ class Pagination extends React.Component {
   };
 
   render() {
-    const { index, dots } = this.props;
+    let { index, dots, propStyle } = this.props;
 
     const children = [];
+    if(propStyle === undefined){
+      propStyle = styles;
+    }
+
+   
 
     for (let i = 0; i < dots; i += 1) {
       children.push(
@@ -28,7 +34,7 @@ class Pagination extends React.Component {
       );
     }
 
-    return <div style={styles.root}>{children}</div>;
+    return <div style={propStyle.root}>{children}</div>;
   }
 }
 
