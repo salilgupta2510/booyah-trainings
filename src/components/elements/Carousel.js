@@ -132,6 +132,7 @@ const Caraousel = ({
     const maxStepsImages = carouselImages && carouselImages.length ? carouselImages.length : 0;
 
       const handleStepChange = (step) => {
+        console.log(step);
             setActiveStep(step);
       };
 
@@ -149,12 +150,12 @@ const Caraousel = ({
           index={activeStep}
           onChangeIndex={handleStepChange}
           enableMouseEvents
-          animateTransitions={true}
-          interval={6000}
+          animateTransitions={false}
+          interval={10000}
           >
          {carouselImages.map((image, i) => (
               <Box
-              key={i}
+              // key={i}
               sx={{ display: "flex", justifyContent: "center" }}>
                   <article style={{height:'100%', position:'relative',  textAlign:'center'}}>
                   <img  src={image.path} alt="background" style={{objectFit:'cover', width:'1124px', height:'400px'}} />
@@ -194,7 +195,10 @@ const Caraousel = ({
             axis={theme.direction === "rtl" ? "x-reverse" : "x"}
             index={activeStep}
             onChangeIndex={handleStepChange}
-            enableMouseEvents>
+            enableMouseEvents
+            animateTransitions={false}
+            interval={10000}>
+            
           {testimonialData && typeof testimonialData !== "string" && testimonialData.length > 0 && testimonialData.map((item, i) => (
               <Box
                 key={item.testimonialId}
