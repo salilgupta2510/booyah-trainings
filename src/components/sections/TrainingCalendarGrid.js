@@ -10,6 +10,9 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useHistory } from 'react-router-dom';
+import {Box, Paper, Typography, Grid, CssBaseline, Card, CardContent, CardActions} from '@material-ui/core';
+import { styled } from '@mui/material/styles';
+import Moment from 'react-moment';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -19,7 +22,7 @@ const propTypes = {
 const defaultProps = {
     ...SectionProps.defaults
 }
-const TrainingCalendar = ({
+const TrainingCalendarGrid = ({
     className,
     topOuterDivider,
     bottomOuterDivider,
@@ -31,16 +34,15 @@ const TrainingCalendar = ({
     showHeader,
     showTrainerInfo,
     showSearchOption,
-    trainingFilterInput,
     ...props
 }) => {
     const setTrainingCalendarData = TrainingCalendarStore((state) => state.setTrainingCalendarData);
     const trainingCalendarData = TrainingCalendarStore((state) => state.trainingCalendarData);
 
     const [trainingCount, setTrainingCount] = useState(0);
-    const [trainingFilter, setTrainingFilter] = useState(trainingFilterInput === undefined ? 'ALL' : trainingFilterInput);
+    const [trainingFilter, setTrainingFilter] = useState('All');
 
-    const [selectedBtn, setSelectedBtn] = useState(trainingFilterInput === undefined ? 'ALL' : trainingFilterInput);
+    const [selectedBtn, setSelectedBtn] = useState('ALL');
 
     const history = useHistory();
 
@@ -97,14 +99,13 @@ const TrainingCalendar = ({
         if (calendarItem.trainingDurationTimeZone2) {
             timeZoneResult.push(calendarItem.trainingDurationTimeZone2);
         }
-        if (calendarItem.trainingDurationTimeZone2) {
+        if (calendarItem.trainingDurationTimeZone3) {
             timeZoneResult.push(calendarItem.trainingDurationTimeZone3);
         }
-        return timeZoneResult.map(item => item).join('\r\n');
+        return timeZoneResult.map(item => item).join(' / ');
     }
 
     useEffect(() => {
-        console.log(trainingFilter);
         makeDataCall(trainingFilter);
     }, [trainingCount])
 
@@ -274,6 +275,88 @@ const TrainingCalendar = ({
             </>
         )
     }
+    const Item = styled(Paper)(({ theme }) => ({
+        backgroundColor: 'white',
+        //  theme.palette.mode === 'dark' ? '#fff' : '#fff',
+        ...theme.typography.body2,
+        padding: theme.spacing(1),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+      }));
+
+      const Header = styled(Paper)(({ theme }) => ({
+        backgroundColor: 'white',
+        //  theme.palette.mode === 'dark' ? '#fff' : '#fff',
+        ...theme.typography.body2,
+        padding: theme.spacing(1),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        borderStyle:'none'
+      }));
+
+    const renderGrid = () =>{
+        return(
+
+<Box style={{overflowX: 'auto', maxWidth:1200}}>
+      <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3, lg:0 }} className="grid-width">
+      <Grid item xs={2} style={{paddingBottom:10}}>
+          <Header className="header-left">Event</Header>
+        </Grid>
+        <Grid item xs={2} style={{paddingBottom:10}}>
+          <Header className="header-all">Start Date</Header>
+        </Grid>
+        <Grid item xs={2} style={{paddingBottom:10}}>
+          <Header className="header-all">End Date</Header>
+        </Grid>
+        <Grid item xs={2} style={{paddingBottom:10}}>
+          <Header className="header-all" noWrap>Timing</Header>
+        </Grid>
+        <Grid item xs={2} style={{paddingBottom:10}}>
+          <Header className="header-all">Venue</Header>
+        </Grid>
+        <Grid item xs={2} style={{paddingBottom:10}}>
+          <Header className="header-right"></Header>
+        </Grid>
+        {trainingCalendarData.map((training, index) =>{
+            return(<>
+
+            <Grid item xs={2} className="grid-row">
+          <Item className="header-left">{training.trainingTitle}</Item>
+        </Grid>
+        <Grid item xs={2} className="grid-row">
+          <Item className="header-all">
+          <Moment format="DD/MM/YYYY">
+          {training.trainingStartDate}
+            </Moment>
+          </Item>
+        </Grid>
+        <Grid item xs={2} className="grid-row">
+          <Item className="header-all">
+          <Moment format="DD/MM/YYYY">
+          {training.trainingEndDate}
+            </Moment>
+            </Item>
+        </Grid>
+        <Grid item xs={2} className="grid-row">
+          <Item className="header-all">{getTimeZonesInfo(training)}</Item>
+        </Grid>
+        <Grid item xs={2} className="grid-row">
+          <Item className="header-all">{training.venue}</Item>
+        </Grid>
+        <Grid item xs={2} className="grid-row">
+          <Item className="header-right">
+            <a tag="a" onClick={routeToQueryForm} 
+            style={{color:'blue', cursor:'pointer', textDecoration:'underline'}}>Register</a>
+          </Item>
+        </Grid>
+            </>)
+        })}
+        
+        
+      </Grid>
+    </Box>
+        )
+    }
 
     const renderTrainingCalendarData = () => {
         let rowCount = [];
@@ -427,10 +510,10 @@ const TrainingCalendar = ({
                     </div>}
             </div>
             {typeof trainingCalendarData !== 'string' && trainingCalendarData.length > 0 &&
-                renderTrainingCalendarData()
+                renderGrid()
             }
         </section>
     );
 }
 
-export default TrainingCalendar;
+export default TrainingCalendarGrid;

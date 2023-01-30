@@ -44,8 +44,8 @@ const Caraousel = ({
     const [activeStep, setActiveStep] = useState(0);
     
     const carouselImages = [
-            {path: require('../../assets/images/carousel/1.jpeg'), description:'Collaboration using Interactive Mural Boards'},
             {path: require('../../assets/images/carousel/2.jpg'), description:'Attend Online Workshop and Learn from Anywhere'},
+            {path: require('../../assets/images/carousel/1.jpeg'), description:'Collaboration using Interactive Mural Boards'},
             {path: require('../../assets/images/carousel/3.jpg'), description:'Engaging and Fun-Filled Learning Experience'},
             {path: require('../../assets/images/carousel/4.jpg'), description:'Focus and Attention to each participant'},
             {path: require('../../assets/images/carousel/5.jpg'), description:'Get Answer to all your questions'},
@@ -132,7 +132,6 @@ const Caraousel = ({
     const maxStepsImages = carouselImages && carouselImages.length ? carouselImages.length : 0;
 
       const handleStepChange = (step) => {
-        console.log(step);
             setActiveStep(step);
       };
 
@@ -160,7 +159,7 @@ const Caraousel = ({
                   <article style={{height:'100%', position:'relative',  textAlign:'center'}}>
                   <img  src={image.path} alt="background" style={{objectFit:'cover', width:'1124px', height:'400px'}} />
                   
-                  <div style={{backgroundColor:'#6163ff', position:'absolute',position:'absolute',top:8, right:16, padding:8, opacity:0.8, borderRadius:10, fontSize:"2vw" }}>
+                  <div style={{backgroundColor:'#6163ff', position:'absolute',position:'absolute',top:8, right:16, padding:8, opacity:0.8, borderRadius:10, fontSize:"2vw" }} className="carousel-heading">
                   {image.description}
                   </div>
                   </article>
@@ -200,7 +199,7 @@ const Caraousel = ({
             interval={10000}>
             
           {testimonialData && typeof testimonialData !== "string" && testimonialData.length > 0 && testimonialData.map((item, i) => (
-              <Box
+              <Box id="testimonials"
                 key={item.testimonialId}
                 sx={{ display: "flex", justifyContent: "center" }}
               >

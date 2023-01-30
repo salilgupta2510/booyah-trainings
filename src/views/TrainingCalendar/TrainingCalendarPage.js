@@ -5,8 +5,13 @@ import Testimonials from '../../components/sections/Testimonials';
 import { useLocation} from 'react-router-dom';
 import { gtag } from 'ga-gtag';
 
-const TrainingCalendarPage = () =>{
+const TrainingCalendarPage = ({...props}) =>{
   // gtag('event', 'conversion', { 'send_to': 'AW-11057596411/MvRiCJqIzocYEPuP1pgp' });
+
+  const location = useLocation()
+  const {state} = props.location;
+  console.log("Vaue of state");
+  console.log(state);
 
   const routePath = useLocation();
   const onTop = () => {
@@ -23,7 +28,7 @@ const TrainingCalendarPage = () =>{
 
     return(
         <>
-      <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} />
+      <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} trainingFilterInput={state} />
       <div style={{marginTop:10}}>
       <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} />
       </div>

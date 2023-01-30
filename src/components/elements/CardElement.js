@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Paper, Typography, Grid, CssBaseline, Card, CardContent, CardActions} from '@material-ui/core';
+import {Box, Typography,Card, CardContent, CardActions} from '@material-ui/core';
 import '../../assets/scss/core/elements/_card.scss';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
@@ -7,8 +7,22 @@ import Button from '../elements/Button';
 
 const CardElement = ({
     data,
+    exploreClickEvent,
+    findClickEvent,
     ...props
 })=>{
+
+  const onClickExplore = (event) =>{
+    event.preventDefault();
+    exploreClickEvent();
+  }
+
+  const onClickRegister = (event)=>{
+    event.preventDefault();
+    findClickEvent();
+  }
+
+  
 
     const card = (
         <React.Fragment >
@@ -22,11 +36,11 @@ const CardElement = ({
           </CardContent>
           <CardActions>
           <div className="features-tiles-item-content center-content">
-                  <ButtonGroup style={{marginLeft:26}}>
-                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 14, color: '#6163ff'}} >
+                  <ButtonGroup style={{marginLeft:35}}>
+                    <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '30%', fontSize: 14, color: '#6163ff'}} className="card-button" onClick={onClickRegister}>
                     Register
                     </Button>
-                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '40%', fontSize: 14, color: '#6163ff' }} >Explore
+                    <Button tag="a" color="white" wideMobile href="" style={{ borderRadius: 7, width: '30%', fontSize: 14, color: '#6163ff' }} className="card-button" onClick={onClickExplore}>Explore
                     </Button>
                   </ButtonGroup>
                 </div>

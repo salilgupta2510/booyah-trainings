@@ -5,7 +5,8 @@ import FeaturesTiles from '../components/sections/FeaturesTiles';
 import Cta from '../components/sections/Cta';
 import AboutCoach from '../components/sections/AboutCoach';
 import InfoSection from '../components/sections/partials/InfoSection';
-import TrainingCalendar from '../components/sections/TrainingCalendar';
+// import TrainingCalendar from '../components/sections/TrainingCalendar';
+import TrainingCalendarGrid from '../components/sections/TrainingCalendarGrid';
 import WhyUS from '../components/sections/WhyUs';
 import Testimonials from '../components/sections/Testimonials';
 import { useLocation} from 'react-router-dom';
@@ -46,7 +47,7 @@ const Home = () => {
       {/* <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" /> */}
       <Caraousel showImages={true} style={CarouselPaginationstyle}/>
       <InfoCards/>
-      <TrainingCalendar invertMobile imageFill className="illustration-section-02" calenderLimit={4} showHeader={true} showTrainerInfo={true} showSearchOption={false} />
+      <TrainingCalendarGrid invertMobile imageFill className="illustration-section-02" calenderLimit={6} showHeader={true} showTrainerInfo={true} showSearchOption={false} />
       <WhyUS invertMobile imageFill className="illustration-section-02" />
       <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} showCarousel={true} />
       {/* <AboutCoach invertMobile topDivider imageFill className="illustration-section-02" /> */}
