@@ -4,6 +4,7 @@ import InfoSection from '../../components/sections/partials/InfoSection';
 import Testimonials from '../../components/sections/Testimonials';
 import { useLocation} from 'react-router-dom';
 import { gtag } from 'ga-gtag';
+import TrainingCalendarGrid from '../../components/sections/TrainingCalendarGrid';
 
 const TrainingCalendarPage = ({...props}) =>{
   // gtag('event', 'conversion', { 'send_to': 'AW-11057596411/MvRiCJqIzocYEPuP1pgp' });
@@ -28,8 +29,11 @@ const TrainingCalendarPage = ({...props}) =>{
 
     return(
         <>
-      <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} trainingFilterInput={state} />
+      {/* <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} trainingFilterInput={state} />
+       */}
+       <TrainingCalendarGrid invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} />
       <div style={{marginTop:10}}>
+      
       <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} />
       </div>
         </>

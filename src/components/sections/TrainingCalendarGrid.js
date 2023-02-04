@@ -294,6 +294,47 @@ const TrainingCalendarGrid = ({
         borderStyle:'none'
       }));
 
+      const renderTrainingCalendarHeader = () =>{
+        return(
+            <tr style={{marginBottom:10, backgroundColor:'#6163ff'}}>
+      <th className="header-left">Event</th>
+      <th className='header-all'>Start Date</th>
+      <th className='header-all'>End Date</th>
+      <th className='header-all'>Timing</th>
+      <th className='header-all'>Venue</th>
+      <th className='header-right'>Register</th>
+            </tr>
+        )
+      }
+
+      const renderTrainingCalendarGridRow = () =>{
+        return(
+            <>
+            {trainingCalendarData.map((training, index) =>{
+                return(<>
+    
+    <tr key={index} style={{backgroundColor: index%2 == 0 ? '#ffffff' : '#D3D3D3'}}>
+      <td className="header-left">{training.trainingTitle}</td>
+      <td className='header-all'> 
+      <Moment format="DD/MM/YYYY">{training.trainingStartDate}</Moment>
+      </td>
+      <td className='header-all'>
+      <Moment format="DD/MM/YYYY">{training.trainingEndDate}</Moment>
+      </td>
+      <td className='header-all'>{getTimeZonesInfo(training)}</td>
+      <td className='header-all'>{training.venue}</td>
+      <td  className='header-right'>
+      <a tag="a" onClick={routeToQueryForm} 
+            style={{color:'blue', cursor:'pointer', textDecoration:'underline'}}>Register</a>
+      </td>
+    </tr>
+                </>)
+            })}
+        </>
+        )
+
+      }
+
     const renderGrid = () =>{
         return(
 
@@ -510,7 +551,13 @@ const TrainingCalendarGrid = ({
                     </div>}
             </div>
             {typeof trainingCalendarData !== 'string' && trainingCalendarData.length > 0 &&
-                renderGrid()
+            <div style={{overflowX:'scroll', minWidth:800}}>
+  <table style={{minWidth:100}}>
+  {renderTrainingCalendarHeader()}
+    {renderTrainingCalendarGridRow()}
+  
+  </table>
+</div>
             }
         </section>
     );
