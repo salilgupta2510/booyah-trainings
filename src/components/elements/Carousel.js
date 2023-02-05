@@ -159,7 +159,7 @@ const Caraousel = ({
                   <article style={{height:'100%', position:'relative',  textAlign:'center'}}>
                   <img  src={image.path} alt="background" style={{objectFit:'cover', width:'1124px', height:'400px'}} />
                   
-                  <div style={{backgroundColor:'#6163ff', position:'absolute',position:'absolute',top:8, right:16, padding:8, opacity:0.8, borderRadius:10, fontSize:"2vw" }} className="carousel-heading">
+                  <div style={{backgroundColor:'#6163ff', position:'absolute',position:'absolute',top:8, right:16, padding:8, opacity:0.8, borderRadius:10, fontSize:"1.5vw" }} className="carousel-heading">
                   {image.description}
                   </div>
                   </article>

@@ -11,8 +11,6 @@ const TrainingCalendarPage = ({...props}) =>{
 
   const location = useLocation()
   const {state} = props.location;
-  console.log("Vaue of state");
-  console.log(state);
 
   const routePath = useLocation();
   const onTop = () => {
@@ -29,9 +27,9 @@ const TrainingCalendarPage = ({...props}) =>{
 
     return(
         <>
-      {/* <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} trainingFilterInput={state} />
-       */}
-       <TrainingCalendarGrid invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} />
+      <TrainingCalendar  invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} trainingFilterInput={state} />
+       
+       {/* <TrainingCalendarGrid invertMobile imageFill className="illustration-section-02" calenderLimit={0} showHeader={false} showTrainerInfo={false} showSearchOption={true} /> */}
       <div style={{marginTop:10}}>
       
       <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} />

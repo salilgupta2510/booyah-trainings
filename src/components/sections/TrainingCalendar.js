@@ -104,7 +104,6 @@ const TrainingCalendar = ({
     }
 
     useEffect(() => {
-        console.log(trainingFilter);
         makeDataCall(trainingFilter);
     }, [trainingCount])
 
