@@ -112,3 +112,23 @@ margin-left: 5px;
 	height: 35px;
 	margin-top: 5px;
 }
+
+.MuiToolbar-regular
+{
+	min-height: 27px !important;
+}
+
+.MuiButton-text{
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text{
+	size:14px !important;
+	font-size: small !important;
+}
+
+.MuiTypography-h6{
+	font-size: 1rem !important;
+	line-height: 0.6rem !important;
+}

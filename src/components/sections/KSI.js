@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../../components/elements/ButtonGroup';
 import Button from '../../components/elements/Button';
 import { Link } from 'react-router-dom';
 import Image from '../elements/Image';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 // eslint-disable-next-line
@@ -28,6 +28,12 @@ const KSI = ({
 }) => {
 
   const history = useHistory();
+
+  const routePath = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [routePath]);
 
   const routeToQueryForm = () =>{ 
     history.push('/queryForm');
@@ -153,7 +159,7 @@ const KSI = ({
         <section
             {...props}
             className={outerClasses}
-            style={{ paddingTop: 0, marginTop: 150 }}
+            style={{ paddingTop: 0}}
         >
             <div className="container">
                 <div className={innerClasses} style={{ paddingBottom: 10 }}>

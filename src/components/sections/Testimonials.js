@@ -6,6 +6,8 @@ import TestimonialStore from '../../store/testimonialStore';
 import Button from '../elements/Button';
 import { Link } from 'react-router-dom';
 import { BrowserView, MobileView } from 'react-device-detect';
+import Caraousel from '../elements/Carousel.js';
+import Rating from '../elements/Rating';
 
 // eslint-disable-next-line
 const propTypes = {
@@ -25,6 +27,7 @@ const Testimonials = ({
     invertColor,
     countToFetch,
     showHeader,
+    showCarousel,
     ...props
 }) => {
     const setTestimonialData = TestimonialStore((state) => state.setTestimonialData);
@@ -86,7 +89,10 @@ const Testimonials = ({
         return (
             <div style={{ padding: 0, marginRight: 10, width: '32%', marginBottom: 10 }}>
                 <div className="tiles-item-inner" style={{ backgroundColor: 'rgb(39, 51, 69)', color: '#eceded', borderRadius: 5, marginRight: 6 }}>
-                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:16 }}>Trainer Rating: {rating(testimonialData.trainerRating,9)}</span>
+                    <span style={{ textAlign: "left", color: "#eceded", fontWeight: "bold",fontFamily: "Arial, Ancient Runes, serif", fontSize:16 }}>Trainer Rating: 
+                    <Rating currentRating={testimonialData.trainerRating} leftMargin={9} {...props}/>
+                    {/* {rating(testimonialData.trainerRating,9)} */}
+                    </span>
                     <span style={{ textAlign: "left", color: "#eceded", fontFamily: "Arial, Ancient Runes, serif", fontWeight: "bold" , fontSize:16}}>Content Rating: {rating(testimonialData.contentRating,2)}</span>
                     <br/>
                     <p className="m-0 text-sm" style={{ textAlign: "left", color: "#eceded", fontFamily: "system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Noto Sans,Liberation Sans,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji" }}>
@@ -97,12 +103,14 @@ const Testimonials = ({
         )
     }
 
-    return (
+    return ( <>{showCarousel ? <Caraousel testimonialData={testimonialData} {...props}/>
+        :
         <section
             {...props}
             className='container'
             style={{ paddingTop: 10, width: '89%', margin: 'auto', borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
+
          <BrowserView>
          <div className={innerClasses}>
                {showHeader && <h3 style={{ textAlign: "left", marginTop: 0 }}>Testimonials</h3>}
@@ -159,6 +167,8 @@ const Testimonials = ({
          </MobileView>
             
         </section>
+        }
+        </>
     );
 }
 

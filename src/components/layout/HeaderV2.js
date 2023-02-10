@@ -167,7 +167,8 @@ export default function Header() {
                     paddingRight: 24,
                     backgroundColor: '#fff',
                     borderBottomLeftRadius: 5,
-                    borderBottomRightRadius: 5
+                    borderBottomRightRadius: 5,
+                    minHeight:40
                 }}>
                 <div style={{color: '#6163ff', display:'flex', flexDirection:'row', justifyContent:'space-around', alignItems:'center'}}>
 
@@ -276,7 +277,7 @@ export default function Header() {
 
     const femmecubatorLogo = (
             <Typography variant="h6" component="h1" className={logo}>
-                Learn and Practice Agile 
+                Booyah Training 
             </Typography>
 
     );
