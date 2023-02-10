@@ -3,8 +3,8 @@ import CardElement from "../elements/CardElement";
 import { useHistory } from 'react-router-dom';
 
 const CardData = [
-    {title:"KSD", description:"Learn the basics of Kanban, flow, and how to design a Kanban system."},
-    {title:"KSI", description:"Learn to evolve, improve, and scale a Kanban system."},
+    {title:"KSD / KMP - I", description:"Learn the basics of Kanban, flow, and how to design a Kanban system."},
+    {title:"KSI / KMP - II", description:"Learn to evolve, improve, and scale a Kanban system."},
     {title:"KMP", description:"Learn to design a Kanban system and evolve and scale it beyond the team."}
 ];
 const InfoCards=({...props})=>{
@@ -49,17 +49,17 @@ const InfoCards=({...props})=>{
         <section
             {...props}
             className='container'
-            style={{ paddingTop: 0, borderWidth: 1, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
+            style={{ paddingTop: 0}}
         >
 
         <div class="row">
-            <div className="col-md-4 col-sm-6" style={{paddingBottom:8}}>
+            <div className="col-md-4 col-sm-6" style={{paddingTop:5}}>
                 <CardElement data={CardData[0]} exploreClickEvent={routeToKSD} findClickEvent={onClickFindKSD}/>
             </div>
-            <div class="col-md-4 col-sm-6" style={{paddingBottom:8}}>
+            <div class="col-md-4 col-sm-6" style={{paddingTop:5}}>
                 <CardElement data={CardData[1]} exploreClickEvent={routeToKSI} findClickEvent={onClickFindKSI}/>
             </div>
-            <div class="col-md-4 col-sm-6" style={{paddingBottom:8}}>
+            <div class="col-md-4 col-sm-6" style={{paddingTop:5}}>
                  <CardElement data={CardData[2]} exploreClickEvent={routeToKSD} findClickEvent={onClickFindKMP}/>
             </div>
         </div>

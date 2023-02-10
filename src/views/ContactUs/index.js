@@ -141,7 +141,7 @@ const ContactUs = ({
           setEmailSent(true);
           
         }, 300);
-      // gtag('event', 'conversion', { 'send_to': 'AW-11057596411/opSMCPDNzocYEPuP1pgp'    });
+      gtag('event', 'conversion', { 'send_to': 'AW-11057596411/opSMCPDNzocYEPuP1pgp'    });
     }
 
   };

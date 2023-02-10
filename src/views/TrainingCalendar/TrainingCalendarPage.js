@@ -7,7 +7,7 @@ import { gtag } from 'ga-gtag';
 import TrainingCalendarGrid from '../../components/sections/TrainingCalendarGrid';
 
 const TrainingCalendarPage = ({...props}) =>{
-  // gtag('event', 'conversion', { 'send_to': 'AW-11057596411/MvRiCJqIzocYEPuP1pgp' });
+  gtag('event', 'conversion', { 'send_to': 'AW-11057596411/MvRiCJqIzocYEPuP1pgp' });
 
   const location = useLocation()
   const {state} = props.location;

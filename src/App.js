@@ -25,7 +25,7 @@ import Unsubscribe from './views/Unsubscribe';
 
 
 const App = () => {
-  // install("AW-11057596411"); 
+  install("AW-11057596411"); 
 
   return (
     <>

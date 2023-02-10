@@ -380,7 +380,7 @@ const TrainingCalendar = ({
         <section
             {...props}
             className='container'
-            style={{ paddingTop: 0, borderWidth: 1, marginTop:30, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
+            style={{ paddingTop: 0, borderWidth: 1, marginTop:12, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
         >
             {showSearchOption &&
                 <>

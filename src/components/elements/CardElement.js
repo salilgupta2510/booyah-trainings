@@ -30,7 +30,7 @@ const CardElement = ({
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className='card-text-color'>
               {data.title}
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" style={{color: '#E0E0E0', fontSize:14}}>
               {data.description}
             </Typography>
           </CardContent>
