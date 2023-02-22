@@ -34,15 +34,17 @@ const TrainingCalendarGrid = ({
     showHeader,
     showTrainerInfo,
     showSearchOption,
+    trainingFilterInput,
     ...props
 }) => {
     const setTrainingCalendarData = TrainingCalendarStore((state) => state.setTrainingCalendarData);
     const trainingCalendarData = TrainingCalendarStore((state) => state.trainingCalendarData);
 
     const [trainingCount, setTrainingCount] = useState(0);
-    const [trainingFilter, setTrainingFilter] = useState('All');
 
-    const [selectedBtn, setSelectedBtn] = useState('ALL');
+    const [trainingFilter, setTrainingFilter] = useState(trainingFilterInput === undefined ? 'ALL' : trainingFilterInput);
+
+    const [selectedBtn, setSelectedBtn] = useState(trainingFilterInput === undefined ? 'ALL' : trainingFilterInput);
 
     const history = useHistory();
 
@@ -297,12 +299,12 @@ const TrainingCalendarGrid = ({
       const renderTrainingCalendarHeader = () =>{
         return(
             <tr style={{marginBottom:10, backgroundColor:'#6163ff'}}>
-      <th className="header-left">Event</th>
-      <th className='header-all'>Start Date</th>
-      <th className='header-all'>End Date</th>
-      <th className='header-all'>Timing</th>
-      <th className='header-all'>Venue</th>
-      <th className='header-right'>Register</th>
+      <th className="header-left header-text">Event</th>
+      <th className='header-all header-text'>Start Date</th>
+      <th className='header-all header-text'>End Date</th>
+      <th className='header-all header-text'>Timing</th>
+      <th className='header-all header-text'>Venue</th>
+      <th className='header-right header-text'>Register</th>
             </tr>
         )
       }
@@ -509,7 +511,6 @@ const TrainingCalendarGrid = ({
         >
             {showSearchOption &&
                 <>
-                    <BrowserView>
                         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: 20 }}>
                             <ButtonGroup>
                                 <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, width: '22%', fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "ALL" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "ALL")}>All Classes
@@ -522,19 +523,7 @@ const TrainingCalendarGrid = ({
                                 </Button>
                             </ButtonGroup>
                         </div>
-                    </BrowserView>
-                    <MobileView>
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 20 }}>
-                            <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "ALL" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "ALL" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "ALL")}>All Classes
-                            </Button>
-                            <Button tag="a" wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "KMP" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KMP" ? '#6163ff' : '#eceded' }} onClick={event => onAllDataClick(event, "KMP")}>KMP Class
-                            </Button>
-                            <Button tag="a" fo wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "KSD" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KSD" ? '#6163ff' : '#eceded' }} onClick={event => onKSDClick(event, "KSD")}>KSD Class
-                            </Button>
-                            <Button tag="a" wideMobile href="" style={{ borderRadius: 7, marginBottom: 10, width: '40%', fontSize: 14, color: selectedBtn === "KSI" ? '#eceded' : '#6163ff', backgroundColor: selectedBtn === "KSI" ? '#6163ff' : '#eceded' }} onClick={event => onKSIClick(event, "KSI")}>KSI Class
-                            </Button>
-                        </div>
-                    </MobileView>
+                    
                 </>
             }
             <div className={innerClasses} style={{
@@ -551,12 +540,18 @@ const TrainingCalendarGrid = ({
                     </div>}
             </div>
             {typeof trainingCalendarData !== 'string' && trainingCalendarData.length > 0 &&
-            <div style={{overflowX:'scroll', minWidth:800}}>
+            <div>
   <table style={{minWidth:100}}>
   {renderTrainingCalendarHeader()}
     {renderTrainingCalendarGridRow()}
   
   </table>
+
+  {showHeader && <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems:'center' }} >
+               <Button tag="a" color="white" fo wideMobile href="" style={{ borderRadius: 7, width: '40%', backgroundColor:'#0e1012'}}>
+                      <Link to="/calendar" style={{ fontSize: 22, color: 'white' }} >Click here for more Workshops</Link>
+                    </Button>
+                </div>}
 </div>
             }
         </section>

@@ -13,6 +13,7 @@ import { useLocation} from 'react-router-dom';
 import { gtag } from 'ga-gtag';
 import Caraousel from '../components/elements/Carousel.js';
 import InfoCards from '../components/sections/InfoCards';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 const Home = () => {
   gtag('event', 'conversion', { 'send_to': 'AW-11057596411/A-XQCKK-zocYEPuP1pgp' });
@@ -47,8 +48,13 @@ const Home = () => {
       {/* <InfoSection data={sectionHeader} invertMobile imageFill className="illustration-section-01" /> */}
       <Caraousel showImages={true} style={CarouselPaginationstyle}/>
       <InfoCards/>
-      {/* <TrainingCalendarGrid invertMobile imageFill className="illustration-section-02" calenderLimit={6} showHeader={true} showTrainerInfo={true} showSearchOption={false} /> */}
+      <BrowserView>
+      <TrainingCalendarGrid invertMobile imageFill className="illustration-section-02" calenderLimit={6} showHeader={true} showTrainerInfo={true} showSearchOption={false} />
+      </BrowserView>
+      <MobileView>
+
       <TrainingCalendar invertMobile imageFill className="illustration-section-02" calenderLimit={4} showHeader={true} showTrainerInfo={true} showSearchOption={false} />
+      </MobileView>
 
       <WhyUS invertMobile imageFill className="illustration-section-02" />
       <Testimonials invertMobile imageFill className="illustration-section-02" showHeader={true} countToFetch={6} showCarousel={true} />
