@@ -35,6 +35,10 @@ const headersData = [
     {
         label: "Testimonials",
         href: "/Testimonial",
+    },
+    {
+        label: "KMP Blogs",
+        href: "/blog",
     }
 ];
 
@@ -63,6 +67,11 @@ const headersDataMobile = [
         label:"Blog",
         href : "https://thevikasagarwal.github.io/Portfolio/#/",
         target : "_blank"
+    },
+    {
+        label: "KMP Blogs",
+        href: "/blog",
+        target: "_self"
     }
 ];
 
