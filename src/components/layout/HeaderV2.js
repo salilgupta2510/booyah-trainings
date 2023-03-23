@@ -37,8 +37,8 @@ const headersData = [
         href: "/Testimonial",
     },
     {
-        label: "KMP Blogs",
-        href: "/blog",
+        label: "WHY KMP?",
+        href: "/whykmp",
     }
 ];
 
@@ -69,8 +69,8 @@ const headersDataMobile = [
         target : "_blank"
     },
     {
-        label: "KMP Blogs",
-        href: "/blog",
+        label: "WHY KMP?",
+        href: "/whykmp",
         target: "_self"
     }
 ];

@@ -43,8 +43,8 @@ const App = () => {
           <AppRoute exact path="/calendar" component={TrainingCalendarPage} layout={LayoutDefault} hideFooter={false} />
           <AppRoute exact path="/survey" component={Survey} />
           <AppRoute exact path="/unsubscribe" component={Unsubscribe} />
-          <AppRoute exact path="/blog" component={Blog} layout={LayoutDefault}/>
-          <AppRoute exact path="/blog/:id" component={SingleBlog} layout={LayoutDefault}/>
+          <AppRoute exact path="/whykmp" component={Blog} layout={LayoutDefault}/>
+          <AppRoute exact path="/whykmp/:id" component={SingleBlog} layout={LayoutDefault}/>
 
         </Switch>
       </BrowserRouter>

@@ -76,7 +76,7 @@ const SingleBlog = ({
             setPreviousTitle(currentElement.title);
             setCurrentSelectedBlogId(allBlogs[currentElementIndex+1].blogId);
             setNextTitle(currentElementIndex+2 <= allBlogs.length-1 ? allBlogs[currentElementIndex+2].title : '');
-            browserHistory.push(`/blog/${allBlogs[currentElementIndex+1].blogId}`)
+            browserHistory.push(`/whykmp/${allBlogs[currentElementIndex+1].blogId}`)
           }
         }
         window.scrollTo({top:0, behavior:'smooth'});
@@ -94,7 +94,7 @@ const SingleBlog = ({
             setPreviousTitle(currentElementIndex-2 >= 0 ? allBlogs[currentElementIndex-2].title : '');
             setCurrentSelectedBlogId(allBlogs[currentElementIndex-1].blogId);
             setNextTitle(allBlogs[currentElementIndex].title);
-            browserHistory.push(`/blog/${allBlogs[currentElementIndex-1].blogId}`)
+            browserHistory.push(`/whykmp/${allBlogs[currentElementIndex-1].blogId}`)
           }
         }
         window.scrollTo({top:0, behavior:'smooth'});
@@ -148,10 +148,18 @@ const SingleBlog = ({
         invertColor && 'invert-color',
         className
       );
+
+      const history = useHistory();
+
+      const routeToQueryForm = () => {
+        history.push('/queryForm');
+      }
+
     return(
         <section className="container"
          style={{ paddingTop: 0, borderWidth: 1, marginTop:12, borderColor: '#273345', borderStyle: 'solid', borderRadius: 10, padding: 20 }}
        >
+       <div id="blog-link" onClick={routeToQueryForm}>Register for KMP Workshop</div>
        {renderSingleBlog()}
         </section>
     )

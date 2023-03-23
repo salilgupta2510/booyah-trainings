@@ -33,7 +33,7 @@ const Blog = ({
       }
 
       const routeToBlog = (blogId) =>{
-        browserHistory.push(`/blog/${blogId}`);
+        browserHistory.push(`/whykmp/${blogId}`);
       }
 
       const renderListOfBlogs = () =>{
